@@ -3,7 +3,7 @@ import bronze_layer_workflows
 import threading
 import common
 
-engine = create_engine('postgresql://postgres:postgres@depi-postgres:5432/depi')
+engine = create_engine('postgresql://postgres:postgres@localhost:5433/dwh_database')
 
 if __name__ == "__main__":
 
@@ -17,7 +17,7 @@ if __name__ == "__main__":
     ticketThread = threading.Thread(target=bronze_layer_workflows.create_ticket, args=(engine,))
     weatherThread = threading.Thread(target=bronze_layer_workflows.create_weather, args=(engine,))
     bookingThread = threading.Thread(target=bronze_layer_workflows.create_booking, args=(engine,))
-
+    print(path)
 
     airportThread.start()
     print('AIRPORT_THREAD_STARTED')

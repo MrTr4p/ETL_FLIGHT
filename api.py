@@ -14,11 +14,7 @@ def get_historical_weather(date, latitude, longitude):
         'precipitation_unit': 'mm',
         'timezone': 'auto'
     }
-    print(params)
     response = requests.get(constants.meteo_url, params=params)
-    print(f"Status Code: {response.status_code}")
-    print(f"Response Text: {response.text[:500]}, {len(response.text)}")
-    print(f"Headers: {response.headers}")
     if response.status_code == 200:
         if len(response.text) == 0:
             return None

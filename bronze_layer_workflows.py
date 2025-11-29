@@ -42,7 +42,7 @@ def to_sql_airport(path, engine):
     common.write_large_sql_chunks(f'{os.getcwd()}/airport.csv', engine, 'bronze_dim_airport', chunksize=1000)
 
 def modify_flights(path):
-    flights = pd.read_csv(f"{path}/flights.csv", low_memory=False)
+    flights = pd.read_csv(f"{path}/flights.csv", low_memory=False,nrows=10000)
     
     column_mapping = {
         'YEAR': 'year',
@@ -109,7 +109,7 @@ def add_columns_in_chunks(main_csv_path, additional_csv_path,left_on, right_on, 
     for chunk in common.read_large_csv_chunks(main_csv_path, chunksize=chunksize):
         merged_chunk = pd.merge(chunk, additional_df, left_on=left_on,right_on=right_on, how='left')
         merged_chunk = merged_chunk.rename(columns={'airline_x': "carrier_code", "airline_y": "carrier_name"})
-        
+        print(merged_chunk)
         merged_chunk.drop('iata_code', axis=1)            
         merged_chunk['aircrafttype'] = random.choice(constants.aircraftTypes)
         mode = 'w' if first_chunk else 'a'
@@ -138,7 +138,7 @@ def merge_flight_airline_csv(path, engine):
 
 def create_passenger(engine):
     with engine.connect() as connection:
-        for i in range(10000):
+        for i in range(1000):
             gender = random.choice(['MALE', 'FEMALE'])
             connection.execute(text(f"""
             INSERT INTO bronze_dim_passenger
@@ -150,38 +150,38 @@ def create_passenger(engine):
             '{random.choice(constants.loyalty_statuses)}', 
             {random.choice([True,False])})
              """))
-            if i % 1000 ==0:
-                print(f"PASSENGER: Progress: {i}/10,000")
+            if i % 100 ==0:
+                print(f"PASSENGER: Progress: {i}/1000")
 
         connection.commit()
         
             
 def create_payment(engine):
     with engine.connect() as connection:
-        for i in range(10000):
+        for i in range(1000):
             connection.execute(text(f"""
             INSERT INTO bronze_dim_payment
             (id, paymentmethod, currency, paymentstatus)
             VALUES 
             ({i}, '{random.choice(constants.paymentMethods)}', '{random.choice(constants.currency_codes)}', '{random.choice(constants.paymentStatus)}')
         """))
-            if i % 1000 ==0:
-                print(f"PAYMENT: Progress: {i}/10,000")
+            if i % 100 ==0:
+                print(f"PAYMENT: Progress: {i}/1000")
 
         connection.commit()
         
             
 def create_ticket(engine):
     with engine.connect() as connection:
-        for i in range(10000):
+        for i in range(1000):
             connection.execute(text(f"""
             INSERT INTO bronze_dim_ticket
             (id, bookingclass, seatnumber, faretype, baggageallowance)
             VALUES 
             ({i}, '{random.choice(constants.booking_classes)}', '{random.randint(1, 90)}', '{random.choice(constants.fare_types)}', '{random.randint(10, 10000)}')
         """))
-        if i % 1000 ==0:
-                print(f"TICKET: Progress: {i}/10,000")
+        if i % 100 ==0:
+                print(f"TICKET: Progress: {i}/1000")
         connection.commit()
         
             
@@ -202,7 +202,7 @@ def create_date(engine):
 
 def create_weather(engine):
     with engine.connect() as connection:
-        for i in range(1,364):
+        for i in range(1,80):
             random_airport_code = random.choice(constants.usa_iata_codes)
             airport = connection.execute(
             text(f"SELECT * FROM bronze_dim_airport WHERE iata_code = '{random_airport_code}'")
@@ -213,6 +213,7 @@ def create_weather(engine):
             calender_date =date[1]
 
             weather_data = api.get_historical_weather(calender_date, lat,long)
+            print(i)
             if weather_data == None:
                 print(f'Error at {i}')
                 continue
@@ -224,13 +225,12 @@ def create_weather(engine):
         """))
             
 
-            print(i)
             
         connection.commit()
         
 def create_booking(engine):
     with engine.connect() as connection:
-        for i in range(1, 500000):
+        for i in range(1, 10000):
             connection.execute(text(f"""
                 INSERT INTO bronze_fact_booking
                 (id, passengerid, flightid, ticketid, paymentid, bookingdateid, departuredateid, basefareamount, netsalesamount, numberofbags, totalweightkg)

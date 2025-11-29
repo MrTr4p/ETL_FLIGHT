@@ -1,4 +1,5 @@
 from datetime import datetime
+from datetime import timedelta
 import subprocess
 from airflow import DAG
 from airflow.operators.python import PythonOperator
@@ -43,6 +44,41 @@ with DAG(
     schedule="@daily",
     catchup=False,
 ) as dag:
+
+    kafka_data_sender = BashOperator(
+            task_id='kafka_data_sender',
+            bash_command=r'''
+                docker exec -it --user root spark-notebook /usr/local/spark/bin/spark-submit \
+                    --master spark://spark-master:7077 \
+                    --name NotebookStreamingConsumer \
+                    --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.3.0 \
+                    /tmp/kafka_streaming_job.py
+            ''',
+            execution_timeout=timedelta(minutes=5) 
+    )
+    
+    spark_batch_processor = BashOperator(
+        task_id='spark_batch_processor',
+        bash_command=r'''
+            docker exec -it spark-master /spark/bin/spark-submit \
+                --master spark://spark-master:7077 \
+                --jars /tmp/spark_drivers/postgresql-42.7.7.jar \
+                /opt/create_tables.py
+        ''',
+        execution_timeout=timedelta(minutes=10) 
+    )
+    
+    spark_streaming_start = BashOperator(
+        task_id='spark_streaming_start',
+        bash_command=r'''
+            docker exec -d spark-master /spark/bin/spark-submit \
+                --master spark://spark-master:7077 \
+                --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.3.0 \
+                --jars /opt/spark/jars/postgresql-42.7.7.jar \
+                /opt/kafka_consumer.py
+        ''',
+        execution_timeout=timedelta(seconds=15) 
+    )
     
     call_bronze_procedure = PythonOperator(
         task_id="call_bronze_procedure",
@@ -72,10 +108,14 @@ with DAG(
         task_id="talend_etl_pipeline",
         python_callable=run_talend_job,
     )
-    call_bronze_procedure >> run_python_script >> run_talend_etl
-
-    call_silver_procedure
-
-    call_gold_procedure
+    [kafka_data_sender, spark_streaming_start, spark_batch_processor] >> call_bronze_procedure
+    
+    (
+        call_bronze_procedure 
+        >> run_python_script 
+        >> run_talend_etl 
+        >> call_silver_procedure
+        >> call_gold_procedure
+    )
 
     
