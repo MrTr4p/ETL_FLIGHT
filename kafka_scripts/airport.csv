@@ -1,0 +1,101 @@
+airport_id,airport_code,airport_name,city,state,country,latitude,longitude
+1,LHR1,London Heathrow,London,-,UK,-43.21298,98.910753
+2,DXB2,Dubai Intl,Dubai,-,UAE,29.808128,145.708965
+3,CDG3,Charles de Gaulle,Paris,-,France,-25.216606,117.272996
+4,FRA4,Frankfurt Main,Frankfurt,-,Germany,44.383953,-67.907794
+5,HND5,Tokyo Haneda,Tokyo,Tokyo,Japan,25.723322,-86.905416
+6,SYD6,Sydney Kingsford,Sydney,NSW,Australia,84.130995,-38.932555
+7,YYZ7,Toronto Pearson,Toronto,ON,Canada,-64.261798,-96.963376
+8,GRU8,São Paulo Guarulhos,São Paulo,SP,Brazil,-72.600118,64.254553
+9,DEL9,Indira Gandhi Intl,New Delhi,DL,India,-86.371264,-45.709116
+10,JFK10,John F. Kennedy Intl,New York,NY,USA,59.199144,26.858415
+11,LHR11,London Heathrow,London,-,UK,-81.481935,80.219814
+12,DXB12,Dubai Intl,Dubai,-,UAE,-0.610634,-21.433622
+13,CDG13,Charles de Gaulle,Paris,-,France,77.412882,50.652957
+14,FRA14,Frankfurt Main,Frankfurt,-,Germany,-25.134427,63.569521
+15,HND15,Tokyo Haneda,Tokyo,Tokyo,Japan,49.5075,-58.049603
+16,SYD16,Sydney Kingsford,Sydney,NSW,Australia,-61.033329,-41.044518
+17,YYZ17,Toronto Pearson,Toronto,ON,Canada,74.113035,64.660097
+18,GRU18,São Paulo Guarulhos,São Paulo,SP,Brazil,-44.140039,-164.036929
+19,DEL19,Indira Gandhi Intl,New Delhi,DL,India,79.596103,-160.687074
+20,JFK20,John F. Kennedy Intl,New York,NY,USA,-5.988533,161.599469
+21,LHR21,London Heathrow,London,-,UK,-0.598322,-159.828767
+22,DXB22,Dubai Intl,Dubai,-,UAE,-16.995149,73.451196
+23,CDG23,Charles de Gaulle,Paris,-,France,68.462403,74.491025
+24,FRA24,Frankfurt Main,Frankfurt,-,Germany,-0.255552,-54.525583
+25,HND25,Tokyo Haneda,Tokyo,Tokyo,Japan,-4.386017,-96.622646
+26,SYD26,Sydney Kingsford,Sydney,NSW,Australia,-68.910847,-14.623563
+27,YYZ27,Toronto Pearson,Toronto,ON,Canada,46.361426,-169.750803
+28,GRU28,São Paulo Guarulhos,São Paulo,SP,Brazil,54.201885,172.349512
+29,DEL29,Indira Gandhi Intl,New Delhi,DL,India,-16.067296,168.923377
+30,JFK30,John F. Kennedy Intl,New York,NY,USA,16.323309,32.708991
+31,LHR31,London Heathrow,London,-,UK,-46.693855,-22.820556
+32,DXB32,Dubai Intl,Dubai,-,UAE,39.516994,-1.206254
+33,CDG33,Charles de Gaulle,Paris,-,France,39.058597,-114.33492
+34,FRA34,Frankfurt Main,Frankfurt,-,Germany,47.941979,6.448403
+35,HND35,Tokyo Haneda,Tokyo,Tokyo,Japan,48.948115,95.229882
+36,SYD36,Sydney Kingsford,Sydney,NSW,Australia,86.715624,76.715728
+37,YYZ37,Toronto Pearson,Toronto,ON,Canada,67.691777,126.071903
+38,GRU38,São Paulo Guarulhos,São Paulo,SP,Brazil,-31.425143,-43.944169
+39,DEL39,Indira Gandhi Intl,New Delhi,DL,India,-48.516749,-60.788014
+40,JFK40,John F. Kennedy Intl,New York,NY,USA,2.755016,77.177589
+41,LHR41,London Heathrow,London,-,UK,-25.209159,36.313136
+42,DXB42,Dubai Intl,Dubai,-,UAE,-3.992455,47.227136
+43,CDG43,Charles de Gaulle,Paris,-,France,64.25475,-114.054042
+44,FRA44,Frankfurt Main,Frankfurt,-,Germany,27.865317,141.030676
+45,HND45,Tokyo Haneda,Tokyo,Tokyo,Japan,-21.927238,-111.721652
+46,SYD46,Sydney Kingsford,Sydney,NSW,Australia,24.446089,58.484659
+47,YYZ47,Toronto Pearson,Toronto,ON,Canada,9.613507,149.961487
+48,GRU48,São Paulo Guarulhos,São Paulo,SP,Brazil,-64.367016,86.770671
+49,DEL49,Indira Gandhi Intl,New Delhi,DL,India,-28.295559,11.473319
+50,JFK50,John F. Kennedy Intl,New York,NY,USA,54.013897,17.83522
+51,LHR51,London Heathrow,London,-,UK,-55.866071,-167.812667
+52,DXB52,Dubai Intl,Dubai,-,UAE,75.194418,68.225716
+53,CDG53,Charles de Gaulle,Paris,-,France,-11.833635,-16.004869
+54,FRA54,Frankfurt Main,Frankfurt,-,Germany,-5.36991,169.127528
+55,HND55,Tokyo Haneda,Tokyo,Tokyo,Japan,-64.50287,-158.480358
+56,SYD56,Sydney Kingsford,Sydney,NSW,Australia,33.274921,-4.55372
+57,YYZ57,Toronto Pearson,Toronto,ON,Canada,1.145659,-79.299187
+58,GRU58,São Paulo Guarulhos,São Paulo,SP,Brazil,-49.835316,161.714598
+59,DEL59,Indira Gandhi Intl,New Delhi,DL,India,-52.506129,-172.574552
+60,JFK60,John F. Kennedy Intl,New York,NY,USA,-83.538157,-132.761333
+61,LHR61,London Heathrow,London,-,UK,-8.016044,105.13867
+62,DXB62,Dubai Intl,Dubai,-,UAE,57.117103,139.276399
+63,CDG63,Charles de Gaulle,Paris,-,France,-7.555242,60.627232
+64,FRA64,Frankfurt Main,Frankfurt,-,Germany,-17.102033,-88.708784
+65,HND65,Tokyo Haneda,Tokyo,Tokyo,Japan,-86.237735,-111.655081
+66,SYD66,Sydney Kingsford,Sydney,NSW,Australia,31.504425,91.761062
+67,YYZ67,Toronto Pearson,Toronto,ON,Canada,77.948165,39.303786
+68,GRU68,São Paulo Guarulhos,São Paulo,SP,Brazil,-54.267549,-10.230157
+69,DEL69,Indira Gandhi Intl,New Delhi,DL,India,-7.084146,-160.508333
+70,JFK70,John F. Kennedy Intl,New York,NY,USA,-3.304418,-133.404442
+71,LHR71,London Heathrow,London,-,UK,40.162438,137.157488
+72,DXB72,Dubai Intl,Dubai,-,UAE,16.333162,-166.659164
+73,CDG73,Charles de Gaulle,Paris,-,France,31.176394,65.694313
+74,FRA74,Frankfurt Main,Frankfurt,-,Germany,-31.56307,-41.103818
+75,HND75,Tokyo Haneda,Tokyo,Tokyo,Japan,70.533161,-19.793308
+76,SYD76,Sydney Kingsford,Sydney,NSW,Australia,71.847093,-135.662443
+77,YYZ77,Toronto Pearson,Toronto,ON,Canada,1.909774,54.447357
+78,GRU78,São Paulo Guarulhos,São Paulo,SP,Brazil,-40.733308,83.041297
+79,DEL79,Indira Gandhi Intl,New Delhi,DL,India,-63.131659,160.836627
+80,JFK80,John F. Kennedy Intl,New York,NY,USA,43.142231,18.910946
+81,LHR81,London Heathrow,London,-,UK,-87.791652,-61.147434
+82,DXB82,Dubai Intl,Dubai,-,UAE,-76.12732,-148.857688
+83,CDG83,Charles de Gaulle,Paris,-,France,71.91369,-119.161649
+84,FRA84,Frankfurt Main,Frankfurt,-,Germany,-58.980718,-159.706419
+85,HND85,Tokyo Haneda,Tokyo,Tokyo,Japan,-54.966081,-154.763575
+86,SYD86,Sydney Kingsford,Sydney,NSW,Australia,-85.389365,-168.666614
+87,YYZ87,Toronto Pearson,Toronto,ON,Canada,71.043592,172.453037
+88,GRU88,São Paulo Guarulhos,São Paulo,SP,Brazil,53.079554,-86.023784
+89,DEL89,Indira Gandhi Intl,New Delhi,DL,India,-82.952995,-86.708552
+90,JFK90,John F. Kennedy Intl,New York,NY,USA,-40.089058,-9.440283
+91,LHR91,London Heathrow,London,-,UK,-71.391896,155.861766
+92,DXB92,Dubai Intl,Dubai,-,UAE,-86.737477,46.687899
+93,CDG93,Charles de Gaulle,Paris,-,France,-31.373017,158.565387
+94,FRA94,Frankfurt Main,Frankfurt,-,Germany,-42.177504,-46.111972
+95,HND95,Tokyo Haneda,Tokyo,Tokyo,Japan,77.18944,121.973158
+96,SYD96,Sydney Kingsford,Sydney,NSW,Australia,62.435614,-12.662902
+97,YYZ97,Toronto Pearson,Toronto,ON,Canada,21.933486,-167.905923
+98,GRU98,São Paulo Guarulhos,São Paulo,SP,Brazil,-28.577461,52.471829
+99,DEL99,Indira Gandhi Intl,New Delhi,DL,India,27.492964,-62.835686
+100,JFK100,John F. Kennedy Intl,New York,NY,USA,-13.791884,-10.322149

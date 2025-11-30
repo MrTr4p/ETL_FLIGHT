@@ -1,0 +1,17 @@
+[2025-11-29T17:24:29.478+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_etl.debug_check_dir manual__2025-11-29T17:24:24.920691+00:00 [queued]>
+[2025-11-29T17:24:29.484+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_etl.debug_check_dir manual__2025-11-29T17:24:24.920691+00:00 [queued]>
+[2025-11-29T17:24:29.484+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2025-11-29T17:24:29.540+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): debug_check_dir> on 2025-11-29 17:24:24.920691+00:00
+[2025-11-29T17:24:29.548+0000] {standard_task_runner.py:57} INFO - Started process 706 to run task
+[2025-11-29T17:24:29.554+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'flight_etl', 'debug_check_dir', 'manual__2025-11-29T17:24:24.920691+00:00', '--job-id', '82', '--raw', '--subdir', 'DAGS_FOLDER/etl-dag.py', '--cfg-path', '/tmp/tmp930mygoo']
+[2025-11-29T17:24:29.556+0000] {standard_task_runner.py:85} INFO - Job 82: Subtask debug_check_dir
+[2025-11-29T17:24:29.690+0000] {task_command.py:416} INFO - Running <TaskInstance: flight_etl.debug_check_dir manual__2025-11-29T17:24:24.920691+00:00 [running]> on host 074e46dd394a
+[2025-11-29T17:24:30.228+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='flight_etl' AIRFLOW_CTX_TASK_ID='debug_check_dir' AIRFLOW_CTX_EXECUTION_DATE='2025-11-29T17:24:24.920691+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-29T17:24:24.920691+00:00'
+[2025-11-29T17:24:30.307+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-29T17:24:30.312+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'pwd']
+[2025-11-29T17:24:30.367+0000] {subprocess.py:86} INFO - Output:
+[2025-11-29T17:24:30.580+0000] {subprocess.py:93} INFO - /tmp/***tmp4urixy8z
+[2025-11-29T17:24:30.581+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-11-29T17:24:30.807+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=flight_etl, task_id=debug_check_dir, execution_date=20251129T172424, start_date=20251129T172429, end_date=20251129T172430
+[2025-11-29T17:24:30.928+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-11-29T17:24:30.952+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,61 @@
+[2025-11-29T17:10:39.759+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_etl.python_etl_pipeline manual__2025-11-29T17:10:26.979252+00:00 [queued]>
+[2025-11-29T17:10:39.765+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_etl.python_etl_pipeline manual__2025-11-29T17:10:26.979252+00:00 [queued]>
+[2025-11-29T17:10:39.765+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2025-11-29T17:10:39.773+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): python_etl_pipeline> on 2025-11-29 17:10:26.979252+00:00
+[2025-11-29T17:10:39.777+0000] {standard_task_runner.py:57} INFO - Started process 348 to run task
+[2025-11-29T17:10:39.780+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'flight_etl', 'python_etl_pipeline', 'manual__2025-11-29T17:10:26.979252+00:00', '--job-id', '54', '--raw', '--subdir', 'DAGS_FOLDER/etl-dag.py', '--cfg-path', '/tmp/tmp9vst2p7g']
+[2025-11-29T17:10:39.782+0000] {standard_task_runner.py:85} INFO - Job 54: Subtask python_etl_pipeline
+[2025-11-29T17:10:39.815+0000] {task_command.py:416} INFO - Running <TaskInstance: flight_etl.python_etl_pipeline manual__2025-11-29T17:10:26.979252+00:00 [running]> on host 074e46dd394a
+[2025-11-29T17:10:39.873+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='flight_etl' AIRFLOW_CTX_TASK_ID='python_etl_pipeline' AIRFLOW_CTX_EXECUTION_DATE='2025-11-29T17:10:26.979252+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-29T17:10:26.979252+00:00'
+[2025-11-29T17:10:39.874+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-29T17:10:39.874+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', '\n            echo "Starting ETL pipeline execution..." &&             cd /opt/***/etl_scripts &&             echo "Current directory is: $(pwd)" &&             echo "Installing requirements..." &&             /usr/local/bin/pip install -r requirements.txt &&             echo "Starting main.py script..." &&             python main.py\n        ']
+[2025-11-29T17:10:39.888+0000] {subprocess.py:86} INFO - Output:
+[2025-11-29T17:10:39.891+0000] {subprocess.py:93} INFO - Starting ETL pipeline execution...
+[2025-11-29T17:10:39.892+0000] {subprocess.py:93} INFO - Current directory is: /opt/***/etl_scripts
+[2025-11-29T17:10:39.892+0000] {subprocess.py:93} INFO - Installing requirements...
+[2025-11-29T17:10:40.689+0000] {subprocess.py:93} INFO - Collecting certifi==2025.8.3
+[2025-11-29T17:10:40.697+0000] {subprocess.py:93} INFO -   Using cached certifi-2025.8.3-py3-none-any.whl (161 kB)
+[2025-11-29T17:10:40.921+0000] {subprocess.py:93} INFO - Collecting charset-normalizer==3.4.3
+[2025-11-29T17:10:40.930+0000] {subprocess.py:93} INFO -   Using cached charset_normalizer-3.4.3-cp38-cp38-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (147 kB)
+[2025-11-29T17:10:41.166+0000] {subprocess.py:93} INFO - Collecting Faker==35.2.2
+[2025-11-29T17:10:41.175+0000] {subprocess.py:93} INFO -   Using cached Faker-35.2.2-py3-none-any.whl (1.9 MB)
+[2025-11-29T17:10:41.446+0000] {subprocess.py:93} INFO - Collecting greenlet==2.0.2
+[2025-11-29T17:10:41.449+0000] {subprocess.py:93} INFO -   Using cached greenlet-2.0.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (618 kB)
+[2025-11-29T17:10:41.524+0000] {subprocess.py:93} INFO - Collecting idna==3.10
+[2025-11-29T17:10:41.526+0000] {subprocess.py:93} INFO -   Using cached idna-3.10-py3-none-any.whl (70 kB)
+[2025-11-29T17:10:41.604+0000] {subprocess.py:93} INFO - Collecting kagglehub==0.2.9
+[2025-11-29T17:10:41.606+0000] {subprocess.py:93} INFO -   Using cached kagglehub-0.2.9-py3-none-any.whl (39 kB)
+[2025-11-29T17:10:41.608+0000] {subprocess.py:93} INFO - Requirement already satisfied: numpy==1.24.4 in /home/***/.local/lib/python3.8/site-packages (from -r requirements.txt (line 7)) (1.24.4)
+[2025-11-29T17:10:41.693+0000] {subprocess.py:93} INFO - Collecting packaging==25.0
+[2025-11-29T17:10:41.704+0000] {subprocess.py:93} INFO -   Using cached packaging-25.0-py3-none-any.whl (66 kB)
+[2025-11-29T17:10:41.973+0000] {subprocess.py:93} INFO - Collecting pandas==1.5.3
+[2025-11-29T17:10:42.366+0000] {subprocess.py:93} INFO -   Downloading pandas-1.5.3-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.2 MB)
+[2025-11-29T17:10:46.454+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.2/12.2 MB 3.2 MB/s eta 0:00:00
+[2025-11-29T17:10:46.921+0000] {subprocess.py:93} INFO - Collecting psycopg2-binary==2.9.10
+[2025-11-29T17:10:47.169+0000] {subprocess.py:93} INFO -   Downloading psycopg2_binary-2.9.10-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
+[2025-11-29T17:10:48.810+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 1.8 MB/s eta 0:00:00
+[2025-11-29T17:10:48.905+0000] {subprocess.py:93} INFO - Collecting python-dateutil==2.9.0.post0
+[2025-11-29T17:10:48.971+0000] {subprocess.py:93} INFO -   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+[2025-11-29T17:10:49.102+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 229.9/229.9 kB 1.8 MB/s eta 0:00:00
+[2025-11-29T17:10:49.257+0000] {subprocess.py:93} INFO - Collecting pytz==2025.2
+[2025-11-29T17:10:49.322+0000] {subprocess.py:93} INFO -   Downloading pytz-2025.2-py2.py3-none-any.whl (509 kB)
+[2025-11-29T17:10:49.607+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 509.2/509.2 kB 1.8 MB/s eta 0:00:00
+[2025-11-29T17:10:49.915+0000] {subprocess.py:93} INFO - Collecting PyYAML==6.0.2
+[2025-11-29T17:10:49.999+0000] {subprocess.py:93} INFO -   Downloading PyYAML-6.0.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (746 kB)
+[2025-11-29T17:10:50.873+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 746.5/746.5 kB 858.6 kB/s eta 0:00:00
+[2025-11-29T17:10:51.041+0000] {subprocess.py:93} INFO - ERROR: Ignored the following versions that require a different python version: 0.3.0 Requires-Python >=3.9; 0.3.1 Requires-Python >=3.9; 0.3.10 Requires-Python >=3.9; 0.3.11 Requires-Python >=3.9; 0.3.12 Requires-Python >=3.9; 0.3.13 Requires-Python >=3.9; 0.3.2 Requires-Python >=3.9; 0.3.3 Requires-Python >=3.9; 0.3.4 Requires-Python >=3.9; 0.3.5 Requires-Python >=3.9; 0.3.6 Requires-Python >=3.9; 0.3.7 Requires-Python >=3.9; 0.3.8 Requires-Python >=3.9; 0.3.9 Requires-Python >=3.9; 2.1.0 Requires-Python >=3.9; 2.1.0rc0 Requires-Python >=3.9; 2.1.1 Requires-Python >=3.9; 2.1.2 Requires-Python >=3.9; 2.1.3 Requires-Python >=3.9; 2.1.4 Requires-Python >=3.9; 2.2.0 Requires-Python >=3.9; 2.2.0rc0 Requires-Python >=3.9; 2.2.1 Requires-Python >=3.9; 2.2.2 Requires-Python >=3.9; 2.2.3 Requires-Python >=3.9; 2.3.0 Requires-Python >=3.9; 2.3.1 Requires-Python >=3.9; 2.3.2 Requires-Python >=3.9; 2.3.3 Requires-Python >=3.9; 2.32.5 Requires-Python >=3.9; 2.9.11 Requires-Python >=3.9; 3.2.0 Requires-Python >=3.9; 3.2.1 Requires-Python >=3.9; 3.2.2 Requires-Python >=3.9; 3.2.3 Requires-Python >=3.9; 3.2.4 Requires-Python >=3.9; 36.0.0 Requires-Python >=3.9; 36.1.0 Requires-Python >=3.9; 36.1.1 Requires-Python >=3.9; 36.2.0 Requires-Python >=3.9; 36.2.1 Requires-Python >=3.9; 36.2.2 Requires-Python >=3.9; 36.2.3 Requires-Python >=3.9; 37.0.0 Requires-Python >=3.9; 37.0.1 Requires-Python >=3.9; 37.0.2 Requires-Python >=3.9; 37.1.0 Requires-Python >=3.9; 37.1.1 Requires-Python >=3.9; 37.11.0 Requires-Python >=3.9; 37.12.0 Requires-Python >=3.9; 37.2.0 Requires-Python >=3.9; 37.2.1 Requires-Python >=3.9; 37.3.0 Requires-Python >=3.9; 37.4.0 Requires-Python >=3.9; 37.4.1 Requires-Python >=3.9; 37.4.2 Requires-Python >=3.9; 37.4.3 Requires-Python >=3.9; 37.5.0 Requires-Python >=3.9; 37.5.1 Requires-Python >=3.9; 37.5.2 Requires-Python >=3.9; 37.5.3 Requires-Python >=3.9; 37.6.0 Requires-Python >=3.9; 37.7.0 Requires-Python >=3.9; 37.8.0 Requires-Python >=3.9; 37.9.0 Requires-Python >=3.9; 38.0.0 Requires-Python >=3.10; 38.1.0 Requires-Python >=3.10; 38.2.0 Requires-Python >=3.10
+[2025-11-29T17:10:51.042+0000] {subprocess.py:93} INFO - ERROR: Could not find a version that satisfies the requirement requests==2.32.5 (from versions: 0.2.0, 0.2.1, 0.2.2, 0.2.3, 0.2.4, 0.3.0, 0.3.1, 0.3.2, 0.3.3, 0.3.4, 0.4.0, 0.4.1, 0.5.0, 0.5.1, 0.6.0, 0.6.1, 0.6.2, 0.6.3, 0.6.4, 0.6.5, 0.6.6, 0.7.0, 0.7.1, 0.7.2, 0.7.3, 0.7.4, 0.7.5, 0.7.6, 0.8.0, 0.8.1, 0.8.2, 0.8.3, 0.8.4, 0.8.5, 0.8.6, 0.8.7, 0.8.8, 0.8.9, 0.9.0, 0.9.1, 0.9.2, 0.9.3, 0.10.0, 0.10.1, 0.10.2, 0.10.3, 0.10.4, 0.10.6, 0.10.7, 0.10.8, 0.11.1, 0.11.2, 0.12.0, 0.12.1, 0.13.0, 0.13.1, 0.13.2, 0.13.3, 0.13.4, 0.13.5, 0.13.6, 0.13.7, 0.13.8, 0.13.9, 0.14.0, 0.14.1, 0.14.2, 1.0.0, 1.0.1, 1.0.2, 1.0.3, 1.0.4, 1.1.0, 1.2.0, 1.2.1, 1.2.2, 1.2.3, 2.0.0, 2.0.1, 2.1.0, 2.2.0, 2.2.1, 2.3.0, 2.4.0, 2.4.1, 2.4.2, 2.4.3, 2.5.0, 2.5.1, 2.5.2, 2.5.3, 2.6.0, 2.6.1, 2.6.2, 2.7.0, 2.8.0, 2.8.1, 2.9.0, 2.9.1, 2.9.2, 2.10.0, 2.11.0, 2.11.1, 2.12.0, 2.12.1, 2.12.2, 2.12.3, 2.12.4, 2.12.5, 2.13.0, 2.14.0, 2.14.1, 2.14.2, 2.15.1, 2.16.0, 2.16.1, 2.16.2, 2.16.3, 2.16.4, 2.16.5, 2.17.0, 2.17.1, 2.17.2, 2.17.3, 2.18.0, 2.18.1, 2.18.2, 2.18.3, 2.18.4, 2.19.0, 2.19.1, 2.20.0, 2.20.1, 2.21.0, 2.22.0, 2.23.0, 2.24.0, 2.25.0, 2.25.1, 2.26.0, 2.27.0, 2.27.1, 2.28.0, 2.28.1, 2.28.2, 2.29.0, 2.30.0, 2.31.0, 2.32.0, 2.32.1, 2.32.2, 2.32.3, 2.32.4)
+[2025-11-29T17:10:51.042+0000] {subprocess.py:93} INFO - ERROR: No matching distribution found for requests==2.32.5
+[2025-11-29T17:10:51.068+0000] {subprocess.py:93} INFO - 
+[2025-11-29T17:10:51.068+0000] {subprocess.py:93} INFO - [notice] A new release of pip is available: 23.0.1 -> 25.0.1
+[2025-11-29T17:10:51.068+0000] {subprocess.py:93} INFO - [notice] To update, run: pip3 install --upgrade pip
+[2025-11-29T17:10:51.274+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-11-29T17:10:51.282+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-11-29T17:10:51.316+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=flight_etl, task_id=python_etl_pipeline, execution_date=20251129T171026, start_date=20251129T171039, end_date=20251129T171051
+[2025-11-29T17:10:51.342+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 54 for task python_etl_pipeline (Bash command failed. The command returned a non-zero exit code 1.; 348)
+[2025-11-29T17:10:51.362+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-11-29T17:10:51.377+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,332 @@
+[2025-11-29T18:51:38.774+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_etl.python_etl_pipeline manual__2025-11-29T18:51:34.296109+00:00 [queued]>
+[2025-11-29T18:51:38.785+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_etl.python_etl_pipeline manual__2025-11-29T18:51:34.296109+00:00 [queued]>
+[2025-11-29T18:51:38.786+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2025-11-29T18:51:38.942+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): python_etl_pipeline> on 2025-11-29 18:51:34.296109+00:00
+[2025-11-29T18:51:38.952+0000] {standard_task_runner.py:57} INFO - Started process 93 to run task
+[2025-11-29T18:51:38.956+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'flight_etl', 'python_etl_pipeline', 'manual__2025-11-29T18:51:34.296109+00:00', '--job-id', '145', '--raw', '--subdir', 'DAGS_FOLDER/etl-dag.py', '--cfg-path', '/tmp/tmpb4iu59b2']
+[2025-11-29T18:51:38.959+0000] {standard_task_runner.py:85} INFO - Job 145: Subtask python_etl_pipeline
+[2025-11-29T18:51:39.054+0000] {task_command.py:416} INFO - Running <TaskInstance: flight_etl.python_etl_pipeline manual__2025-11-29T18:51:34.296109+00:00 [running]> on host 5eb1b8ec96b4
+[2025-11-29T18:51:39.381+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='flight_etl' AIRFLOW_CTX_TASK_ID='python_etl_pipeline' AIRFLOW_CTX_EXECUTION_DATE='2025-11-29T18:51:34.296109+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-29T18:51:34.296109+00:00'
+[2025-11-29T18:51:39.386+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-29T18:51:39.388+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', '\n            echo "Starting ETL pipeline execution..." &&             cd /opt/***/etl_scripts &&             echo "Current directory is: $(pwd)" &&             echo "Installing requirements..." &&             /usr/local/bin/pip install -r requirements.txt &&             echo "Starting main.py script..." &&             python main.py\n        ']
+[2025-11-29T18:51:39.414+0000] {subprocess.py:86} INFO - Output:
+[2025-11-29T18:51:39.473+0000] {subprocess.py:93} INFO - Starting ETL pipeline execution...
+[2025-11-29T18:51:39.474+0000] {subprocess.py:93} INFO - Current directory is: /opt/***/etl_scripts
+[2025-11-29T18:51:39.474+0000] {subprocess.py:93} INFO - Installing requirements...
+[2025-11-29T18:51:42.665+0000] {subprocess.py:93} INFO - Collecting certifi==2025.8.3
+[2025-11-29T18:51:42.952+0000] {subprocess.py:93} INFO -   Downloading certifi-2025.8.3-py3-none-any.whl (161 kB)
+[2025-11-29T18:51:43.163+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 161.2/161.2 kB 744.5 kB/s eta 0:00:00
+[2025-11-29T18:51:43.489+0000] {subprocess.py:93} INFO - Collecting charset-normalizer==3.4.3
+[2025-11-29T18:51:43.687+0000] {subprocess.py:93} INFO -   Downloading charset_normalizer-3.4.3-cp38-cp38-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (147 kB)
+[2025-11-29T18:51:43.766+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 147.4/147.4 kB 1.9 MB/s eta 0:00:00
+[2025-11-29T18:51:43.981+0000] {subprocess.py:93} INFO - Collecting Faker==35.2.2
+[2025-11-29T18:51:44.081+0000] {subprocess.py:93} INFO -   Downloading Faker-35.2.2-py3-none-any.whl (1.9 MB)
+[2025-11-29T18:51:45.850+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 1.1 MB/s eta 0:00:00
+[2025-11-29T18:51:46.193+0000] {subprocess.py:93} INFO - Collecting greenlet==2.0.2
+[2025-11-29T18:51:46.284+0000] {subprocess.py:93} INFO -   Downloading greenlet-2.0.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (618 kB)
+[2025-11-29T18:51:46.725+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 618.5/618.5 kB 1.4 MB/s eta 0:00:00
+[2025-11-29T18:51:46.804+0000] {subprocess.py:93} INFO - Collecting idna==3.10
+[2025-11-29T18:51:46.894+0000] {subprocess.py:93} INFO -   Downloading idna-3.10-py3-none-any.whl (70 kB)
+[2025-11-29T18:51:46.958+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 70.4/70.4 kB 1.1 MB/s eta 0:00:00
+[2025-11-29T18:51:47.036+0000] {subprocess.py:93} INFO - Collecting kagglehub==0.2.9
+[2025-11-29T18:51:47.246+0000] {subprocess.py:93} INFO -   Downloading kagglehub-0.2.9-py3-none-any.whl (39 kB)
+[2025-11-29T18:51:47.269+0000] {subprocess.py:93} INFO - Requirement already satisfied: numpy==1.24.4 in /home/***/.local/lib/python3.8/site-packages (from -r requirements.txt (line 7)) (1.24.4)
+[2025-11-29T18:51:47.349+0000] {subprocess.py:93} INFO - Collecting packaging==25.0
+[2025-11-29T18:51:47.452+0000] {subprocess.py:93} INFO -   Downloading packaging-25.0-py3-none-any.whl (66 kB)
+[2025-11-29T18:51:47.574+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 66.5/66.5 kB 515.9 kB/s eta 0:00:00
+[2025-11-29T18:51:47.892+0000] {subprocess.py:93} INFO - Collecting pandas==1.5.3
+[2025-11-29T18:51:47.985+0000] {subprocess.py:93} INFO -   Downloading pandas-1.5.3-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.2 MB)
+[2025-11-29T18:52:21.444+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.2/12.2 MB 327.6 kB/s eta 0:00:00
+[2025-11-29T18:52:21.659+0000] {subprocess.py:93} INFO - Collecting psycopg2-binary==2.9.10
+[2025-11-29T18:52:21.877+0000] {subprocess.py:93} INFO -   Downloading psycopg2_binary-2.9.10-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
+[2025-11-29T18:52:29.969+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 373.1 kB/s eta 0:00:00
+[2025-11-29T18:52:30.063+0000] {subprocess.py:93} INFO - Collecting python-dateutil==2.9.0.post0
+[2025-11-29T18:52:30.154+0000] {subprocess.py:93} INFO -   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+[2025-11-29T18:52:31.137+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 229.9/229.9 kB 235.1 kB/s eta 0:00:00
+[2025-11-29T18:52:31.272+0000] {subprocess.py:93} INFO - Collecting pytz==2025.2
+[2025-11-29T18:52:31.363+0000] {subprocess.py:93} INFO -   Downloading pytz-2025.2-py2.py3-none-any.whl (509 kB)
+[2025-11-29T18:52:33.352+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 509.2/509.2 kB 263.1 kB/s eta 0:00:00
+[2025-11-29T18:52:33.491+0000] {subprocess.py:93} INFO - Collecting PyYAML==6.0.2
+[2025-11-29T18:52:33.582+0000] {subprocess.py:93} INFO -   Downloading PyYAML-6.0.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (746 kB)
+[2025-11-29T18:52:35.782+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 746.5/746.5 kB 341.3 kB/s eta 0:00:00
+[2025-11-29T18:52:35.896+0000] {subprocess.py:93} INFO - Collecting requests==2.32.4
+[2025-11-29T18:52:35.988+0000] {subprocess.py:93} INFO -   Downloading requests-2.32.4-py3-none-any.whl (64 kB)
+[2025-11-29T18:52:36.260+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.8/64.8 kB 230.9 kB/s eta 0:00:00
+[2025-11-29T18:52:36.333+0000] {subprocess.py:93} INFO - Collecting six==1.17.0
+[2025-11-29T18:52:36.422+0000] {subprocess.py:93} INFO -   Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+[2025-11-29T18:52:37.135+0000] {subprocess.py:93} INFO - Collecting SQLAlchemy==2.0.43
+[2025-11-29T18:52:37.352+0000] {subprocess.py:93} INFO -   Downloading sqlalchemy-2.0.43-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.2 MB)
+[2025-11-29T18:52:44.521+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.2/3.2 MB 453.8 kB/s eta 0:00:00
+[2025-11-29T18:52:44.770+0000] {subprocess.py:93} INFO - Collecting tqdm==4.67.1
+[2025-11-29T18:52:44.861+0000] {subprocess.py:93} INFO -   Downloading tqdm-4.67.1-py3-none-any.whl (78 kB)
+[2025-11-29T18:52:45.103+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.5/78.5 kB 318.4 kB/s eta 0:00:00
+[2025-11-29T18:52:45.223+0000] {subprocess.py:93} INFO - Collecting typing_extensions==4.13.2
+[2025-11-29T18:52:45.312+0000] {subprocess.py:93} INFO -   Downloading typing_extensions-4.13.2-py3-none-any.whl (45 kB)
+[2025-11-29T18:52:45.439+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.8/45.8 kB 426.9 kB/s eta 0:00:00
+[2025-11-29T18:52:45.558+0000] {subprocess.py:93} INFO - Collecting tzdata==2025.2
+[2025-11-29T18:52:45.649+0000] {subprocess.py:93} INFO -   Downloading tzdata-2025.2-py2.py3-none-any.whl (347 kB)
+[2025-11-29T18:52:46.637+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 347.8/347.8 kB 353.7 kB/s eta 0:00:00
+[2025-11-29T18:52:46.783+0000] {subprocess.py:93} INFO - Collecting urllib3==2.2.3
+[2025-11-29T18:52:46.875+0000] {subprocess.py:93} INFO -   Downloading urllib3-2.2.3-py3-none-any.whl (126 kB)
+[2025-11-29T18:52:47.358+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 126.3/126.3 kB 271.9 kB/s eta 0:00:00
+[2025-11-29T18:52:51.371+0000] {subprocess.py:93} INFO - Installing collected packages: pytz, urllib3, tzdata, typing_extensions, tqdm, six, PyYAML, psycopg2-binary, packaging, idna, greenlet, charset-normalizer, certifi, SQLAlchemy, requests, python-dateutil, pandas, kagglehub, Faker
+[2025-11-29T18:52:51.371+0000] {subprocess.py:93} INFO -   Attempting uninstall: pytz
+[2025-11-29T18:52:51.373+0000] {subprocess.py:93} INFO -     Found existing installation: pytz 2023.3.post1
+[2025-11-29T18:52:51.558+0000] {subprocess.py:93} INFO -     Uninstalling pytz-2023.3.post1:
+[2025-11-29T18:52:51.569+0000] {subprocess.py:93} INFO -       Successfully uninstalled pytz-2023.3.post1
+[2025-11-29T18:52:51.740+0000] {subprocess.py:93} INFO -   Attempting uninstall: urllib3
+[2025-11-29T18:52:51.745+0000] {subprocess.py:93} INFO -     Found existing installation: urllib3 1.26.18
+[2025-11-29T18:52:51.772+0000] {subprocess.py:93} INFO -     Uninstalling urllib3-1.26.18:
+[2025-11-29T18:52:51.773+0000] {subprocess.py:93} INFO -       Successfully uninstalled urllib3-1.26.18
+[2025-11-29T18:52:51.857+0000] {subprocess.py:93} INFO -   Attempting uninstall: tzdata
+[2025-11-29T18:52:51.859+0000] {subprocess.py:93} INFO -     Found existing installation: tzdata 2023.3
+[2025-11-29T18:52:51.983+0000] {subprocess.py:93} INFO -     Uninstalling tzdata-2023.3:
+[2025-11-29T18:52:51.986+0000] {subprocess.py:93} INFO -       Successfully uninstalled tzdata-2023.3
+[2025-11-29T18:52:52.073+0000] {subprocess.py:93} INFO -   Attempting uninstall: typing_extensions
+[2025-11-29T18:52:52.073+0000] {subprocess.py:93} INFO -     Found existing installation: typing_extensions 4.8.0
+[2025-11-29T18:52:52.075+0000] {subprocess.py:93} INFO -     Uninstalling typing_extensions-4.8.0:
+[2025-11-29T18:52:55.077+0000] {subprocess.py:93} INFO -       Successfully uninstalled typing_extensions-4.8.0
+[2025-11-29T18:52:55.251+0000] {subprocess.py:93} INFO -   Attempting uninstall: six
+[2025-11-29T18:52:55.252+0000] {subprocess.py:93} INFO -     Found existing installation: six 1.16.0
+[2025-11-29T18:52:55.254+0000] {subprocess.py:93} INFO -     Uninstalling six-1.16.0:
+[2025-11-29T18:52:55.713+0000] {subprocess.py:93} INFO -       Successfully uninstalled six-1.16.0
+[2025-11-29T18:52:55.735+0000] {subprocess.py:93} INFO -   Attempting uninstall: PyYAML
+[2025-11-29T18:52:55.736+0000] {subprocess.py:93} INFO -     Found existing installation: PyYAML 6.0.1
+[2025-11-29T18:52:55.750+0000] {subprocess.py:93} INFO -     Uninstalling PyYAML-6.0.1:
+[2025-11-29T18:52:55.751+0000] {subprocess.py:93} INFO -       Successfully uninstalled PyYAML-6.0.1
+[2025-11-29T18:52:55.817+0000] {subprocess.py:93} INFO -   Attempting uninstall: psycopg2-binary
+[2025-11-29T18:52:55.819+0000] {subprocess.py:93} INFO -     Found existing installation: psycopg2-binary 2.9.9
+[2025-11-29T18:52:55.822+0000] {subprocess.py:93} INFO -     Uninstalling psycopg2-binary-2.9.9:
+[2025-11-29T18:52:55.823+0000] {subprocess.py:93} INFO -       Successfully uninstalled psycopg2-binary-2.9.9
+[2025-11-29T18:52:55.915+0000] {subprocess.py:93} INFO -   Attempting uninstall: packaging
+[2025-11-29T18:52:55.916+0000] {subprocess.py:93} INFO -     Found existing installation: packaging 23.2
+[2025-11-29T18:52:55.930+0000] {subprocess.py:93} INFO -     Uninstalling packaging-23.2:
+[2025-11-29T18:52:55.931+0000] {subprocess.py:93} INFO -       Successfully uninstalled packaging-23.2
+[2025-11-29T18:52:55.987+0000] {subprocess.py:93} INFO -   Attempting uninstall: idna
+[2025-11-29T18:52:55.989+0000] {subprocess.py:93} INFO -     Found existing installation: idna 3.4
+[2025-11-29T18:52:55.996+0000] {subprocess.py:93} INFO -     Uninstalling idna-3.4:
+[2025-11-29T18:52:55.997+0000] {subprocess.py:93} INFO -       Successfully uninstalled idna-3.4
+[2025-11-29T18:52:56.079+0000] {subprocess.py:93} INFO -   Attempting uninstall: greenlet
+[2025-11-29T18:52:56.080+0000] {subprocess.py:93} INFO -     Found existing installation: greenlet 3.0.1
+[2025-11-29T18:52:56.109+0000] {subprocess.py:93} INFO -     Uninstalling greenlet-3.0.1:
+[2025-11-29T18:52:56.110+0000] {subprocess.py:93} INFO -       Successfully uninstalled greenlet-3.0.1
+[2025-11-29T18:52:56.201+0000] {subprocess.py:93} INFO -   Attempting uninstall: charset-normalizer
+[2025-11-29T18:52:56.203+0000] {subprocess.py:93} INFO -     Found existing installation: charset-normalizer 3.3.2
+[2025-11-29T18:52:56.210+0000] {subprocess.py:93} INFO -     Uninstalling charset-normalizer-3.3.2:
+[2025-11-29T18:52:56.231+0000] {subprocess.py:93} INFO -       Successfully uninstalled charset-normalizer-3.3.2
+[2025-11-29T18:52:56.313+0000] {subprocess.py:93} INFO -   Attempting uninstall: certifi
+[2025-11-29T18:52:56.315+0000] {subprocess.py:93} INFO -     Found existing installation: certifi 2023.7.22
+[2025-11-29T18:52:56.321+0000] {subprocess.py:93} INFO -     Uninstalling certifi-2023.7.22:
+[2025-11-29T18:52:56.322+0000] {subprocess.py:93} INFO -       Successfully uninstalled certifi-2023.7.22
+[2025-11-29T18:52:56.363+0000] {subprocess.py:93} INFO -   Attempting uninstall: SQLAlchemy
+[2025-11-29T18:52:56.372+0000] {subprocess.py:93} INFO -     Found existing installation: SQLAlchemy 1.4.50
+[2025-11-29T18:52:56.461+0000] {subprocess.py:93} INFO -     Uninstalling SQLAlchemy-1.4.50:
+[2025-11-29T18:52:56.464+0000] {subprocess.py:93} INFO -       Successfully uninstalled SQLAlchemy-1.4.50
+[2025-11-29T18:52:57.249+0000] {subprocess.py:93} INFO -   Attempting uninstall: requests
+[2025-11-29T18:52:57.250+0000] {subprocess.py:93} INFO -     Found existing installation: requests 2.31.0
+[2025-11-29T18:52:57.255+0000] {subprocess.py:93} INFO -     Uninstalling requests-2.31.0:
+[2025-11-29T18:52:57.256+0000] {subprocess.py:93} INFO -       Successfully uninstalled requests-2.31.0
+[2025-11-29T18:52:57.305+0000] {subprocess.py:93} INFO -   Attempting uninstall: python-dateutil
+[2025-11-29T18:52:57.306+0000] {subprocess.py:93} INFO -     Found existing installation: python-dateutil 2.8.2
+[2025-11-29T18:52:57.310+0000] {subprocess.py:93} INFO -     Uninstalling python-dateutil-2.8.2:
+[2025-11-29T18:52:57.311+0000] {subprocess.py:93} INFO -       Successfully uninstalled python-dateutil-2.8.2
+[2025-11-29T18:52:57.370+0000] {subprocess.py:93} INFO -   Attempting uninstall: pandas
+[2025-11-29T18:52:57.372+0000] {subprocess.py:93} INFO -     Found existing installation: pandas 2.0.3
+[2025-11-29T18:52:57.701+0000] {subprocess.py:93} INFO -     Uninstalling pandas-2.0.3:
+[2025-11-29T18:52:57.708+0000] {subprocess.py:93} INFO -       Successfully uninstalled pandas-2.0.3
+[2025-11-29T18:53:01.865+0000] {subprocess.py:93} INFO - ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+[2025-11-29T18:53:01.865+0000] {subprocess.py:93} INFO - sqlalchemy-redshift 0.8.14 requires SQLAlchemy<2.0.0,>=0.9.2, but you have sqlalchemy 2.0.43 which is incompatible.
+[2025-11-29T18:53:01.866+0000] {subprocess.py:93} INFO - sqlalchemy-bigquery 1.8.0 requires sqlalchemy<2.0.0dev,>=1.2.0, but you have sqlalchemy 2.0.43 which is incompatible.
+[2025-11-29T18:53:01.866+0000] {subprocess.py:93} INFO - snowflake-sqlalchemy 1.5.0 requires sqlalchemy<2.0.0,>=1.4.0, but you have sqlalchemy 2.0.43 which is incompatible.
+[2025-11-29T18:53:01.866+0000] {subprocess.py:93} INFO - snowflake-connector-python 3.3.1 requires urllib3<1.27,>=1.21.1, but you have urllib3 2.2.3 which is incompatible.
+[2025-11-29T18:53:01.866+0000] {subprocess.py:93} INFO - limits 3.6.0 requires packaging<24,>=21, but you have packaging 25.0 which is incompatible.
+[2025-11-29T18:53:01.866+0000] {subprocess.py:93} INFO - flask-appbuilder 4.3.6 requires SQLAlchemy<1.5, but you have sqlalchemy 2.0.43 which is incompatible.
+[2025-11-29T18:53:01.866+0000] {subprocess.py:93} INFO - botocore 1.31.64 requires urllib3<1.27,>=1.25.4; python_version < "3.10", but you have urllib3 2.2.3 which is incompatible.
+[2025-11-29T18:53:01.866+0000] {subprocess.py:93} INFO - apache-*** 2.7.3 requires sqlalchemy<2.0,>=1.4.28, but you have sqlalchemy 2.0.43 which is incompatible.
+[2025-11-29T18:53:01.866+0000] {subprocess.py:93} INFO - Successfully installed Faker-35.2.2 PyYAML-6.0.2 SQLAlchemy-2.0.43 certifi-2025.8.3 charset-normalizer-3.4.3 greenlet-2.0.2 idna-3.10 kagglehub-0.2.9 packaging-25.0 pandas-1.5.3 psycopg2-binary-2.9.10 python-dateutil-2.9.0.post0 pytz-2025.2 requests-2.32.4 six-1.17.0 tqdm-4.67.1 typing_extensions-4.13.2 tzdata-2025.2 urllib3-2.2.3
+[2025-11-29T18:53:01.866+0000] {subprocess.py:93} INFO - WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[2025-11-29T18:53:02.117+0000] {subprocess.py:93} INFO - 
+[2025-11-29T18:53:02.117+0000] {subprocess.py:93} INFO - [notice] A new release of pip is available: 23.0.1 -> 25.0.1
+[2025-11-29T18:53:02.117+0000] {subprocess.py:93} INFO - [notice] To update, run: pip3 install --upgrade pip
+[2025-11-29T18:53:02.347+0000] {subprocess.py:93} INFO - Starting main.py script...
+[2025-11-29T18:53:04.755+0000] {subprocess.py:93} INFO - All tables truncated successfully
+[2025-11-29T18:53:04.755+0000] {subprocess.py:93} INFO - Warning: Looks like you're using an outdated `kagglehub` version, please consider updating (latest version: 0.3.13)
+[2025-11-29T18:53:05.363+0000] {subprocess.py:93} INFO - Downloading from https://www.kaggle.com/api/v1/datasets/download/usdot/flight-delays?dataset_version_number=1...
+[2025-11-29T18:54:06.238+0000] {subprocess.py:93} INFO -   0%|          | 0.00/191M [00:00<?, ?B/s]  1%|          | 1.00M/191M [00:00<02:03, 1.62MB/s]  1%|          | 2.00M/191M [00:01<01:33, 2.11MB/s]  2%|▏         | 3.00M/191M [00:01<01:16, 2.56MB/s]  2%|▏         | 4.00M/191M [00:01<01:06, 2.96MB/s]  3%|▎         | 5.00M/191M [00:01<00:59, 3.25MB/s]  3%|▎         | 6.00M/191M [00:02<00:56, 3.44MB/s]  4%|▎         | 7.00M/191M [00:03<01:31, 2.10MB/s]  4%|▍         | 8.00M/191M [00:03<01:18, 2.43MB/s]  5%|▍         | 9.00M/191M [00:03<01:09, 2.74MB/s]  5%|▌         | 10.0M/191M [00:03<01:03, 2.99MB/s]  6%|▌         | 11.0M/191M [00:04<00:58, 3.21MB/s]  6%|▋         | 12.0M/191M [00:05<01:34, 1.98MB/s]  7%|▋         | 13.0M/191M [00:05<01:29, 2.09MB/s]  7%|▋         | 14.0M/191M [00:06<01:25, 2.16MB/s]  8%|▊         | 15.0M/191M [00:06<01:16, 2.42MB/s]  8%|▊         | 16.0M/191M [00:06<01:14, 2.46MB/s]  9%|▉         | 17.0M/191M [00:07<01:06, 2.73MB/s]  9%|▉         | 18.0M/191M [00:07<01:01, 2.96MB/s] 10%|▉         | 19.0M/191M [00:07<00:57, 3.14MB/s] 10%|█         | 20.0M/191M [00:07<00:54, 3.29MB/s] 11%|█         | 21.0M/191M [00:08<00:58, 3.05MB/s] 12%|█▏        | 22.0M/191M [00:08<00:54, 3.23MB/s] 12%|█▏        | 23.0M/191M [00:08<00:52, 3.36MB/s] 13%|█▎        | 24.0M/191M [00:09<00:50, 3.46MB/s] 13%|█▎        | 25.0M/191M [00:09<00:49, 3.52MB/s] 14%|█▎        | 26.0M/191M [00:09<00:48, 3.57MB/s] 14%|█▍        | 27.0M/191M [00:10<00:48, 3.55MB/s] 15%|█▍        | 28.0M/191M [00:10<00:47, 3.57MB/s] 15%|█▌        | 29.0M/191M [00:10<00:46, 3.61MB/s] 16%|█▌        | 30.0M/191M [00:10<00:46, 3.62MB/s] 16%|█▌        | 31.0M/191M [00:11<00:47, 3.55MB/s] 17%|█▋        | 32.0M/191M [00:11<00:51, 3.25MB/s] 17%|█▋        | 33.0M/191M [00:11<00:49, 3.36MB/s] 18%|█▊        | 34.0M/191M [00:12<00:47, 3.45MB/s] 18%|█▊        | 35.0M/191M [00:12<00:46, 3.50MB/s] 19%|█▉        | 36.0M/191M [00:12<00:45, 3.54MB/s] 19%|█▉        | 37.0M/191M [00:13<00:45, 3.58MB/s] 20%|█▉        | 38.0M/191M [00:13<00:48, 3.29MB/s] 20%|██        | 39.0M/191M [00:13<00:51, 3.09MB/s] 21%|██        | 40.0M/191M [00:14<00:48, 3.23MB/s] 21%|██▏       | 41.0M/191M [00:14<00:46, 3.35MB/s] 22%|██▏       | 42.0M/191M [00:14<00:45, 3.44MB/s] 23%|██▎       | 43.0M/191M [00:14<00:44, 3.49MB/s] 23%|██▎       | 44.0M/191M [00:15<00:43, 3.53MB/s] 24%|██▎       | 45.0M/191M [00:15<00:42, 3.56MB/s] 24%|██▍       | 46.0M/191M [00:15<00:42, 3.57MB/s] 25%|██▍       | 47.0M/191M [00:16<00:41, 3.59MB/s] 25%|██▌       | 48.0M/191M [00:16<00:41, 3.60MB/s] 26%|██▌       | 49.0M/191M [00:16<00:42, 3.47MB/s] 26%|██▌       | 50.0M/191M [00:17<00:44, 3.33MB/s] 27%|██▋       | 51.0M/191M [00:17<00:43, 3.41MB/s] 27%|██▋       | 52.0M/191M [00:17<00:42, 3.46MB/s] 28%|██▊       | 53.0M/191M [00:17<00:41, 3.49MB/s] 28%|██▊       | 54.0M/191M [00:18<00:41, 3.50MB/s] 29%|██▉       | 55.0M/191M [00:18<00:41, 3.42MB/s] 29%|██▉       | 56.0M/191M [00:18<00:44, 3.15MB/s] 30%|██▉       | 57.0M/191M [00:19<00:43, 3.26MB/s] 30%|███       | 58.0M/191M [00:19<00:41, 3.35MB/s] 31%|███       | 59.0M/191M [00:19<00:40, 3.40MB/s] 31%|███▏      | 60.0M/191M [00:20<00:39, 3.44MB/s] 32%|███▏      | 61.0M/191M [00:20<00:39, 3.48MB/s] 32%|███▏      | 62.0M/191M [00:20<00:38, 3.51MB/s] 33%|███▎      | 63.0M/191M [00:21<00:38, 3.52MB/s] 34%|███▎      | 64.0M/191M [00:21<00:37, 3.52MB/s] 34%|███▍      | 65.0M/191M [00:21<00:37, 3.54MB/s] 35%|███▍      | 66.0M/191M [00:21<00:37, 3.52MB/s] 35%|███▌      | 67.0M/191M [00:22<00:36, 3.53MB/s] 36%|███▌      | 68.0M/191M [00:22<00:38, 3.30MB/s] 36%|███▌      | 69.0M/191M [00:22<00:39, 3.20MB/s] 37%|███▋      | 70.0M/191M [00:23<00:38, 3.28MB/s] 37%|███▋      | 71.0M/191M [00:23<00:37, 3.35MB/s] 38%|███▊      | 72.0M/191M [00:23<00:38, 3.20MB/s] 38%|███▊      | 73.0M/191M [00:24<00:39, 3.12MB/s] 39%|███▉      | 74.0M/191M [00:24<00:37, 3.22MB/s] 39%|███▉      | 75.0M/191M [00:24<00:36, 3.31MB/s] 40%|███▉      | 76.0M/191M [00:25<00:35, 3.40MB/s] 40%|████      | 77.0M/191M [00:25<00:34, 3.41MB/s] 41%|████      | 78.0M/191M [00:25<00:34, 3.46MB/s] 41%|████▏     | 79.0M/191M [00:26<00:34, 3.45MB/s] 42%|████▏     | 80.0M/191M [00:26<00:37, 3.09MB/s] 42%|████▏     | 81.0M/191M [00:26<00:36, 3.20MB/s] 43%|████▎     | 82.0M/191M [00:27<00:34, 3.28MB/s] 44%|████▎     | 83.0M/191M [00:27<00:33, 3.35MB/s] 44%|████▍     | 84.0M/191M [00:27<00:32, 3.41MB/s] 45%|████▍     | 85.0M/191M [00:27<00:32, 3.44MB/s] 45%|████▌     | 86.0M/191M [00:28<00:31, 3.48MB/s] 46%|████▌     | 87.0M/191M [00:28<00:31, 3.51MB/s] 46%|████▌     | 88.0M/191M [00:28<00:30, 3.52MB/s] 47%|████▋     | 89.0M/191M [00:29<00:33, 3.19MB/s] 47%|████▋     | 90.0M/191M [00:29<00:32, 3.24MB/s] 48%|████▊     | 91.0M/191M [00:29<00:31, 3.34MB/s] 48%|████▊     | 92.0M/191M [00:30<00:30, 3.41MB/s] 49%|████▊     | 93.0M/191M [00:30<00:29, 3.45MB/s] 49%|████▉     | 94.0M/191M [00:30<00:29, 3.48MB/s] 50%|████▉     | 95.0M/191M [00:30<00:28, 3.50MB/s] 50%|█████     | 96.0M/191M [00:31<00:28, 3.52MB/s] 51%|█████     | 97.0M/191M [00:31<00:30, 3.18MB/s] 51%|█████▏    | 98.0M/191M [00:32<00:30, 3.14MB/s] 52%|█████▏    | 99.0M/191M [00:32<00:29, 3.26MB/s] 52%|█████▏    | 100M/191M [00:32<00:28, 3.34MB/s]  53%|█████▎    | 101M/191M [00:32<00:27, 3.39MB/s] 53%|█████▎    | 102M/191M [00:33<00:27, 3.43MB/s] 54%|█████▍    | 103M/191M [00:33<00:26, 3.46MB/s] 55%|█████▍    | 104M/191M [00:33<00:26, 3.48MB/s] 55%|█████▌    | 105M/191M [00:34<00:25, 3.49MB/s] 56%|█████▌    | 106M/191M [00:34<00:28, 3.13MB/s] 56%|█████▌    | 107M/191M [00:34<00:27, 3.24MB/s] 57%|█████▋    | 108M/191M [00:35<00:26, 3.33MB/s] 57%|█████▋    | 109M/191M [00:35<00:25, 3.40MB/s] 58%|█████▊    | 110M/191M [00:35<00:24, 3.44MB/s] 58%|█████▊    | 111M/191M [00:36<00:24, 3.47MB/s] 59%|█████▊    | 112M/191M [00:36<00:23, 3.51MB/s] 59%|█████▉    | 113M/191M [00:36<00:23, 3.53MB/s] 60%|█████▉    | 114M/191M [00:36<00:23, 3.36MB/s] 60%|██████    | 115M/191M [00:37<00:24, 3.20MB/s] 61%|██████    | 116M/191M [00:37<00:23, 3.29MB/s] 61%|██████▏   | 117M/191M [00:37<00:22, 3.37MB/s] 62%|██████▏   | 118M/191M [00:38<00:22, 3.42MB/s] 62%|██████▏   | 119M/191M [00:38<00:21, 3.45MB/s] 63%|██████▎   | 120M/191M [00:38<00:21, 3.49MB/s] 63%|██████▎   | 121M/191M [00:39<00:20, 3.50MB/s] 64%|██████▍   | 122M/191M [00:39<00:20, 3.52MB/s] 64%|██████▍   | 123M/191M [00:39<00:22, 3.12MB/s] 65%|██████▍   | 124M/191M [00:40<00:21, 3.24MB/s] 66%|██████▌   | 125M/191M [00:40<00:20, 3.33MB/s] 66%|██████▌   | 126M/191M [00:40<00:19, 3.40MB/s] 67%|██████▋   | 127M/191M [00:40<00:19, 3.46MB/s] 67%|██████▋   | 128M/191M [00:41<00:18, 3.49MB/s] 68%|██████▊   | 129M/191M [00:41<00:18, 3.51MB/s] 68%|██████▊   | 130M/191M [00:41<00:18, 3.39MB/s] 69%|██████▊   | 131M/191M [00:42<00:18, 3.32MB/s] 69%|██████▉   | 132M/191M [00:42<00:18, 3.25MB/s] 70%|██████▉   | 133M/191M [00:42<00:18, 3.35MB/s] 70%|███████   | 134M/191M [00:43<00:17, 3.41MB/s] 71%|███████   | 135M/191M [00:43<00:16, 3.45MB/s] 71%|███████▏  | 136M/191M [00:43<00:16, 3.48MB/s] 72%|███████▏  | 137M/191M [00:44<00:16, 3.50MB/s] 72%|███████▏  | 138M/191M [00:44<00:15, 3.52MB/s] 73%|███████▎  | 139M/191M [00:44<00:15, 3.53MB/s] 73%|███████▎  | 140M/191M [00:45<00:16, 3.14MB/s] 74%|███████▍  | 141M/191M [00:45<00:16, 3.26MB/s] 74%|███████▍  | 142M/191M [00:45<00:15, 3.35MB/s] 75%|███████▍  | 143M/191M [00:45<00:14, 3.42MB/s] 75%|███████▌  | 144M/191M [00:46<00:14, 3.47MB/s] 76%|███████▌  | 145M/191M [00:46<00:13, 3.51MB/s] 77%|███████▋  | 146M/191M [00:46<00:13, 3.36MB/s] 77%|███████▋  | 147M/191M [00:47<00:14, 3.20MB/s] 78%|███████▊  | 148M/191M [00:47<00:13, 3.28MB/s] 78%|███████▊  | 149M/191M [00:47<00:13, 3.37MB/s] 79%|███████▊  | 150M/191M [00:48<00:12, 3.42MB/s] 79%|███████▉  | 151M/191M [00:48<00:12, 3.42MB/s] 80%|███████▉  | 152M/191M [00:48<00:11, 3.44MB/s] 80%|████████  | 153M/191M [00:49<00:11, 3.44MB/s] 81%|████████  | 154M/191M [00:49<00:11, 3.48MB/s] 81%|████████  | 155M/191M [00:49<00:10, 3.49MB/s] 82%|████████▏ | 156M/191M [00:49<00:10, 3.49MB/s] 82%|████████▏ | 157M/191M [00:50<00:11, 3.12MB/s] 83%|████████▎ | 158M/191M [00:50<00:10, 3.23MB/s] 83%|████████▎ | 159M/191M [00:50<00:10, 3.09MB/s] 84%|████████▍ | 160M/191M [00:51<00:10, 2.96MB/s] 84%|████████▍ | 161M/191M [00:51<00:10, 3.07MB/s] 85%|████████▍ | 162M/191M [00:51<00:09, 3.19MB/s] 85%|████████▌ | 163M/191M [00:52<00:08, 3.28MB/s] 86%|████████▌ | 164M/191M [00:52<00:08, 3.36MB/s] 86%|████████▋ | 165M/191M [00:52<00:07, 3.41MB/s] 87%|████████▋ | 166M/191M [00:53<00:07, 3.47MB/s] 88%|████████▊ | 167M/191M [00:53<00:07, 3.50MB/s] 88%|████████▊ | 168M/191M [00:53<00:06, 3.53MB/s] 89%|████████▊ | 169M/191M [00:54<00:06, 3.54MB/s] 89%|████████▉ | 170M/191M [00:54<00:06, 3.55MB/s] 90%|████████▉ | 171M/191M [00:54<00:05, 3.54MB/s] 90%|█████████ | 172M/191M [00:54<00:05, 3.57MB/s] 91%|█████████ | 173M/191M [00:55<00:05, 3.56MB/s] 91%|█████████ | 174M/191M [00:55<00:05, 3.16MB/s] 92%|█████████▏| 175M/191M [00:56<00:05, 3.07MB/s] 92%|█████████▏| 176M/191M [00:56<00:04, 3.12MB/s] 93%|█████████▎| 177M/191M [00:56<00:04, 3.24MB/s] 93%|█████████▎| 178M/191M [00:56<00:04, 3.34MB/s] 94%|█████████▍| 179M/191M [00:57<00:03, 3.41MB/s] 94%|█████████▍| 180M/191M [00:57<00:03, 3.46MB/s] 95%|█████████▍| 181M/191M [00:57<00:02, 3.50MB/s] 95%|█████████▌| 182M/191M [00:58<00:02, 3.51MB/s] 96%|█████████▌| 183M/191M [00:58<00:02, 3.48MB/s] 96%|█████████▋| 184M/191M [00:58<00:02, 3.48MB/s] 97%|█████████▋| 185M/191M [00:58<00:01, 3.50MB/s] 97%|█████████▋| 186M/191M [00:59<00:01, 3.52MB/s] 98%|█████████▊| 187M/191M [00:59<00:01, 3.45MB/s] 99%|█████████▊| 188M/191M [00:59<00:00, 3.49MB/s] 99%|█████████▉| 189M/191M [01:00<00:00, 3.51MB/s]100%|█████████▉| 190M/191M [01:00<00:00, 3.55MB/s]100%|██████████| 191M/191M [01:00<00:00, 3.07MB/s]100%|██████████| 191M/191M [01:00<00:00, 3.29MB/s]Extracting model files...
+[2025-11-29T19:12:05.216+0000] {subprocess.py:93} INFO - 
+[2025-11-29T19:12:05.230+0000] {subprocess.py:93} INFO - Exception in thread Thread-8:
+[2025-11-29T19:12:05.230+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-11-29T19:12:05.230+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+[2025-11-29T19:12:05.230+0000] {subprocess.py:93} INFO -     response = self._make_request(
+[2025-11-29T19:12:05.230+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 490, in _make_request
+[2025-11-29T19:12:05.231+0000] {subprocess.py:93} INFO -     raise new_e
+[2025-11-29T19:12:05.231+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 466, in _make_request
+[2025-11-29T19:12:05.231+0000] {subprocess.py:93} INFO -     self._validate_conn(conn)
+[2025-11-29T19:12:05.231+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 1095, in _validate_conn
+[2025-11-29T19:12:05.231+0000] {subprocess.py:93} INFO -     conn.connect()
+[2025-11-29T19:12:05.231+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/urllib3/connection.py", line 730, in connect
+[2025-11-29T19:12:05.231+0000] {subprocess.py:93} INFO -     sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+[2025-11-29T19:12:05.231+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/urllib3/connection.py", line 909, in _ssl_wrap_socket_and_match_hostname
+[2025-11-29T19:12:05.231+0000] {subprocess.py:93} INFO -     ssl_sock = ssl_wrap_socket(
+[2025-11-29T19:12:05.231+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/urllib3/util/ssl_.py", line 469, in ssl_wrap_socket
+[2025-11-29T19:12:05.232+0000] {subprocess.py:93} INFO -     ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+[2025-11-29T19:12:05.232+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/urllib3/util/ssl_.py", line 513, in _ssl_wrap_socket_impl
+[2025-11-29T19:12:05.232+0000] {subprocess.py:93} INFO -     return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+[2025-11-29T19:12:05.232+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/ssl.py", line 500, in wrap_socket
+[2025-11-29T19:12:05.232+0000] {subprocess.py:93} INFO -     return self.sslsocket_class._create(
+[2025-11-29T19:12:05.232+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/ssl.py", line 1073, in _create
+[2025-11-29T19:12:05.232+0000] {subprocess.py:93} INFO -     self.do_handshake()
+[2025-11-29T19:12:05.232+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/ssl.py", line 1342, in do_handshake
+[2025-11-29T19:12:05.232+0000] {subprocess.py:93} INFO -     self._sslobj.do_handshake()
+[2025-11-29T19:12:05.232+0000] {subprocess.py:93} INFO - TimeoutError: [Errno 110] Connection timed out
+[2025-11-29T19:12:05.232+0000] {subprocess.py:93} INFO - 
+[2025-11-29T19:12:05.232+0000] {subprocess.py:93} INFO - During handling of the above exception, another exception occurred:
+[2025-11-29T19:12:05.232+0000] {subprocess.py:93} INFO - 
+[2025-11-29T19:12:05.233+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-11-29T19:12:05.233+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+[2025-11-29T19:12:05.233+0000] {subprocess.py:93} INFO -     resp = conn.urlopen(
+[2025-11-29T19:12:05.233+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+[2025-11-29T19:12:05.233+0000] {subprocess.py:93} INFO -     retries = retries.increment(
+[2025-11-29T19:12:05.233+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/urllib3/util/retry.py", line 474, in increment
+[2025-11-29T19:12:05.233+0000] {subprocess.py:93} INFO -     raise reraise(type(error), error, _stacktrace)
+[2025-11-29T19:12:05.233+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/urllib3/util/util.py", line 38, in reraise
+[2025-11-29T19:12:05.233+0000] {subprocess.py:93} INFO -     raise value.with_traceback(tb)
+[2025-11-29T19:12:05.233+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+[2025-11-29T19:12:05.233+0000] {subprocess.py:93} INFO -     response = self._make_request(
+[2025-11-29T19:12:05.233+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 490, in _make_request
+[2025-11-29T19:12:05.233+0000] {subprocess.py:93} INFO -     raise new_e
+[2025-11-29T19:12:05.233+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 466, in _make_request
+[2025-11-29T19:12:05.233+0000] {subprocess.py:93} INFO -     self._validate_conn(conn)
+[2025-11-29T19:12:05.233+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 1095, in _validate_conn
+[2025-11-29T19:12:05.233+0000] {subprocess.py:93} INFO -     conn.connect()
+[2025-11-29T19:12:05.233+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/urllib3/connection.py", line 730, in connect
+[2025-11-29T19:12:05.233+0000] {subprocess.py:93} INFO -     sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+[2025-11-29T19:12:05.233+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/urllib3/connection.py", line 909, in _ssl_wrap_socket_and_match_hostname
+[2025-11-29T19:12:05.233+0000] {subprocess.py:93} INFO -     ssl_sock = ssl_wrap_socket(
+[2025-11-29T19:12:05.233+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/urllib3/util/ssl_.py", line 469, in ssl_wrap_socket
+[2025-11-29T19:12:05.233+0000] {subprocess.py:93} INFO -     ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+[2025-11-29T19:12:05.234+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/urllib3/util/ssl_.py", line 513, in _ssl_wrap_socket_impl
+[2025-11-29T19:12:05.234+0000] {subprocess.py:93} INFO -     return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+[2025-11-29T19:12:05.234+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/ssl.py", line 500, in wrap_socket
+[2025-11-29T19:12:05.234+0000] {subprocess.py:93} INFO -     return self.sslsocket_class._create(
+[2025-11-29T19:12:05.234+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/ssl.py", line 1073, in _create
+[2025-11-29T19:12:05.234+0000] {subprocess.py:93} INFO -     self.do_handshake()
+[2025-11-29T19:12:05.234+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/ssl.py", line 1342, in do_handshake
+[2025-11-29T19:12:05.234+0000] {subprocess.py:93} INFO -     self._sslobj.do_handshake()
+[2025-11-29T19:12:05.234+0000] {subprocess.py:93} INFO - urllib3.exceptions.ProtocolError: ('Connection aborted.', TimeoutError(110, 'Connection timed out'))
+[2025-11-29T19:12:05.234+0000] {subprocess.py:93} INFO - 
+[2025-11-29T19:12:05.234+0000] {subprocess.py:93} INFO - During handling of the above exception, another exception occurred:
+[2025-11-29T19:12:05.234+0000] {subprocess.py:93} INFO - 
+[2025-11-29T19:12:05.234+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-11-29T19:12:05.234+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2025-11-29T19:12:05.234+0000] {subprocess.py:93} INFO -     self.run()
+[2025-11-29T19:12:05.234+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/threading.py", line 870, in run
+[2025-11-29T19:12:05.234+0000] {subprocess.py:93} INFO -     self._target(*self._args, **self._kwargs)
+[2025-11-29T19:12:05.234+0000] {subprocess.py:93} INFO -   File "/opt/***/etl_scripts/bronze_layer_workflows.py", line 215, in create_weather
+[2025-11-29T19:12:05.234+0000] {subprocess.py:93} INFO -     weather_data = api.get_historical_weather(calender_date, lat,long)
+[2025-11-29T19:12:05.234+0000] {subprocess.py:93} INFO -   File "/opt/***/etl_scripts/api.py", line 17, in get_historical_weather
+[2025-11-29T19:12:05.235+0000] {subprocess.py:93} INFO -     response = requests.get(constants.meteo_url, params=params)
+[2025-11-29T19:12:05.235+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/requests/api.py", line 73, in get
+[2025-11-29T19:12:05.235+0000] {subprocess.py:93} INFO -     return request("get", url, params=params, **kwargs)
+[2025-11-29T19:12:05.235+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/requests/api.py", line 59, in request
+[2025-11-29T19:12:05.235+0000] {subprocess.py:93} INFO -     return session.request(method=method, url=url, **kwargs)
+[2025-11-29T19:12:05.235+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+[2025-11-29T19:12:05.235+0000] {subprocess.py:93} INFO -     resp = self.send(prep, **send_kwargs)
+[2025-11-29T19:12:05.235+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+[2025-11-29T19:12:05.235+0000] {subprocess.py:93} INFO -     r = adapter.send(request, **kwargs)
+[2025-11-29T19:12:05.235+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/requests/adapters.py", line 682, in send
+[2025-11-29T19:12:05.235+0000] {subprocess.py:93} INFO -     raise ConnectionError(err, request=request)
+[2025-11-29T19:12:05.235+0000] {subprocess.py:93} INFO - requests.exceptions.ConnectionError: ('Connection aborted.', TimeoutError(110, 'Connection timed out'))
+[2025-11-29T19:12:05.235+0000] {subprocess.py:93} INFO - /root/.cache/kagglehub/datasets/usdot/flight-delays/versions/1
+[2025-11-29T19:12:05.235+0000] {subprocess.py:93} INFO - AIRPORT_THREAD_STARTED
+[2025-11-29T19:12:05.235+0000] {subprocess.py:93} INFO - FLIGHT_THREAD_STARTED
+[2025-11-29T19:12:05.235+0000] {subprocess.py:93} INFO - FLIGHT:FLIGHT_SUB_THREAD_HAS_STARTED
+[2025-11-29T19:12:05.235+0000] {subprocess.py:93} INFO - FLIGHT:AIRELINE_SUB_THREAD_HAS_STARTED
+[2025-11-29T19:12:05.235+0000] {subprocess.py:93} INFO - FLIGHT:AIRLINE_SUB_THREAD_HAS_FINISHED
+[2025-11-29T19:12:05.235+0000] {subprocess.py:93} INFO - FLIGHT:FLIGHT_SUB_THREAD_HAS_FINISHED
+[2025-11-29T19:12:05.235+0000] {subprocess.py:93} INFO -       month  day  ...  iata_code                  carrier_name
+[2025-11-29T19:12:05.235+0000] {subprocess.py:93} INFO - 0         1    1  ...         AS          Alaska Airlines Inc.
+[2025-11-29T19:12:05.235+0000] {subprocess.py:93} INFO - 1         1    1  ...         AA        American Airlines Inc.
+[2025-11-29T19:12:05.236+0000] {subprocess.py:93} INFO - 2         1    1  ...         US               US Airways Inc.
+[2025-11-29T19:12:05.236+0000] {subprocess.py:93} INFO - 3         1    1  ...         AA        American Airlines Inc.
+[2025-11-29T19:12:05.236+0000] {subprocess.py:93} INFO - 4         1    1  ...         AS          Alaska Airlines Inc.
+[2025-11-29T19:12:05.236+0000] {subprocess.py:93} INFO - ...     ...  ...  ...        ...                           ...
+[2025-11-29T19:12:05.236+0000] {subprocess.py:93} INFO - 9995      1    1  ...         HA        Hawaiian Airlines Inc.
+[2025-11-29T19:12:05.236+0000] {subprocess.py:93} INFO - 9996      1    1  ...         MQ  American Eagle Airlines Inc.
+[2025-11-29T19:12:05.236+0000] {subprocess.py:93} INFO - 9997      1    1  ...         MQ  American Eagle Airlines Inc.
+[2025-11-29T19:12:05.236+0000] {subprocess.py:93} INFO - 9998      1    1  ...         MQ  American Eagle Airlines Inc.
+[2025-11-29T19:12:05.236+0000] {subprocess.py:93} INFO - 9999      1    1  ...         MQ  American Eagle Airlines Inc.
+[2025-11-29T19:12:05.236+0000] {subprocess.py:93} INFO - 
+[2025-11-29T19:12:05.236+0000] {subprocess.py:93} INFO - [10000 rows x 32 columns]
+[2025-11-29T19:12:05.236+0000] {subprocess.py:93} INFO - Chunk 1 written to 'bronze_dim_airport'
+[2025-11-29T19:12:05.236+0000] {subprocess.py:93} INFO - Completed writing bronze_dim_airport
+[2025-11-29T19:12:05.236+0000] {subprocess.py:93} INFO - Chunk 1 written to 'bronze_dim_flight'
+[2025-11-29T19:12:05.236+0000] {subprocess.py:93} INFO - Completed writing bronze_dim_flight
+[2025-11-29T19:12:05.236+0000] {subprocess.py:93} INFO - FLIGHT_THREAD_FINISHED
+[2025-11-29T19:12:05.236+0000] {subprocess.py:93} INFO - PASSENGER_THREAD_STARTED
+[2025-11-29T19:12:05.236+0000] {subprocess.py:93} INFO - PAYMENT_THREAD_STARTED
+[2025-11-29T19:12:05.236+0000] {subprocess.py:93} INFO - TICKET_THREAD_STARTED
+[2025-11-29T19:12:05.236+0000] {subprocess.py:93} INFO - BOOKING_THREAD_STARTED
+[2025-11-29T19:12:05.236+0000] {subprocess.py:93} INFO - AIRPORT_THREAD_FINISHED
+[2025-11-29T19:12:05.236+0000] {subprocess.py:93} INFO - PASSENGER: Progress: 0/1000
+[2025-11-29T19:12:05.236+0000] {subprocess.py:93} INFO - PASSENGER: Progress: 100/1000
+[2025-11-29T19:12:05.237+0000] {subprocess.py:93} INFO - PASSENGER: Progress: 200/1000
+[2025-11-29T19:12:05.237+0000] {subprocess.py:93} INFO - PASSENGER: Progress: 300/1000
+[2025-11-29T19:12:05.237+0000] {subprocess.py:93} INFO - PAYMENT: Progress: 0/1000
+[2025-11-29T19:12:05.237+0000] {subprocess.py:93} INFO - PASSENGER: Progress: 400/1000
+[2025-11-29T19:12:05.237+0000] {subprocess.py:93} INFO - PAYMENT: Progress: 100/1000
+[2025-11-29T19:12:05.237+0000] {subprocess.py:93} INFO - PASSENGER: Progress: 500/1000
+[2025-11-29T19:12:05.237+0000] {subprocess.py:93} INFO - PAYMENT: Progress: 200/1000
+[2025-11-29T19:12:05.237+0000] {subprocess.py:93} INFO - PAYMENT: Progress: 300/1000
+[2025-11-29T19:12:05.237+0000] {subprocess.py:93} INFO - PASSENGER: Progress: 600/1000
+[2025-11-29T19:12:05.237+0000] {subprocess.py:93} INFO - PAYMENT: Progress: 400/1000
+[2025-11-29T19:12:05.237+0000] {subprocess.py:93} INFO - PASSENGER: Progress: 700/1000
+[2025-11-29T19:12:05.237+0000] {subprocess.py:93} INFO - PASSENGER: Progress: 800/1000
+[2025-11-29T19:12:05.237+0000] {subprocess.py:93} INFO - PAYMENT: Progress: 500/1000
+[2025-11-29T19:12:05.237+0000] {subprocess.py:93} INFO - PASSENGER: Progress: 900/1000
+[2025-11-29T19:12:05.237+0000] {subprocess.py:93} INFO - PAYMENT: Progress: 600/1000
+[2025-11-29T19:12:05.237+0000] {subprocess.py:93} INFO - PAYMENT: Progress: 700/1000
+[2025-11-29T19:12:05.237+0000] {subprocess.py:93} INFO - PASSENGER_THREAD_FINISHED
+[2025-11-29T19:12:05.237+0000] {subprocess.py:93} INFO - PAYMENT: Progress: 800/1000
+[2025-11-29T19:12:05.237+0000] {subprocess.py:93} INFO - PAYMENT: Progress: 900/1000
+[2025-11-29T19:12:05.237+0000] {subprocess.py:93} INFO - PAYMENT_THREAD_FINISHED
+[2025-11-29T19:12:05.237+0000] {subprocess.py:93} INFO - TICKET_THREAD_FINISHED
+[2025-11-29T19:12:05.237+0000] {subprocess.py:93} INFO - BOOKING_THREAD_FINISHED
+[2025-11-29T19:12:05.237+0000] {subprocess.py:93} INFO - DATE_THREAD_STARTED
+[2025-11-29T19:12:05.237+0000] {subprocess.py:93} INFO - DATE_THREAD_FINISHED
+[2025-11-29T19:12:05.238+0000] {subprocess.py:93} INFO - WEATHER_THREAD_STARTED
+[2025-11-29T19:12:05.238+0000] {subprocess.py:93} INFO - 1
+[2025-11-29T19:12:05.238+0000] {subprocess.py:93} INFO - 2
+[2025-11-29T19:12:05.238+0000] {subprocess.py:93} INFO - 3
+[2025-11-29T19:12:05.238+0000] {subprocess.py:93} INFO - 4
+[2025-11-29T19:12:05.238+0000] {subprocess.py:93} INFO - 5
+[2025-11-29T19:12:05.238+0000] {subprocess.py:93} INFO - 6
+[2025-11-29T19:12:05.238+0000] {subprocess.py:93} INFO - 7
+[2025-11-29T19:12:05.238+0000] {subprocess.py:93} INFO - 8
+[2025-11-29T19:12:05.238+0000] {subprocess.py:93} INFO - 9
+[2025-11-29T19:12:05.238+0000] {subprocess.py:93} INFO - 10
+[2025-11-29T19:12:05.238+0000] {subprocess.py:93} INFO - 11
+[2025-11-29T19:12:05.238+0000] {subprocess.py:93} INFO - 12
+[2025-11-29T19:12:05.238+0000] {subprocess.py:93} INFO - 13
+[2025-11-29T19:12:05.238+0000] {subprocess.py:93} INFO - 14
+[2025-11-29T19:12:05.238+0000] {subprocess.py:93} INFO - 15
+[2025-11-29T19:12:05.238+0000] {subprocess.py:93} INFO - 16
+[2025-11-29T19:12:05.238+0000] {subprocess.py:93} INFO - 17
+[2025-11-29T19:12:05.238+0000] {subprocess.py:93} INFO - 18
+[2025-11-29T19:12:05.238+0000] {subprocess.py:93} INFO - 19
+[2025-11-29T19:12:05.238+0000] {subprocess.py:93} INFO - 20
+[2025-11-29T19:12:05.238+0000] {subprocess.py:93} INFO - 21
+[2025-11-29T19:12:05.238+0000] {subprocess.py:93} INFO - 22
+[2025-11-29T19:12:05.239+0000] {subprocess.py:93} INFO - 23
+[2025-11-29T19:12:05.239+0000] {subprocess.py:93} INFO - 24
+[2025-11-29T19:12:05.239+0000] {subprocess.py:93} INFO - 25
+[2025-11-29T19:12:05.239+0000] {subprocess.py:93} INFO - 26
+[2025-11-29T19:12:05.239+0000] {subprocess.py:93} INFO - 27
+[2025-11-29T19:12:05.239+0000] {subprocess.py:93} INFO - 28
+[2025-11-29T19:12:05.239+0000] {subprocess.py:93} INFO - 29
+[2025-11-29T19:12:05.239+0000] {subprocess.py:93} INFO - 30
+[2025-11-29T19:12:05.239+0000] {subprocess.py:93} INFO - WEATHER_THREAD_FINISHED
+[2025-11-29T19:12:05.572+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-11-29T19:12:05.593+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=flight_etl, task_id=python_etl_pipeline, execution_date=20251129T185134, start_date=20251129T185138, end_date=20251129T191205
+[2025-11-29T19:12:05.644+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-11-29T19:12:05.656+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

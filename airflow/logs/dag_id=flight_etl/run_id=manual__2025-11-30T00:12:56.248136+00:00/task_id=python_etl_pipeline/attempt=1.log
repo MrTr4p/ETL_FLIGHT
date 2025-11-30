@@ -1,0 +1,218 @@
+[2025-11-30T00:12:58.232+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_etl.python_etl_pipeline manual__2025-11-30T00:12:56.248136+00:00 [queued]>
+[2025-11-30T00:12:58.237+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_etl.python_etl_pipeline manual__2025-11-30T00:12:56.248136+00:00 [queued]>
+[2025-11-30T00:12:58.237+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2025-11-30T00:12:58.248+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): python_etl_pipeline> on 2025-11-30 00:12:56.248136+00:00
+[2025-11-30T00:12:58.252+0000] {standard_task_runner.py:57} INFO - Started process 304 to run task
+[2025-11-30T00:12:58.254+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'flight_etl', 'python_etl_pipeline', 'manual__2025-11-30T00:12:56.248136+00:00', '--job-id', '341', '--raw', '--subdir', 'DAGS_FOLDER/etl-dag.py', '--cfg-path', '/tmp/tmppn72m9y7']
+[2025-11-30T00:12:58.256+0000] {standard_task_runner.py:85} INFO - Job 341: Subtask python_etl_pipeline
+[2025-11-30T00:12:58.291+0000] {task_command.py:416} INFO - Running <TaskInstance: flight_etl.python_etl_pipeline manual__2025-11-30T00:12:56.248136+00:00 [running]> on host c5613c26f8d0
+[2025-11-30T00:12:58.348+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='flight_etl' AIRFLOW_CTX_TASK_ID='python_etl_pipeline' AIRFLOW_CTX_EXECUTION_DATE='2025-11-30T00:12:56.248136+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-30T00:12:56.248136+00:00'
+[2025-11-30T00:12:58.350+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-30T00:12:58.350+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', '\n        echo "Starting ETL pipeline execution..." &&         cd /opt/***/etl_scripts &&         echo "Current directory is: $(pwd)" &&         echo "Installing requirements..." &&         /usr/local/bin/pip install --ignore-installed -r requirements.txt &&         rm -rf ~/.kaggle/kagglehub/datasets/usdot/flight-delays/\n        echo "Starting main.py script..." &&         python main.py\n    ']
+[2025-11-30T00:12:58.360+0000] {subprocess.py:86} INFO - Output:
+[2025-11-30T00:12:58.362+0000] {subprocess.py:93} INFO - Starting ETL pipeline execution...
+[2025-11-30T00:12:58.362+0000] {subprocess.py:93} INFO - Current directory is: /opt/***/etl_scripts
+[2025-11-30T00:12:58.363+0000] {subprocess.py:93} INFO - Installing requirements...
+[2025-11-30T00:12:59.012+0000] {subprocess.py:93} INFO - Collecting certifi==2025.8.3
+[2025-11-30T00:12:59.014+0000] {subprocess.py:93} INFO -   Using cached certifi-2025.8.3-py3-none-any.whl (161 kB)
+[2025-11-30T00:12:59.198+0000] {subprocess.py:93} INFO - Collecting charset-normalizer==3.4.3
+[2025-11-30T00:12:59.201+0000] {subprocess.py:93} INFO -   Using cached charset_normalizer-3.4.3-cp38-cp38-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (147 kB)
+[2025-11-30T00:12:59.374+0000] {subprocess.py:93} INFO - Collecting Faker==35.2.2
+[2025-11-30T00:12:59.384+0000] {subprocess.py:93} INFO -   Using cached Faker-35.2.2-py3-none-any.whl (1.9 MB)
+[2025-11-30T00:12:59.645+0000] {subprocess.py:93} INFO - Collecting greenlet==2.0.2
+[2025-11-30T00:12:59.695+0000] {subprocess.py:93} INFO -   Using cached greenlet-2.0.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (618 kB)
+[2025-11-30T00:12:59.783+0000] {subprocess.py:93} INFO - Collecting idna==3.10
+[2025-11-30T00:12:59.785+0000] {subprocess.py:93} INFO -   Using cached idna-3.10-py3-none-any.whl (70 kB)
+[2025-11-30T00:12:59.861+0000] {subprocess.py:93} INFO - Collecting kagglehub==0.2.9
+[2025-11-30T00:12:59.863+0000] {subprocess.py:93} INFO -   Using cached kagglehub-0.2.9-py3-none-any.whl (39 kB)
+[2025-11-30T00:13:00.230+0000] {subprocess.py:93} INFO - Collecting numpy==1.24.4
+[2025-11-30T00:13:00.257+0000] {subprocess.py:93} INFO -   Using cached numpy-1.24.4-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (17.3 MB)
+[2025-11-30T00:13:00.365+0000] {subprocess.py:93} INFO - Collecting packaging==25.0
+[2025-11-30T00:13:00.367+0000] {subprocess.py:93} INFO -   Using cached packaging-25.0-py3-none-any.whl (66 kB)
+[2025-11-30T00:13:00.596+0000] {subprocess.py:93} INFO - Collecting pandas==1.5.3
+[2025-11-30T00:13:00.627+0000] {subprocess.py:93} INFO -   Using cached pandas-1.5.3-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.2 MB)
+[2025-11-30T00:13:00.816+0000] {subprocess.py:93} INFO - Collecting psycopg2-binary==2.9.10
+[2025-11-30T00:13:00.825+0000] {subprocess.py:93} INFO -   Using cached psycopg2_binary-2.9.10-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
+[2025-11-30T00:13:00.901+0000] {subprocess.py:93} INFO - Collecting python-dateutil==2.9.0.post0
+[2025-11-30T00:13:00.903+0000] {subprocess.py:93} INFO -   Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+[2025-11-30T00:13:01.002+0000] {subprocess.py:93} INFO - Collecting pytz==2025.2
+[2025-11-30T00:13:01.004+0000] {subprocess.py:93} INFO -   Using cached pytz-2025.2-py2.py3-none-any.whl (509 kB)
+[2025-11-30T00:13:01.122+0000] {subprocess.py:93} INFO - Collecting PyYAML==6.0.2
+[2025-11-30T00:13:01.125+0000] {subprocess.py:93} INFO -   Using cached PyYAML-6.0.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (746 kB)
+[2025-11-30T00:13:01.212+0000] {subprocess.py:93} INFO - Collecting requests==2.32.4
+[2025-11-30T00:13:01.214+0000] {subprocess.py:93} INFO -   Using cached requests-2.32.4-py3-none-any.whl (64 kB)
+[2025-11-30T00:13:01.282+0000] {subprocess.py:93} INFO - Collecting six==1.17.0
+[2025-11-30T00:13:01.284+0000] {subprocess.py:93} INFO -   Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+[2025-11-30T00:13:01.818+0000] {subprocess.py:93} INFO - Collecting SQLAlchemy==2.0.43
+[2025-11-30T00:13:01.825+0000] {subprocess.py:93} INFO -   Using cached sqlalchemy-2.0.43-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.2 MB)
+[2025-11-30T00:13:01.934+0000] {subprocess.py:93} INFO - Collecting tqdm==4.67.1
+[2025-11-30T00:13:01.936+0000] {subprocess.py:93} INFO -   Using cached tqdm-4.67.1-py3-none-any.whl (78 kB)
+[2025-11-30T00:13:02.013+0000] {subprocess.py:93} INFO - Collecting typing_extensions==4.13.2
+[2025-11-30T00:13:02.015+0000] {subprocess.py:93} INFO -   Using cached typing_extensions-4.13.2-py3-none-any.whl (45 kB)
+[2025-11-30T00:13:02.092+0000] {subprocess.py:93} INFO - Collecting tzdata==2025.2
+[2025-11-30T00:13:02.094+0000] {subprocess.py:93} INFO -   Using cached tzdata-2025.2-py2.py3-none-any.whl (347 kB)
+[2025-11-30T00:13:02.189+0000] {subprocess.py:93} INFO - Collecting urllib3==2.2.3
+[2025-11-30T00:13:02.191+0000] {subprocess.py:93} INFO -   Using cached urllib3-2.2.3-py3-none-any.whl (126 kB)
+[2025-11-30T00:13:05.600+0000] {subprocess.py:93} INFO - Installing collected packages: pytz, urllib3, tzdata, typing_extensions, tqdm, six, PyYAML, psycopg2-binary, packaging, numpy, idna, greenlet, charset-normalizer, certifi, SQLAlchemy, requests, python-dateutil, pandas, kagglehub, Faker
+[2025-11-30T00:13:12.081+0000] {subprocess.py:93} INFO - ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+[2025-11-30T00:13:12.081+0000] {subprocess.py:93} INFO - sqlalchemy-redshift 0.8.14 requires SQLAlchemy<2.0.0,>=0.9.2, but you have sqlalchemy 2.0.43 which is incompatible.
+[2025-11-30T00:13:12.081+0000] {subprocess.py:93} INFO - sqlalchemy-bigquery 1.8.0 requires sqlalchemy<2.0.0dev,>=1.2.0, but you have sqlalchemy 2.0.43 which is incompatible.
+[2025-11-30T00:13:12.081+0000] {subprocess.py:93} INFO - snowflake-sqlalchemy 1.5.0 requires sqlalchemy<2.0.0,>=1.4.0, but you have sqlalchemy 2.0.43 which is incompatible.
+[2025-11-30T00:13:12.081+0000] {subprocess.py:93} INFO - snowflake-connector-python 3.3.1 requires urllib3<1.27,>=1.21.1, but you have urllib3 2.2.3 which is incompatible.
+[2025-11-30T00:13:12.082+0000] {subprocess.py:93} INFO - limits 3.6.0 requires packaging<24,>=21, but you have packaging 25.0 which is incompatible.
+[2025-11-30T00:13:12.082+0000] {subprocess.py:93} INFO - flask-appbuilder 4.3.6 requires SQLAlchemy<1.5, but you have sqlalchemy 2.0.43 which is incompatible.
+[2025-11-30T00:13:12.082+0000] {subprocess.py:93} INFO - botocore 1.31.64 requires urllib3<1.27,>=1.25.4; python_version < "3.10", but you have urllib3 2.2.3 which is incompatible.
+[2025-11-30T00:13:12.082+0000] {subprocess.py:93} INFO - apache-*** 2.7.3 requires sqlalchemy<2.0,>=1.4.28, but you have sqlalchemy 2.0.43 which is incompatible.
+[2025-11-30T00:13:12.082+0000] {subprocess.py:93} INFO - Successfully installed Faker-35.2.2 PyYAML-6.0.2 SQLAlchemy-2.0.43 certifi-2025.8.3 charset-normalizer-3.4.3 greenlet-2.0.2 idna-3.10 kagglehub-0.2.9 numpy-1.24.4 packaging-25.0 pandas-1.5.3 psycopg2-binary-2.9.10 python-dateutil-2.9.0.post0 pytz-2025.2 requests-2.32.4 six-1.17.0 tqdm-4.67.1 typing_extensions-4.13.2 tzdata-2025.2 urllib3-2.2.3
+[2025-11-30T00:13:12.082+0000] {subprocess.py:93} INFO - WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[2025-11-30T00:13:12.086+0000] {subprocess.py:93} INFO - 
+[2025-11-30T00:13:12.086+0000] {subprocess.py:93} INFO - [notice] A new release of pip is available: 23.0.1 -> 25.0.1
+[2025-11-30T00:13:12.087+0000] {subprocess.py:93} INFO - [notice] To update, run: pip3 install --upgrade pip
+[2025-11-30T00:13:12.312+0000] {subprocess.py:93} INFO - Starting main.py script...
+[2025-11-30T00:13:13.240+0000] {subprocess.py:93} INFO - All tables truncated successfully
+[2025-11-30T00:13:13.240+0000] {subprocess.py:93} INFO - Warning: Looks like you're using an outdated `kagglehub` version, please consider updating (latest version: 0.3.13)
+[2025-11-30T00:13:13.959+0000] {subprocess.py:93} INFO - Downloading from https://www.kaggle.com/api/v1/datasets/download/usdot/flight-delays?dataset_version_number=1...
+[2025-11-30T00:14:12.514+0000] {subprocess.py:93} INFO -   0%|          | 0.00/191M [00:00<?, ?B/s]  1%|          | 1.00M/191M [00:00<02:08, 1.55MB/s]  1%|          | 2.00M/191M [00:00<01:22, 2.40MB/s]  2%|▏         | 3.00M/191M [00:01<01:07, 2.92MB/s]  2%|▏         | 4.00M/191M [00:01<01:00, 3.22MB/s]  3%|▎         | 5.00M/191M [00:01<00:57, 3.41MB/s]  3%|▎         | 6.00M/191M [00:02<00:55, 3.52MB/s]  4%|▎         | 7.00M/191M [00:02<00:53, 3.60MB/s]  4%|▍         | 8.00M/191M [00:02<00:52, 3.66MB/s]  5%|▍         | 9.00M/191M [00:02<00:51, 3.67MB/s]  5%|▌         | 10.0M/191M [00:03<00:51, 3.68MB/s]  6%|▌         | 11.0M/191M [00:03<00:51, 3.68MB/s]  6%|▋         | 12.0M/191M [00:03<00:51, 3.67MB/s]  7%|▋         | 13.0M/191M [00:04<00:51, 3.64MB/s]  7%|▋         | 14.0M/191M [00:04<00:50, 3.66MB/s]  8%|▊         | 15.0M/191M [00:04<00:50, 3.64MB/s]  8%|▊         | 16.0M/191M [00:04<00:50, 3.64MB/s]  9%|▉         | 17.0M/191M [00:05<00:49, 3.65MB/s]  9%|▉         | 18.0M/191M [00:05<00:55, 3.27MB/s] 10%|▉         | 19.0M/191M [00:05<00:53, 3.37MB/s] 10%|█         | 20.0M/191M [00:06<00:51, 3.45MB/s] 11%|█         | 21.0M/191M [00:06<00:50, 3.51MB/s] 12%|█▏        | 22.0M/191M [00:06<00:49, 3.55MB/s] 12%|█▏        | 23.0M/191M [00:07<00:49, 3.58MB/s] 13%|█▎        | 24.0M/191M [00:07<00:48, 3.60MB/s] 13%|█▎        | 25.0M/191M [00:07<00:47, 3.63MB/s] 14%|█▎        | 26.0M/191M [00:07<00:47, 3.63MB/s] 14%|█▍        | 27.0M/191M [00:08<00:47, 3.63MB/s] 15%|█▍        | 28.0M/191M [00:08<00:46, 3.64MB/s] 15%|█▌        | 29.0M/191M [00:08<00:46, 3.63MB/s] 16%|█▌        | 30.0M/191M [00:09<00:46, 3.63MB/s] 16%|█▌        | 31.0M/191M [00:09<00:46, 3.62MB/s] 17%|█▋        | 32.0M/191M [00:09<00:45, 3.63MB/s] 17%|█▋        | 33.0M/191M [00:09<00:45, 3.63MB/s] 18%|█▊        | 34.0M/191M [00:10<00:45, 3.63MB/s] 18%|█▊        | 35.0M/191M [00:10<00:45, 3.63MB/s] 19%|█▉        | 36.0M/191M [00:10<00:50, 3.21MB/s] 19%|█▉        | 37.0M/191M [00:11<00:48, 3.30MB/s] 20%|█▉        | 38.0M/191M [00:11<00:47, 3.37MB/s] 20%|██        | 39.0M/191M [00:11<00:46, 3.42MB/s] 21%|██        | 40.0M/191M [00:12<00:45, 3.45MB/s] 21%|██▏       | 41.0M/191M [00:12<00:45, 3.47MB/s] 22%|██▏       | 42.0M/191M [00:12<00:44, 3.49MB/s] 23%|██▎       | 43.0M/191M [00:12<00:44, 3.49MB/s] 23%|██▎       | 44.0M/191M [00:13<00:44, 3.49MB/s] 24%|██▎       | 45.0M/191M [00:13<00:43, 3.50MB/s] 24%|██▍       | 46.0M/191M [00:13<00:43, 3.50MB/s] 25%|██▍       | 47.0M/191M [00:14<00:43, 3.49MB/s] 25%|██▌       | 48.0M/191M [00:14<00:42, 3.49MB/s] 26%|██▌       | 49.0M/191M [00:14<00:42, 3.50MB/s] 26%|██▌       | 50.0M/191M [00:15<00:42, 3.51MB/s] 27%|██▋       | 51.0M/191M [00:15<00:41, 3.51MB/s] 27%|██▋       | 52.0M/191M [00:15<00:41, 3.51MB/s] 28%|██▊       | 53.0M/191M [00:16<00:46, 3.13MB/s] 28%|██▊       | 54.0M/191M [00:16<00:44, 3.24MB/s] 29%|██▉       | 55.0M/191M [00:16<00:43, 3.31MB/s] 29%|██▉       | 56.0M/191M [00:16<00:41, 3.38MB/s] 30%|██▉       | 57.0M/191M [00:17<00:41, 3.42MB/s] 30%|███       | 58.0M/191M [00:17<00:40, 3.46MB/s] 31%|███       | 59.0M/191M [00:17<00:39, 3.50MB/s] 31%|███▏      | 60.0M/191M [00:18<00:38, 3.52MB/s] 32%|███▏      | 61.0M/191M [00:18<00:38, 3.53MB/s] 32%|███▏      | 62.0M/191M [00:18<00:38, 3.55MB/s] 33%|███▎      | 63.0M/191M [00:19<00:37, 3.55MB/s] 34%|███▎      | 64.0M/191M [00:19<00:37, 3.55MB/s] 34%|███▍      | 65.0M/191M [00:19<00:37, 3.54MB/s] 35%|███▍      | 66.0M/191M [00:19<00:37, 3.53MB/s] 35%|███▌      | 67.0M/191M [00:20<00:36, 3.53MB/s] 36%|███▌      | 68.0M/191M [00:20<00:36, 3.52MB/s] 36%|███▌      | 69.0M/191M [00:20<00:36, 3.53MB/s] 37%|███▋      | 70.0M/191M [00:21<00:36, 3.47MB/s] 37%|███▋      | 71.0M/191M [00:21<00:39, 3.16MB/s] 38%|███▊      | 72.0M/191M [00:21<00:38, 3.26MB/s] 38%|███▊      | 73.0M/191M [00:22<00:36, 3.34MB/s] 39%|███▉      | 74.0M/191M [00:22<00:36, 3.39MB/s] 39%|███▉      | 75.0M/191M [00:22<00:35, 3.43MB/s] 40%|███▉      | 76.0M/191M [00:23<00:34, 3.46MB/s] 40%|████      | 77.0M/191M [00:23<00:34, 3.48MB/s] 41%|████      | 78.0M/191M [00:23<00:33, 3.48MB/s] 41%|████▏     | 79.0M/191M [00:23<00:33, 3.47MB/s] 42%|████▏     | 80.0M/191M [00:24<00:33, 3.47MB/s] 42%|████▏     | 81.0M/191M [00:24<00:33, 3.46MB/s] 43%|████▎     | 82.0M/191M [00:24<00:32, 3.47MB/s] 44%|████▎     | 83.0M/191M [00:25<00:32, 3.47MB/s] 44%|████▍     | 84.0M/191M [00:25<00:32, 3.46MB/s] 45%|████▍     | 85.0M/191M [00:25<00:31, 3.47MB/s] 45%|████▌     | 86.0M/191M [00:26<00:31, 3.48MB/s] 46%|████▌     | 87.0M/191M [00:26<00:31, 3.48MB/s] 46%|████▌     | 88.0M/191M [00:26<00:34, 3.11MB/s] 47%|████▋     | 89.0M/191M [00:27<00:33, 3.20MB/s] 47%|████▋     | 90.0M/191M [00:27<00:32, 3.28MB/s] 48%|████▊     | 91.0M/191M [00:27<00:31, 3.35MB/s] 48%|████▊     | 92.0M/191M [00:27<00:30, 3.40MB/s] 49%|████▊     | 93.0M/191M [00:28<00:29, 3.42MB/s] 49%|████▉     | 94.0M/191M [00:28<00:29, 3.44MB/s] 50%|████▉     | 95.0M/191M [00:28<00:29, 3.46MB/s] 50%|█████     | 96.0M/191M [00:29<00:28, 3.47MB/s] 51%|█████     | 97.0M/191M [00:29<00:28, 3.49MB/s] 51%|█████▏    | 98.0M/191M [00:29<00:27, 3.49MB/s] 52%|█████▏    | 99.0M/191M [00:30<00:27, 3.49MB/s] 52%|█████▏    | 100M/191M [00:30<00:27, 3.50MB/s]  53%|█████▎    | 101M/191M [00:30<00:26, 3.50MB/s] 53%|█████▎    | 102M/191M [00:30<00:26, 3.49MB/s] 54%|█████▍    | 103M/191M [00:31<00:26, 3.49MB/s] 55%|█████▍    | 104M/191M [00:31<00:26, 3.49MB/s] 55%|█████▌    | 105M/191M [00:31<00:28, 3.11MB/s] 56%|█████▌    | 106M/191M [00:32<00:27, 3.22MB/s] 56%|█████▌    | 107M/191M [00:32<00:26, 3.30MB/s] 57%|█████▋    | 108M/191M [00:32<00:25, 3.37MB/s] 57%|█████▋    | 109M/191M [00:33<00:25, 3.41MB/s] 58%|█████▊    | 110M/191M [00:33<00:24, 3.46MB/s] 58%|█████▊    | 111M/191M [00:33<00:23, 3.49MB/s] 59%|█████▊    | 112M/191M [00:34<00:23, 3.51MB/s] 59%|█████▉    | 113M/191M [00:34<00:23, 3.52MB/s] 60%|█████▉    | 114M/191M [00:34<00:22, 3.53MB/s] 60%|██████    | 115M/191M [00:34<00:22, 3.53MB/s] 61%|██████    | 116M/191M [00:35<00:22, 3.54MB/s] 61%|██████▏   | 117M/191M [00:35<00:21, 3.53MB/s] 62%|██████▏   | 118M/191M [00:35<00:21, 3.53MB/s] 62%|██████▏   | 119M/191M [00:36<00:21, 3.53MB/s] 63%|██████▎   | 120M/191M [00:36<00:21, 3.53MB/s] 63%|██████▎   | 121M/191M [00:36<00:20, 3.53MB/s] 64%|██████▍   | 122M/191M [00:37<00:20, 3.54MB/s] 64%|██████▍   | 123M/191M [00:37<00:20, 3.54MB/s] 65%|██████▍   | 124M/191M [00:37<00:19, 3.53MB/s] 66%|██████▌   | 125M/191M [00:37<00:19, 3.53MB/s] 66%|██████▌   | 126M/191M [00:38<00:19, 3.53MB/s] 67%|██████▋   | 127M/191M [00:38<00:18, 3.53MB/s] 67%|██████▋   | 128M/191M [00:38<00:18, 3.53MB/s] 68%|██████▊   | 129M/191M [00:39<00:18, 3.53MB/s] 68%|██████▊   | 130M/191M [00:39<00:18, 3.53MB/s] 69%|██████▊   | 131M/191M [00:39<00:20, 3.13MB/s] 69%|██████▉   | 132M/191M [00:40<00:19, 3.24MB/s] 70%|██████▉   | 133M/191M [00:40<00:18, 3.32MB/s] 70%|███████   | 134M/191M [00:40<00:17, 3.38MB/s] 71%|███████   | 135M/191M [00:41<00:17, 3.42MB/s] 71%|███████▏  | 136M/191M [00:41<00:16, 3.46MB/s] 72%|███████▏  | 137M/191M [00:41<00:16, 3.49MB/s] 72%|███████▏  | 138M/191M [00:41<00:15, 3.51MB/s] 73%|███████▎  | 139M/191M [00:42<00:15, 3.50MB/s] 73%|███████▎  | 140M/191M [00:42<00:15, 3.52MB/s] 74%|███████▍  | 141M/191M [00:42<00:14, 3.52MB/s] 74%|███████▍  | 142M/191M [00:43<00:14, 3.52MB/s] 75%|███████▍  | 143M/191M [00:43<00:14, 3.52MB/s] 75%|███████▌  | 144M/191M [00:43<00:13, 3.53MB/s] 76%|███████▌  | 145M/191M [00:43<00:13, 3.53MB/s] 77%|███████▋  | 146M/191M [00:44<00:13, 3.53MB/s] 77%|███████▋  | 147M/191M [00:44<00:12, 3.54MB/s] 78%|███████▊  | 148M/191M [00:44<00:13, 3.25MB/s] 78%|███████▊  | 149M/191M [00:45<00:13, 3.20MB/s] 79%|███████▊  | 150M/191M [00:45<00:13, 3.29MB/s] 79%|███████▉  | 151M/191M [00:45<00:12, 3.36MB/s] 80%|███████▉  | 152M/191M [00:46<00:11, 3.41MB/s] 80%|████████  | 153M/191M [00:46<00:11, 3.45MB/s] 81%|████████  | 154M/191M [00:46<00:11, 3.48MB/s] 81%|████████  | 155M/191M [00:47<00:10, 3.50MB/s] 82%|████████▏ | 156M/191M [00:47<00:10, 3.51MB/s] 82%|████████▏ | 157M/191M [00:47<00:10, 3.52MB/s] 83%|████████▎ | 158M/191M [00:47<00:09, 3.53MB/s] 83%|████████▎ | 159M/191M [00:48<00:09, 3.53MB/s] 84%|████████▍ | 160M/191M [00:48<00:09, 3.53MB/s] 84%|████████▍ | 161M/191M [00:48<00:08, 3.53MB/s] 85%|████████▍ | 162M/191M [00:49<00:08, 3.53MB/s] 85%|████████▌ | 163M/191M [00:49<00:08, 3.53MB/s] 86%|████████▌ | 164M/191M [00:49<00:07, 3.53MB/s] 86%|████████▋ | 165M/191M [00:50<00:07, 3.46MB/s] 87%|████████▋ | 166M/191M [00:50<00:08, 3.13MB/s] 88%|████████▊ | 167M/191M [00:50<00:07, 3.25MB/s] 88%|████████▊ | 168M/191M [00:51<00:07, 3.33MB/s] 89%|████████▊ | 169M/191M [00:51<00:06, 3.39MB/s] 89%|████████▉ | 170M/191M [00:51<00:06, 3.43MB/s] 90%|████████▉ | 171M/191M [00:51<00:05, 3.46MB/s] 90%|█████████ | 172M/191M [00:52<00:05, 3.48MB/s] 91%|█████████ | 173M/191M [00:52<00:05, 3.50MB/s] 91%|█████████ | 174M/191M [00:52<00:05, 3.51MB/s] 92%|█████████▏| 175M/191M [00:53<00:04, 3.52MB/s] 92%|█████████▏| 176M/191M [00:53<00:04, 3.53MB/s] 93%|█████████▎| 177M/191M [00:53<00:04, 3.53MB/s] 93%|█████████▎| 178M/191M [00:54<00:03, 3.44MB/s] 94%|█████████▍| 179M/191M [00:54<00:03, 3.36MB/s] 94%|█████████▍| 180M/191M [00:55<00:05, 2.04MB/s] 95%|█████████▍| 181M/191M [00:55<00:04, 2.29MB/s] 95%|█████████▌| 182M/191M [00:55<00:03, 2.57MB/s] 96%|█████████▌| 183M/191M [00:56<00:02, 2.81MB/s] 96%|█████████▋| 184M/191M [00:56<00:02, 3.01MB/s] 97%|█████████▋| 185M/191M [00:56<00:01, 3.17MB/s] 97%|█████████▋| 186M/191M [00:57<00:01, 3.29MB/s] 98%|█████████▊| 187M/191M [00:57<00:01, 3.39MB/s] 99%|█████████▊| 188M/191M [00:57<00:00, 3.45MB/s] 99%|█████████▉| 189M/191M [00:58<00:00, 3.49MB/s]100%|█████████▉| 190M/191M [00:58<00:00, 3.51MB/s]100%|██████████| 191M/191M [00:58<00:00, 3.54MB/s]100%|██████████| 191M/191M [00:58<00:00, 3.42MB/s]Extracting model files...
+[2025-11-30T00:15:18.091+0000] {subprocess.py:93} INFO - 
+[2025-11-30T00:15:18.092+0000] {subprocess.py:93} INFO - /root/.cache/kagglehub/datasets/usdot/flight-delays/versions/1
+[2025-11-30T00:15:18.092+0000] {subprocess.py:93} INFO - AIRPORT_THREAD_STARTED
+[2025-11-30T00:15:18.092+0000] {subprocess.py:93} INFO - FLIGHT_THREAD_STARTED
+[2025-11-30T00:15:18.092+0000] {subprocess.py:93} INFO - FLIGHT:FLIGHT_SUB_THREAD_HAS_STARTED
+[2025-11-30T00:15:18.093+0000] {subprocess.py:93} INFO - FLIGHT:AIRELINE_SUB_THREAD_HAS_STARTED
+[2025-11-30T00:15:18.093+0000] {subprocess.py:93} INFO - FLIGHT:AIRLINE_SUB_THREAD_HAS_FINISHED
+[2025-11-30T00:15:18.093+0000] {subprocess.py:93} INFO - FLIGHT:FLIGHT_SUB_THREAD_HAS_FINISHED
+[2025-11-30T00:15:18.093+0000] {subprocess.py:93} INFO -       month  day  ...  iata_code                  carrier_name
+[2025-11-30T00:15:18.093+0000] {subprocess.py:93} INFO - 0         1    1  ...         AS          Alaska Airlines Inc.
+[2025-11-30T00:15:18.093+0000] {subprocess.py:93} INFO - 1         1    1  ...         AA        American Airlines Inc.
+[2025-11-30T00:15:18.093+0000] {subprocess.py:93} INFO - 2         1    1  ...         US               US Airways Inc.
+[2025-11-30T00:15:18.093+0000] {subprocess.py:93} INFO - 3         1    1  ...         AA        American Airlines Inc.
+[2025-11-30T00:15:18.094+0000] {subprocess.py:93} INFO - 4         1    1  ...         AS          Alaska Airlines Inc.
+[2025-11-30T00:15:18.094+0000] {subprocess.py:93} INFO - ...     ...  ...  ...        ...                           ...
+[2025-11-30T00:15:18.094+0000] {subprocess.py:93} INFO - 9995      1    1  ...         HA        Hawaiian Airlines Inc.
+[2025-11-30T00:15:18.094+0000] {subprocess.py:93} INFO - 9996      1    1  ...         MQ  American Eagle Airlines Inc.
+[2025-11-30T00:15:18.094+0000] {subprocess.py:93} INFO - 9997      1    1  ...         MQ  American Eagle Airlines Inc.
+[2025-11-30T00:15:18.094+0000] {subprocess.py:93} INFO - 9998      1    1  ...         MQ  American Eagle Airlines Inc.
+[2025-11-30T00:15:18.094+0000] {subprocess.py:93} INFO - 9999      1    1  ...         MQ  American Eagle Airlines Inc.
+[2025-11-30T00:15:18.094+0000] {subprocess.py:93} INFO - 
+[2025-11-30T00:15:18.095+0000] {subprocess.py:93} INFO - [10000 rows x 32 columns]
+[2025-11-30T00:15:18.095+0000] {subprocess.py:93} INFO - Chunk 1 written to 'bronze_dim_airport'
+[2025-11-30T00:15:18.095+0000] {subprocess.py:93} INFO - Completed writing bronze_dim_airport
+[2025-11-30T00:15:18.095+0000] {subprocess.py:93} INFO - Chunk 1 written to 'bronze_dim_flight'
+[2025-11-30T00:15:18.095+0000] {subprocess.py:93} INFO - Completed writing bronze_dim_flight
+[2025-11-30T00:15:18.095+0000] {subprocess.py:93} INFO - FLIGHT_THREAD_FINISHED
+[2025-11-30T00:15:18.095+0000] {subprocess.py:93} INFO - PASSENGER_THREAD_STARTED
+[2025-11-30T00:15:18.095+0000] {subprocess.py:93} INFO - PAYMENT_THREAD_STARTED
+[2025-11-30T00:15:18.095+0000] {subprocess.py:93} INFO - TICKET_THREAD_STARTED
+[2025-11-30T00:15:18.096+0000] {subprocess.py:93} INFO - BOOKING_THREAD_STARTED
+[2025-11-30T00:15:18.096+0000] {subprocess.py:93} INFO - AIRPORT_THREAD_FINISHED
+[2025-11-30T00:15:18.096+0000] {subprocess.py:93} INFO - PASSENGER: Progress: 0/1000
+[2025-11-30T00:15:18.096+0000] {subprocess.py:93} INFO - PAYMENT: Progress: 0/1000
+[2025-11-30T00:15:18.096+0000] {subprocess.py:93} INFO - PASSENGER: Progress: 100/1000
+[2025-11-30T00:15:18.096+0000] {subprocess.py:93} INFO - PAYMENT: Progress: 100/1000
+[2025-11-30T00:15:18.096+0000] {subprocess.py:93} INFO - PASSENGER: Progress: 200/1000
+[2025-11-30T00:15:18.096+0000] {subprocess.py:93} INFO - PAYMENT: Progress: 200/1000
+[2025-11-30T00:15:18.096+0000] {subprocess.py:93} INFO - PASSENGER: Progress: 300/1000
+[2025-11-30T00:15:18.097+0000] {subprocess.py:93} INFO - PAYMENT: Progress: 300/1000
+[2025-11-30T00:15:18.097+0000] {subprocess.py:93} INFO - PASSENGER: Progress: 400/1000
+[2025-11-30T00:15:18.097+0000] {subprocess.py:93} INFO - PAYMENT: Progress: 400/1000
+[2025-11-30T00:15:18.097+0000] {subprocess.py:93} INFO - PASSENGER: Progress: 500/1000
+[2025-11-30T00:15:18.097+0000] {subprocess.py:93} INFO - PAYMENT: Progress: 500/1000
+[2025-11-30T00:15:18.097+0000] {subprocess.py:93} INFO - PASSENGER: Progress: 600/1000
+[2025-11-30T00:15:18.097+0000] {subprocess.py:93} INFO - PAYMENT: Progress: 600/1000
+[2025-11-30T00:15:18.097+0000] {subprocess.py:93} INFO - PASSENGER: Progress: 700/1000
+[2025-11-30T00:15:18.097+0000] {subprocess.py:93} INFO - PAYMENT: Progress: 700/1000
+[2025-11-30T00:15:18.097+0000] {subprocess.py:93} INFO - PASSENGER: Progress: 800/1000
+[2025-11-30T00:15:18.098+0000] {subprocess.py:93} INFO - PAYMENT: Progress: 800/1000
+[2025-11-30T00:15:18.098+0000] {subprocess.py:93} INFO - PASSENGER: Progress: 900/1000
+[2025-11-30T00:15:18.098+0000] {subprocess.py:93} INFO - PAYMENT: Progress: 900/1000
+[2025-11-30T00:15:18.098+0000] {subprocess.py:93} INFO - PASSENGER_THREAD_FINISHED
+[2025-11-30T00:15:18.098+0000] {subprocess.py:93} INFO - PAYMENT_THREAD_FINISHED
+[2025-11-30T00:15:18.098+0000] {subprocess.py:93} INFO - TICKET_THREAD_FINISHED
+[2025-11-30T00:15:18.098+0000] {subprocess.py:93} INFO - BOOKING_THREAD_FINISHED
+[2025-11-30T00:15:18.098+0000] {subprocess.py:93} INFO - DATE_THREAD_STARTED
+[2025-11-30T00:15:18.098+0000] {subprocess.py:93} INFO - DATE_THREAD_FINISHED
+[2025-11-30T00:15:18.098+0000] {subprocess.py:93} INFO - WEATHER_THREAD_STARTED
+[2025-11-30T00:15:18.098+0000] {subprocess.py:93} INFO - 1
+[2025-11-30T00:15:18.098+0000] {subprocess.py:93} INFO - 2
+[2025-11-30T00:15:18.099+0000] {subprocess.py:93} INFO - 3
+[2025-11-30T00:15:18.099+0000] {subprocess.py:93} INFO - 4
+[2025-11-30T00:15:18.099+0000] {subprocess.py:93} INFO - 5
+[2025-11-30T00:15:18.099+0000] {subprocess.py:93} INFO - 6
+[2025-11-30T00:15:18.099+0000] {subprocess.py:93} INFO - 7
+[2025-11-30T00:15:18.099+0000] {subprocess.py:93} INFO - 8
+[2025-11-30T00:15:18.099+0000] {subprocess.py:93} INFO - 9
+[2025-11-30T00:15:18.099+0000] {subprocess.py:93} INFO - 10
+[2025-11-30T00:15:18.099+0000] {subprocess.py:93} INFO - 11
+[2025-11-30T00:15:18.099+0000] {subprocess.py:93} INFO - 12
+[2025-11-30T00:15:18.099+0000] {subprocess.py:93} INFO - 13
+[2025-11-30T00:15:18.099+0000] {subprocess.py:93} INFO - 14
+[2025-11-30T00:15:18.099+0000] {subprocess.py:93} INFO - 15
+[2025-11-30T00:15:18.099+0000] {subprocess.py:93} INFO - 16
+[2025-11-30T00:15:18.099+0000] {subprocess.py:93} INFO - 17
+[2025-11-30T00:15:18.099+0000] {subprocess.py:93} INFO - 18
+[2025-11-30T00:15:18.099+0000] {subprocess.py:93} INFO - 19
+[2025-11-30T00:15:18.099+0000] {subprocess.py:93} INFO - 20
+[2025-11-30T00:15:18.099+0000] {subprocess.py:93} INFO - 21
+[2025-11-30T00:15:18.099+0000] {subprocess.py:93} INFO - 22
+[2025-11-30T00:15:18.099+0000] {subprocess.py:93} INFO - 23
+[2025-11-30T00:15:18.100+0000] {subprocess.py:93} INFO - 24
+[2025-11-30T00:15:18.100+0000] {subprocess.py:93} INFO - 25
+[2025-11-30T00:15:18.100+0000] {subprocess.py:93} INFO - 26
+[2025-11-30T00:15:18.100+0000] {subprocess.py:93} INFO - 27
+[2025-11-30T00:15:18.100+0000] {subprocess.py:93} INFO - 28
+[2025-11-30T00:15:18.100+0000] {subprocess.py:93} INFO - 29
+[2025-11-30T00:15:18.100+0000] {subprocess.py:93} INFO - 30
+[2025-11-30T00:15:18.100+0000] {subprocess.py:93} INFO - 31
+[2025-11-30T00:15:18.100+0000] {subprocess.py:93} INFO - 32
+[2025-11-30T00:15:18.100+0000] {subprocess.py:93} INFO - 33
+[2025-11-30T00:15:18.100+0000] {subprocess.py:93} INFO - 34
+[2025-11-30T00:15:18.100+0000] {subprocess.py:93} INFO - 35
+[2025-11-30T00:15:18.100+0000] {subprocess.py:93} INFO - 36
+[2025-11-30T00:15:18.100+0000] {subprocess.py:93} INFO - 37
+[2025-11-30T00:15:18.100+0000] {subprocess.py:93} INFO - 38
+[2025-11-30T00:15:18.100+0000] {subprocess.py:93} INFO - 39
+[2025-11-30T00:15:18.100+0000] {subprocess.py:93} INFO - 40
+[2025-11-30T00:15:18.100+0000] {subprocess.py:93} INFO - 41
+[2025-11-30T00:15:18.100+0000] {subprocess.py:93} INFO - 42
+[2025-11-30T00:15:18.100+0000] {subprocess.py:93} INFO - 43
+[2025-11-30T00:15:18.100+0000] {subprocess.py:93} INFO - 44
+[2025-11-30T00:15:18.100+0000] {subprocess.py:93} INFO - 45
+[2025-11-30T00:15:18.100+0000] {subprocess.py:93} INFO - 46
+[2025-11-30T00:15:18.100+0000] {subprocess.py:93} INFO - 47
+[2025-11-30T00:15:18.101+0000] {subprocess.py:93} INFO - 48
+[2025-11-30T00:15:18.101+0000] {subprocess.py:93} INFO - 49
+[2025-11-30T00:15:18.101+0000] {subprocess.py:93} INFO - 50
+[2025-11-30T00:15:18.101+0000] {subprocess.py:93} INFO - 51
+[2025-11-30T00:15:18.101+0000] {subprocess.py:93} INFO - 52
+[2025-11-30T00:15:18.101+0000] {subprocess.py:93} INFO - 53
+[2025-11-30T00:15:18.101+0000] {subprocess.py:93} INFO - 54
+[2025-11-30T00:15:18.101+0000] {subprocess.py:93} INFO - 55
+[2025-11-30T00:15:18.101+0000] {subprocess.py:93} INFO - 56
+[2025-11-30T00:15:18.101+0000] {subprocess.py:93} INFO - 57
+[2025-11-30T00:15:18.101+0000] {subprocess.py:93} INFO - 58
+[2025-11-30T00:15:18.101+0000] {subprocess.py:93} INFO - 59
+[2025-11-30T00:15:18.101+0000] {subprocess.py:93} INFO - 60
+[2025-11-30T00:15:18.101+0000] {subprocess.py:93} INFO - 61
+[2025-11-30T00:15:18.101+0000] {subprocess.py:93} INFO - 62
+[2025-11-30T00:15:18.101+0000] {subprocess.py:93} INFO - 63
+[2025-11-30T00:15:18.101+0000] {subprocess.py:93} INFO - 64
+[2025-11-30T00:15:18.101+0000] {subprocess.py:93} INFO - 65
+[2025-11-30T00:15:18.101+0000] {subprocess.py:93} INFO - 66
+[2025-11-30T00:15:18.101+0000] {subprocess.py:93} INFO - 67
+[2025-11-30T00:15:18.101+0000] {subprocess.py:93} INFO - 68
+[2025-11-30T00:15:18.101+0000] {subprocess.py:93} INFO - 69
+[2025-11-30T00:15:18.101+0000] {subprocess.py:93} INFO - 70
+[2025-11-30T00:15:18.102+0000] {subprocess.py:93} INFO - 71
+[2025-11-30T00:15:18.102+0000] {subprocess.py:93} INFO - 72
+[2025-11-30T00:15:18.102+0000] {subprocess.py:93} INFO - 73
+[2025-11-30T00:15:18.102+0000] {subprocess.py:93} INFO - 74
+[2025-11-30T00:15:18.102+0000] {subprocess.py:93} INFO - 75
+[2025-11-30T00:15:18.102+0000] {subprocess.py:93} INFO - 76
+[2025-11-30T00:15:18.102+0000] {subprocess.py:93} INFO - 77
+[2025-11-30T00:15:18.102+0000] {subprocess.py:93} INFO - 78
+[2025-11-30T00:15:18.102+0000] {subprocess.py:93} INFO - 79
+[2025-11-30T00:15:18.102+0000] {subprocess.py:93} INFO - WEATHER_THREAD_FINISHED
+[2025-11-30T00:15:18.245+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-11-30T00:15:18.278+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=flight_etl, task_id=python_etl_pipeline, execution_date=20251130T001256, start_date=20251130T001258, end_date=20251130T001518
+[2025-11-30T00:15:18.336+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-11-30T00:15:18.366+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check

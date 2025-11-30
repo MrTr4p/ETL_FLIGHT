@@ -1,0 +1,16 @@
+[2025-11-30T00:43:44.788+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_etl.copy_spark_script manual__2025-11-30T00:42:21.692734+00:00 [queued]>
+[2025-11-30T00:43:44.792+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_etl.copy_spark_script manual__2025-11-30T00:42:21.692734+00:00 [queued]>
+[2025-11-30T00:43:44.792+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2025-11-30T00:43:44.878+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): copy_spark_script> on 2025-11-30 00:42:21.692734+00:00
+[2025-11-30T00:43:44.887+0000] {standard_task_runner.py:57} INFO - Started process 413 to run task
+[2025-11-30T00:43:44.891+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'flight_etl', 'copy_spark_script', 'manual__2025-11-30T00:42:21.692734+00:00', '--job-id', '399', '--raw', '--subdir', 'DAGS_FOLDER/etl-dag.py', '--cfg-path', '/tmp/tmptoexlk4p']
+[2025-11-30T00:43:44.893+0000] {standard_task_runner.py:85} INFO - Job 399: Subtask copy_spark_script
+[2025-11-30T00:43:44.924+0000] {task_command.py:416} INFO - Running <TaskInstance: flight_etl.copy_spark_script manual__2025-11-30T00:42:21.692734+00:00 [running]> on host 45304bb2c878
+[2025-11-30T00:43:44.976+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='flight_etl' AIRFLOW_CTX_TASK_ID='copy_spark_script' AIRFLOW_CTX_EXECUTION_DATE='2025-11-30T00:42:21.692734+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-30T00:42:21.692734+00:00'
+[2025-11-30T00:43:44.977+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-30T00:43:44.977+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', '\n        SPARK_MASTER="spark-master"\n        # FIX: Use ABSOLUTE path from the Airflow Worker\'s root\n        SOURCE_PATH="/opt/***/scripts/pyspark/batch.py" \n        DEST_DIR="/tmp/spark_drivers/"\n        DEST_FILE="batch.py"\n        # ... rest of the command ...\n    ']
+[2025-11-30T00:43:44.987+0000] {subprocess.py:86} INFO - Output:
+[2025-11-30T00:43:44.989+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-11-30T00:43:45.018+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=flight_etl, task_id=copy_spark_script, execution_date=20251130T004221, start_date=20251130T004344, end_date=20251130T004345
+[2025-11-30T00:43:45.062+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-11-30T00:43:45.097+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check

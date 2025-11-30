@@ -1,0 +1,13 @@
+[2025-11-29T22:29:01.373+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_etl.talend_etl_pipeline manual__2025-11-29T22:25:25.065894+00:00 [queued]>
+[2025-11-29T22:29:01.378+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_etl.talend_etl_pipeline manual__2025-11-29T22:25:25.065894+00:00 [queued]>
+[2025-11-29T22:29:01.379+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2025-11-29T22:29:01.388+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): talend_etl_pipeline> on 2025-11-29 22:25:25.065894+00:00
+[2025-11-29T22:29:01.394+0000] {standard_task_runner.py:57} INFO - Started process 220 to run task
+[2025-11-29T22:29:01.397+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'flight_etl', 'talend_etl_pipeline', 'manual__2025-11-29T22:25:25.065894+00:00', '--job-id', '266', '--raw', '--subdir', 'DAGS_FOLDER/etl-dag.py', '--cfg-path', '/tmp/tmpcjdl7svl']
+[2025-11-29T22:29:01.399+0000] {standard_task_runner.py:85} INFO - Job 266: Subtask talend_etl_pipeline
+[2025-11-29T22:29:01.436+0000] {task_command.py:416} INFO - Running <TaskInstance: flight_etl.talend_etl_pipeline manual__2025-11-29T22:25:25.065894+00:00 [running]> on host 5ef12f28c8da
+[2025-11-29T22:29:01.494+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='flight_etl' AIRFLOW_CTX_TASK_ID='talend_etl_pipeline' AIRFLOW_CTX_EXECUTION_DATE='2025-11-29T22:25:25.065894+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-29T22:25:25.065894+00:00'
+[2025-11-29T22:29:13.832+0000] {python.py:194} INFO - Done. Returned value was: None
+[2025-11-29T22:29:13.842+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=flight_etl, task_id=talend_etl_pipeline, execution_date=20251129T222525, start_date=20251129T222901, end_date=20251129T222913
+[2025-11-29T22:29:13.921+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-11-29T22:29:13.948+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check

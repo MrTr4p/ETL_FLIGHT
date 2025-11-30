@@ -1,0 +1,43 @@
+[2025-11-29T17:08:43.986+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_etl.python_etl_pipeline manual__2025-11-29T17:08:39.318940+00:00 [queued]>
+[2025-11-29T17:08:43.992+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_etl.python_etl_pipeline manual__2025-11-29T17:08:39.318940+00:00 [queued]>
+[2025-11-29T17:08:43.992+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2025-11-29T17:08:44.002+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): python_etl_pipeline> on 2025-11-29 17:08:39.318940+00:00
+[2025-11-29T17:08:44.008+0000] {standard_task_runner.py:57} INFO - Started process 279 to run task
+[2025-11-29T17:08:44.010+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'flight_etl', 'python_etl_pipeline', 'manual__2025-11-29T17:08:39.318940+00:00', '--job-id', '44', '--raw', '--subdir', 'DAGS_FOLDER/etl-dag.py', '--cfg-path', '/tmp/tmpmfeqozb_']
+[2025-11-29T17:08:44.012+0000] {standard_task_runner.py:85} INFO - Job 44: Subtask python_etl_pipeline
+[2025-11-29T17:08:44.045+0000] {task_command.py:416} INFO - Running <TaskInstance: flight_etl.python_etl_pipeline manual__2025-11-29T17:08:39.318940+00:00 [running]> on host 074e46dd394a
+[2025-11-29T17:08:44.098+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='flight_etl' AIRFLOW_CTX_TASK_ID='python_etl_pipeline' AIRFLOW_CTX_EXECUTION_DATE='2025-11-29T17:08:39.318940+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-29T17:08:39.318940+00:00'
+[2025-11-29T17:08:44.100+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-29T17:08:44.100+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', '\n            echo "Starting ETL pipeline execution..." &&             cd /opt/***/etl_scripts &&             echo "Current directory is: $(pwd)" &&             echo "Installing requirements..." &&             /usr/local/bin/pip install -r requirements.txt &&             echo "Starting main.py script..." &&             python main.py\n        ']
+[2025-11-29T17:08:44.109+0000] {subprocess.py:86} INFO - Output:
+[2025-11-29T17:08:44.110+0000] {subprocess.py:93} INFO - Starting ETL pipeline execution...
+[2025-11-29T17:08:44.111+0000] {subprocess.py:93} INFO - Current directory is: /opt/***/etl_scripts
+[2025-11-29T17:08:44.111+0000] {subprocess.py:93} INFO - Installing requirements...
+[2025-11-29T17:08:44.827+0000] {subprocess.py:93} INFO - Collecting certifi==2025.8.3
+[2025-11-29T17:08:44.833+0000] {subprocess.py:93} INFO -   Using cached certifi-2025.8.3-py3-none-any.whl (161 kB)
+[2025-11-29T17:08:45.017+0000] {subprocess.py:93} INFO - Collecting charset-normalizer==3.4.3
+[2025-11-29T17:08:45.019+0000] {subprocess.py:93} INFO -   Using cached charset_normalizer-3.4.3-cp38-cp38-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (147 kB)
+[2025-11-29T17:08:45.197+0000] {subprocess.py:93} INFO - Collecting Faker==35.2.2
+[2025-11-29T17:08:45.204+0000] {subprocess.py:93} INFO -   Using cached Faker-35.2.2-py3-none-any.whl (1.9 MB)
+[2025-11-29T17:08:45.464+0000] {subprocess.py:93} INFO - Collecting greenlet==2.0.2
+[2025-11-29T17:08:45.467+0000] {subprocess.py:93} INFO -   Using cached greenlet-2.0.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (618 kB)
+[2025-11-29T17:08:45.545+0000] {subprocess.py:93} INFO - Collecting idna==3.10
+[2025-11-29T17:08:45.547+0000] {subprocess.py:93} INFO -   Using cached idna-3.10-py3-none-any.whl (70 kB)
+[2025-11-29T17:08:45.796+0000] {subprocess.py:93} INFO - Collecting kagglehub==0.2.9
+[2025-11-29T17:08:46.007+0000] {subprocess.py:93} INFO -   Downloading kagglehub-0.2.9-py3-none-any.whl (39 kB)
+[2025-11-29T17:08:46.669+0000] {subprocess.py:93} INFO - ERROR: Ignored the following versions that require a different python version: 0.3.0 Requires-Python >=3.9; 0.3.1 Requires-Python >=3.9; 0.3.10 Requires-Python >=3.9; 0.3.11 Requires-Python >=3.9; 0.3.12 Requires-Python >=3.9; 0.3.13 Requires-Python >=3.9; 0.3.2 Requires-Python >=3.9; 0.3.3 Requires-Python >=3.9; 0.3.4 Requires-Python >=3.9; 0.3.5 Requires-Python >=3.9; 0.3.6 Requires-Python >=3.9; 0.3.7 Requires-Python >=3.9; 0.3.8 Requires-Python >=3.9; 0.3.9 Requires-Python >=3.9; 1.25.0 Requires-Python >=3.9; 1.25.1 Requires-Python >=3.9; 1.25.2 Requires-Python >=3.9; 1.26.0 Requires-Python <3.13,>=3.9; 1.26.1 Requires-Python <3.13,>=3.9; 1.26.2 Requires-Python >=3.9; 1.26.3 Requires-Python >=3.9; 1.26.4 Requires-Python >=3.9; 2.0.0 Requires-Python >=3.9; 2.0.1 Requires-Python >=3.9; 2.0.2 Requires-Python >=3.9; 2.1.0 Requires-Python >=3.10; 2.1.1 Requires-Python >=3.10; 2.1.2 Requires-Python >=3.10; 2.1.3 Requires-Python >=3.10; 2.2.0 Requires-Python >=3.10; 2.2.1 Requires-Python >=3.10; 2.2.2 Requires-Python >=3.10; 2.2.3 Requires-Python >=3.10; 2.2.4 Requires-Python >=3.10; 2.2.5 Requires-Python >=3.10; 2.2.6 Requires-Python >=3.10; 2.3.0 Requires-Python >=3.11; 2.3.1 Requires-Python >=3.11; 2.3.2 Requires-Python >=3.11; 2.3.3 Requires-Python >=3.11; 2.3.4 Requires-Python >=3.11; 2.3.5 Requires-Python >=3.11; 3.2.0 Requires-Python >=3.9; 3.2.1 Requires-Python >=3.9; 3.2.2 Requires-Python >=3.9; 3.2.3 Requires-Python >=3.9; 3.2.4 Requires-Python >=3.9; 36.0.0 Requires-Python >=3.9; 36.1.0 Requires-Python >=3.9; 36.1.1 Requires-Python >=3.9; 36.2.0 Requires-Python >=3.9; 36.2.1 Requires-Python >=3.9; 36.2.2 Requires-Python >=3.9; 36.2.3 Requires-Python >=3.9; 37.0.0 Requires-Python >=3.9; 37.0.1 Requires-Python >=3.9; 37.0.2 Requires-Python >=3.9; 37.1.0 Requires-Python >=3.9; 37.1.1 Requires-Python >=3.9; 37.11.0 Requires-Python >=3.9; 37.12.0 Requires-Python >=3.9; 37.2.0 Requires-Python >=3.9; 37.2.1 Requires-Python >=3.9; 37.3.0 Requires-Python >=3.9; 37.4.0 Requires-Python >=3.9; 37.4.1 Requires-Python >=3.9; 37.4.2 Requires-Python >=3.9; 37.4.3 Requires-Python >=3.9; 37.5.0 Requires-Python >=3.9; 37.5.1 Requires-Python >=3.9; 37.5.2 Requires-Python >=3.9; 37.5.3 Requires-Python >=3.9; 37.6.0 Requires-Python >=3.9; 37.7.0 Requires-Python >=3.9; 37.8.0 Requires-Python >=3.9; 37.9.0 Requires-Python >=3.9; 38.0.0 Requires-Python >=3.10; 38.1.0 Requires-Python >=3.10; 38.2.0 Requires-Python >=3.10
+[2025-11-29T17:08:46.669+0000] {subprocess.py:93} INFO - ERROR: Could not find a version that satisfies the requirement numpy==1.26.4 (from versions: 1.3.0, 1.4.1, 1.5.0, 1.5.1, 1.6.0, 1.6.1, 1.6.2, 1.7.0, 1.7.1, 1.7.2, 1.8.0, 1.8.1, 1.8.2, 1.9.0, 1.9.1, 1.9.2, 1.9.3, 1.10.0.post2, 1.10.1, 1.10.2, 1.10.4, 1.11.0, 1.11.1, 1.11.2, 1.11.3, 1.12.0, 1.12.1, 1.13.0, 1.13.1, 1.13.3, 1.14.0, 1.14.1, 1.14.2, 1.14.3, 1.14.4, 1.14.5, 1.14.6, 1.15.0, 1.15.1, 1.15.2, 1.15.3, 1.15.4, 1.16.0, 1.16.1, 1.16.2, 1.16.3, 1.16.4, 1.16.5, 1.16.6, 1.17.0, 1.17.1, 1.17.2, 1.17.3, 1.17.4, 1.17.5, 1.18.0, 1.18.1, 1.18.2, 1.18.3, 1.18.4, 1.18.5, 1.19.0, 1.19.1, 1.19.2, 1.19.3, 1.19.4, 1.19.5, 1.20.0, 1.20.1, 1.20.2, 1.20.3, 1.21.0, 1.21.1, 1.21.2, 1.21.3, 1.21.4, 1.21.5, 1.21.6, 1.22.0, 1.22.1, 1.22.2, 1.22.3, 1.22.4, 1.23.0, 1.23.1, 1.23.2, 1.23.3, 1.23.4, 1.23.5, 1.24.0, 1.24.1, 1.24.2, 1.24.3, 1.24.4)
+[2025-11-29T17:08:46.669+0000] {subprocess.py:93} INFO - ERROR: No matching distribution found for numpy==1.26.4
+[2025-11-29T17:08:46.674+0000] {subprocess.py:93} INFO - 
+[2025-11-29T17:08:46.674+0000] {subprocess.py:93} INFO - [notice] A new release of pip is available: 23.0.1 -> 25.0.1
+[2025-11-29T17:08:46.674+0000] {subprocess.py:93} INFO - [notice] To update, run: pip3 install --upgrade pip
+[2025-11-29T17:08:46.770+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-11-29T17:08:46.779+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-11-29T17:08:46.782+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=flight_etl, task_id=python_etl_pipeline, execution_date=20251129T170839, start_date=20251129T170843, end_date=20251129T170846
+[2025-11-29T17:08:46.794+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 44 for task python_etl_pipeline (Bash command failed. The command returned a non-zero exit code 1.; 279)
+[2025-11-29T17:08:46.831+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-11-29T17:08:46.845+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

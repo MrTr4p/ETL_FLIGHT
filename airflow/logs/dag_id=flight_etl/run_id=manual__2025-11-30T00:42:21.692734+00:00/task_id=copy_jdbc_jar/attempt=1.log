@@ -1,0 +1,23 @@
+[2025-11-30T00:43:45.856+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_etl.copy_jdbc_jar manual__2025-11-30T00:42:21.692734+00:00 [queued]>
+[2025-11-30T00:43:45.861+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_etl.copy_jdbc_jar manual__2025-11-30T00:42:21.692734+00:00 [queued]>
+[2025-11-30T00:43:45.861+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2025-11-30T00:43:45.871+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): copy_jdbc_jar> on 2025-11-30 00:42:21.692734+00:00
+[2025-11-30T00:43:45.876+0000] {standard_task_runner.py:57} INFO - Started process 417 to run task
+[2025-11-30T00:43:45.878+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'flight_etl', 'copy_jdbc_jar', 'manual__2025-11-30T00:42:21.692734+00:00', '--job-id', '400', '--raw', '--subdir', 'DAGS_FOLDER/etl-dag.py', '--cfg-path', '/tmp/tmpihbfe3q0']
+[2025-11-30T00:43:45.880+0000] {standard_task_runner.py:85} INFO - Job 400: Subtask copy_jdbc_jar
+[2025-11-30T00:43:45.916+0000] {task_command.py:416} INFO - Running <TaskInstance: flight_etl.copy_jdbc_jar manual__2025-11-30T00:42:21.692734+00:00 [running]> on host 45304bb2c878
+[2025-11-30T00:43:45.974+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='flight_etl' AIRFLOW_CTX_TASK_ID='copy_jdbc_jar' AIRFLOW_CTX_EXECUTION_DATE='2025-11-30T00:42:21.692734+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-30T00:42:21.692734+00:00'
+[2025-11-30T00:43:45.975+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-30T00:43:45.976+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', '\n        SPARK_MASTER="spark-master"\n        # FIX: The absolute path in the container must start with /opt/***/\n        JAR_PATH="/opt/***/drivers/postgresql-42.7.7.jar" \n        DEST_DIR="/tmp/spark_drivers/"\n        JAR_NAME="postgresql-42.7.7.jar" # Assuming this variable is defined elsewhere\n\n        # 1. CREATE DESTINATION DIRECTORY (Crucial step!)\n        docker exec ${SPARK_MASTER} mkdir -p ${DEST_DIR}\n\n        # 2. Copy the file\n        docker cp ${JAR_PATH} ${SPARK_MASTER}:${DEST_DIR}${JAR_NAME}\n        # ...\n    ']
+[2025-11-30T00:43:45.987+0000] {subprocess.py:86} INFO - Output:
+[2025-11-30T00:43:46.109+0000] {subprocess.py:93} INFO - Error response from daemon: cannot overwrite non-directory "/tmp/spark_drivers/postgresql-42.7.7.jar/postgresql-42.7.7.jar" with directory "/tmp/spark_drivers/postgresql-42.7.7.jar"
+[2025-11-30T00:43:46.110+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-11-30T00:43:46.119+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-11-30T00:43:46.123+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=flight_etl, task_id=copy_jdbc_jar, execution_date=20251130T004221, start_date=20251130T004345, end_date=20251130T004346
+[2025-11-30T00:43:46.131+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 400 for task copy_jdbc_jar (Bash command failed. The command returned a non-zero exit code 1.; 417)
+[2025-11-30T00:43:46.170+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-11-30T00:43:46.188+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

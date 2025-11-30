@@ -1,0 +1,380 @@
+[2025-11-30T01:02:26.889+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_etl.spark_batch_processor manual__2025-11-30T01:00:41.361585+00:00 [queued]>
+[2025-11-30T01:02:26.894+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_etl.spark_batch_processor manual__2025-11-30T01:00:41.361585+00:00 [queued]>
+[2025-11-30T01:02:26.894+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2025-11-30T01:02:26.904+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): spark_batch_processor> on 2025-11-30 01:00:41.361585+00:00
+[2025-11-30T01:02:26.909+0000] {standard_task_runner.py:57} INFO - Started process 1882 to run task
+[2025-11-30T01:02:26.912+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'flight_etl', 'spark_batch_processor', 'manual__2025-11-30T01:00:41.361585+00:00', '--job-id', '468', '--raw', '--subdir', 'DAGS_FOLDER/etl-dag.py', '--cfg-path', '/tmp/tmp44os1a4o']
+[2025-11-30T01:02:26.914+0000] {standard_task_runner.py:85} INFO - Job 468: Subtask spark_batch_processor
+[2025-11-30T01:02:26.948+0000] {task_command.py:416} INFO - Running <TaskInstance: flight_etl.spark_batch_processor manual__2025-11-30T01:00:41.361585+00:00 [running]> on host 45304bb2c878
+[2025-11-30T01:02:27.000+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='flight_etl' AIRFLOW_CTX_TASK_ID='spark_batch_processor' AIRFLOW_CTX_EXECUTION_DATE='2025-11-30T01:00:41.361585+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-30T01:00:41.361585+00:00'
+[2025-11-30T01:02:27.002+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-30T01:02:27.002+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', '\ndocker exec spark-master /spark/bin/spark-submit --master spark://spark-master:7077 --jars local:///tmp/spark_drivers/postgresql-42.7.7.jar --conf spark.pyspark.python=/usr/bin/python3 /tmp/spark_drivers/batch.py']
+[2025-11-30T01:02:27.013+0000] {subprocess.py:86} INFO - Output:
+[2025-11-30T01:02:29.636+0000] {subprocess.py:93} INFO - 25/11/30 01:02:29 INFO SparkContext: Running Spark version 3.3.0
+[2025-11-30T01:02:29.715+0000] {subprocess.py:93} INFO - 25/11/30 01:02:29 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-11-30T01:02:29.812+0000] {subprocess.py:93} INFO - 25/11/30 01:02:29 INFO ResourceUtils: ==============================================================
+[2025-11-30T01:02:29.813+0000] {subprocess.py:93} INFO - 25/11/30 01:02:29 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2025-11-30T01:02:29.813+0000] {subprocess.py:93} INFO - 25/11/30 01:02:29 INFO ResourceUtils: ==============================================================
+[2025-11-30T01:02:29.813+0000] {subprocess.py:93} INFO - 25/11/30 01:02:29 INFO SparkContext: Submitted application: postgres-to-hive
+[2025-11-30T01:02:29.842+0000] {subprocess.py:93} INFO - 25/11/30 01:02:29 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2025-11-30T01:02:29.854+0000] {subprocess.py:93} INFO - 25/11/30 01:02:29 INFO ResourceProfile: Limiting resource is cpu
+[2025-11-30T01:02:29.854+0000] {subprocess.py:93} INFO - 25/11/30 01:02:29 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2025-11-30T01:02:29.915+0000] {subprocess.py:93} INFO - 25/11/30 01:02:29 INFO SecurityManager: Changing view acls to: root
+[2025-11-30T01:02:29.915+0000] {subprocess.py:93} INFO - 25/11/30 01:02:29 INFO SecurityManager: Changing modify acls to: root
+[2025-11-30T01:02:29.916+0000] {subprocess.py:93} INFO - 25/11/30 01:02:29 INFO SecurityManager: Changing view acls groups to:
+[2025-11-30T01:02:29.916+0000] {subprocess.py:93} INFO - 25/11/30 01:02:29 INFO SecurityManager: Changing modify acls groups to:
+[2025-11-30T01:02:29.916+0000] {subprocess.py:93} INFO - 25/11/30 01:02:29 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root); groups with view permissions: Set(); users  with modify permissions: Set(root); groups with modify permissions: Set()
+[2025-11-30T01:02:30.108+0000] {subprocess.py:93} INFO - 25/11/30 01:02:30 INFO Utils: Successfully started service 'sparkDriver' on port 37271.
+[2025-11-30T01:02:30.127+0000] {subprocess.py:93} INFO - 25/11/30 01:02:30 INFO SparkEnv: Registering MapOutputTracker
+[2025-11-30T01:02:30.183+0000] {subprocess.py:93} INFO - 25/11/30 01:02:30 INFO SparkEnv: Registering BlockManagerMaster
+[2025-11-30T01:02:30.202+0000] {subprocess.py:93} INFO - 25/11/30 01:02:30 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2025-11-30T01:02:30.203+0000] {subprocess.py:93} INFO - 25/11/30 01:02:30 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2025-11-30T01:02:30.206+0000] {subprocess.py:93} INFO - 25/11/30 01:02:30 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2025-11-30T01:02:30.223+0000] {subprocess.py:93} INFO - 25/11/30 01:02:30 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-f70222c3-d270-413a-9c81-5c99217bf38a
+[2025-11-30T01:02:30.239+0000] {subprocess.py:93} INFO - 25/11/30 01:02:30 INFO MemoryStore: MemoryStore started with capacity 366.3 MiB
+[2025-11-30T01:02:30.251+0000] {subprocess.py:93} INFO - 25/11/30 01:02:30 INFO SparkEnv: Registering OutputCommitCoordinator
+[2025-11-30T01:02:30.421+0000] {subprocess.py:93} INFO - 25/11/30 01:02:30 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2025-11-30T01:02:30.452+0000] {subprocess.py:93} INFO - 25/11/30 01:02:30 INFO SparkContext: Added JAR local:///tmp/spark_drivers/postgresql-42.7.7.jar at file:/tmp/spark_drivers/postgresql-42.7.7.jar with timestamp 1764464549628
+[2025-11-30T01:02:30.523+0000] {subprocess.py:93} INFO - 25/11/30 01:02:30 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+[2025-11-30T01:02:30.572+0000] {subprocess.py:93} INFO - 25/11/30 01:02:30 INFO TransportClientFactory: Successfully created connection to spark-master/172.19.0.11:7077 after 30 ms (0 ms spent in bootstraps)
+[2025-11-30T01:02:30.657+0000] {subprocess.py:93} INFO - 25/11/30 01:02:30 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20251130010230-0002
+[2025-11-30T01:02:30.659+0000] {subprocess.py:93} INFO - 25/11/30 01:02:30 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20251130010230-0002/0 on worker-20251130003745-172.19.0.16-40845 (172.19.0.16:40845) with 20 core(s)
+[2025-11-30T01:02:30.660+0000] {subprocess.py:93} INFO - 25/11/30 01:02:30 INFO StandaloneSchedulerBackend: Granted executor ID app-20251130010230-0002/0 on hostPort 172.19.0.16:40845 with 20 core(s), 1024.0 MiB RAM
+[2025-11-30T01:02:30.661+0000] {subprocess.py:93} INFO - 25/11/30 01:02:30 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20251130010230-0002/1 on worker-20251130003745-172.19.0.15-44503 (172.19.0.15:44503) with 20 core(s)
+[2025-11-30T01:02:30.661+0000] {subprocess.py:93} INFO - 25/11/30 01:02:30 INFO StandaloneSchedulerBackend: Granted executor ID app-20251130010230-0002/1 on hostPort 172.19.0.15:44503 with 20 core(s), 1024.0 MiB RAM
+[2025-11-30T01:02:30.663+0000] {subprocess.py:93} INFO - 25/11/30 01:02:30 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 43345.
+[2025-11-30T01:02:30.663+0000] {subprocess.py:93} INFO - 25/11/30 01:02:30 INFO NettyBlockTransferService: Server created on 3e067e6dd517:43345
+[2025-11-30T01:02:30.665+0000] {subprocess.py:93} INFO - 25/11/30 01:02:30 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2025-11-30T01:02:30.673+0000] {subprocess.py:93} INFO - 25/11/30 01:02:30 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 3e067e6dd517, 43345, None)
+[2025-11-30T01:02:30.680+0000] {subprocess.py:93} INFO - 25/11/30 01:02:30 INFO BlockManagerMasterEndpoint: Registering block manager 3e067e6dd517:43345 with 366.3 MiB RAM, BlockManagerId(driver, 3e067e6dd517, 43345, None)
+[2025-11-30T01:02:30.683+0000] {subprocess.py:93} INFO - 25/11/30 01:02:30 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 3e067e6dd517, 43345, None)
+[2025-11-30T01:02:30.684+0000] {subprocess.py:93} INFO - 25/11/30 01:02:30 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 3e067e6dd517, 43345, None)
+[2025-11-30T01:02:30.689+0000] {subprocess.py:93} INFO - 25/11/30 01:02:30 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20251130010230-0002/0 is now RUNNING
+[2025-11-30T01:02:30.690+0000] {subprocess.py:93} INFO - 25/11/30 01:02:30 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20251130010230-0002/1 is now RUNNING
+[2025-11-30T01:02:30.864+0000] {subprocess.py:93} INFO - 25/11/30 01:02:30 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2025-11-30T01:02:31.100+0000] {subprocess.py:93} INFO - 25/11/30 01:02:31 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2025-11-30T01:02:31.481+0000] {subprocess.py:93} INFO - 25/11/30 01:02:31 INFO SharedState: Warehouse path is 'hdfs://namenode:9000/hive/warehouse'.
+[2025-11-30T01:02:32.695+0000] {subprocess.py:93} INFO - 25/11/30 01:02:32 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.19.0.15:53816) with ID 1,  ResourceProfileId 0
+[2025-11-30T01:02:32.712+0000] {subprocess.py:93} INFO - 25/11/30 01:02:32 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.19.0.16:40872) with ID 0,  ResourceProfileId 0
+[2025-11-30T01:02:32.768+0000] {subprocess.py:93} INFO - 25/11/30 01:02:32 INFO BlockManagerMasterEndpoint: Registering block manager 172.19.0.15:45425 with 366.3 MiB RAM, BlockManagerId(1, 172.19.0.15, 45425, None)
+[2025-11-30T01:02:32.775+0000] {subprocess.py:93} INFO - 25/11/30 01:02:32 INFO BlockManagerMasterEndpoint: Registering block manager 172.19.0.16:46845 with 366.3 MiB RAM, BlockManagerId(0, 172.19.0.16, 46845, None)
+[2025-11-30T01:02:32.923+0000] {subprocess.py:93} INFO - 25/11/30 01:02:32 ERROR TaskSchedulerImpl: Lost an executor 0 (already removed): Unable to create executor due to /tmp/spark_drivers/postgresql-42.7.7.jar
+[2025-11-30T01:02:32.924+0000] {subprocess.py:93} INFO - 25/11/30 01:02:32 ERROR TaskSchedulerImpl: Lost an executor 1 (already removed): Unable to create executor due to /tmp/spark_drivers/postgresql-42.7.7.jar
+[2025-11-30T01:02:32.939+0000] {subprocess.py:93} INFO - 25/11/30 01:02:32 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20251130010230-0002/0 is now EXITED (Command exited with code 1)
+[2025-11-30T01:02:32.940+0000] {subprocess.py:93} INFO - 25/11/30 01:02:32 INFO StandaloneSchedulerBackend: Executor app-20251130010230-0002/0 removed: Command exited with code 1
+[2025-11-30T01:02:32.940+0000] {subprocess.py:93} INFO - 25/11/30 01:02:32 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20251130010230-0002/2 on worker-20251130003745-172.19.0.16-40845 (172.19.0.16:40845) with 20 core(s)
+[2025-11-30T01:02:32.941+0000] {subprocess.py:93} INFO - 25/11/30 01:02:32 INFO BlockManagerMaster: Removal of executor 0 requested
+[2025-11-30T01:02:32.941+0000] {subprocess.py:93} INFO - 25/11/30 01:02:32 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Asked to remove non-existent executor 0
+[2025-11-30T01:02:32.942+0000] {subprocess.py:93} INFO - 25/11/30 01:02:32 INFO StandaloneSchedulerBackend: Granted executor ID app-20251130010230-0002/2 on hostPort 172.19.0.16:40845 with 20 core(s), 1024.0 MiB RAM
+[2025-11-30T01:02:32.945+0000] {subprocess.py:93} INFO - 25/11/30 01:02:32 INFO BlockManagerMasterEndpoint: Trying to remove executor 0 from BlockManagerMaster.
+[2025-11-30T01:02:32.946+0000] {subprocess.py:93} INFO - 25/11/30 01:02:32 INFO BlockManagerMasterEndpoint: Removing block manager BlockManagerId(0, 172.19.0.16, 46845, None)
+[2025-11-30T01:02:32.956+0000] {subprocess.py:93} INFO - 25/11/30 01:02:32 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20251130010230-0002/2 is now RUNNING
+[2025-11-30T01:02:32.980+0000] {subprocess.py:93} INFO - 25/11/30 01:02:32 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20251130010230-0002/1 is now EXITED (Command exited with code 1)
+[2025-11-30T01:02:32.980+0000] {subprocess.py:93} INFO - 25/11/30 01:02:32 INFO StandaloneSchedulerBackend: Executor app-20251130010230-0002/1 removed: Command exited with code 1
+[2025-11-30T01:02:32.981+0000] {subprocess.py:93} INFO - 25/11/30 01:02:32 INFO BlockManagerMasterEndpoint: Trying to remove executor 1 from BlockManagerMaster.
+[2025-11-30T01:02:32.981+0000] {subprocess.py:93} INFO - 25/11/30 01:02:32 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20251130010230-0002/3 on worker-20251130003745-172.19.0.15-44503 (172.19.0.15:44503) with 20 core(s)
+[2025-11-30T01:02:32.981+0000] {subprocess.py:93} INFO - 25/11/30 01:02:32 INFO BlockManagerMaster: Removal of executor 1 requested
+[2025-11-30T01:02:32.981+0000] {subprocess.py:93} INFO - 25/11/30 01:02:32 INFO BlockManagerMasterEndpoint: Removing block manager BlockManagerId(1, 172.19.0.15, 45425, None)
+[2025-11-30T01:02:32.981+0000] {subprocess.py:93} INFO - 25/11/30 01:02:32 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Asked to remove non-existent executor 1
+[2025-11-30T01:02:32.981+0000] {subprocess.py:93} INFO - 25/11/30 01:02:32 INFO StandaloneSchedulerBackend: Granted executor ID app-20251130010230-0002/3 on hostPort 172.19.0.15:44503 with 20 core(s), 1024.0 MiB RAM
+[2025-11-30T01:02:33.001+0000] {subprocess.py:93} INFO - 25/11/30 01:02:33 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20251130010230-0002/3 is now RUNNING
+[2025-11-30T01:02:34.550+0000] {subprocess.py:93} INFO - 25/11/30 01:02:34 INFO HiveConf: Found configuration file null
+[2025-11-30T01:02:34.562+0000] {subprocess.py:93} INFO - 25/11/30 01:02:34 INFO HiveUtils: Initializing HiveMetastoreConnection version 2.3.9 using Spark classes.
+[2025-11-30T01:02:34.811+0000] {subprocess.py:93} INFO - 25/11/30 01:02:34 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.19.0.16:40890) with ID 2,  ResourceProfileId 0
+[2025-11-30T01:02:34.869+0000] {subprocess.py:93} INFO - 25/11/30 01:02:34 INFO BlockManagerMasterEndpoint: Registering block manager 172.19.0.16:44571 with 366.3 MiB RAM, BlockManagerId(2, 172.19.0.16, 44571, None)
+[2025-11-30T01:02:34.911+0000] {subprocess.py:93} INFO - 25/11/30 01:02:34 ERROR TaskSchedulerImpl: Lost an executor 2 (already removed): Unable to create executor due to /tmp/spark_drivers/postgresql-42.7.7.jar
+[2025-11-30T01:02:34.949+0000] {subprocess.py:93} INFO - 25/11/30 01:02:34 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.19.0.15:53832) with ID 3,  ResourceProfileId 0
+[2025-11-30T01:02:34.973+0000] {subprocess.py:93} INFO - 25/11/30 01:02:34 INFO HiveClientImpl: Warehouse location for Hive client (version 2.3.9) is hdfs://namenode:9000/hive/warehouse
+[2025-11-30T01:02:35.003+0000] {subprocess.py:93} INFO - 25/11/30 01:02:35 INFO BlockManagerMasterEndpoint: Registering block manager 172.19.0.15:33755 with 366.3 MiB RAM, BlockManagerId(3, 172.19.0.15, 33755, None)
+[2025-11-30T01:02:35.035+0000] {subprocess.py:93} INFO - 25/11/30 01:02:35 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20251130010230-0002/2 is now EXITED (Command exited with code 1)
+[2025-11-30T01:02:35.035+0000] {subprocess.py:93} INFO - 25/11/30 01:02:35 INFO StandaloneSchedulerBackend: Executor app-20251130010230-0002/2 removed: Command exited with code 1
+[2025-11-30T01:02:35.035+0000] {subprocess.py:93} INFO - 25/11/30 01:02:35 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20251130010230-0002/4 on worker-20251130003745-172.19.0.16-40845 (172.19.0.16:40845) with 20 core(s)
+[2025-11-30T01:02:35.035+0000] {subprocess.py:93} INFO - 25/11/30 01:02:35 INFO BlockManagerMasterEndpoint: Trying to remove executor 2 from BlockManagerMaster.
+[2025-11-30T01:02:35.036+0000] {subprocess.py:93} INFO - 25/11/30 01:02:35 INFO BlockManagerMaster: Removal of executor 2 requested
+[2025-11-30T01:02:35.036+0000] {subprocess.py:93} INFO - 25/11/30 01:02:35 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Asked to remove non-existent executor 2
+[2025-11-30T01:02:35.036+0000] {subprocess.py:93} INFO - 25/11/30 01:02:35 INFO BlockManagerMasterEndpoint: Removing block manager BlockManagerId(2, 172.19.0.16, 44571, None)
+[2025-11-30T01:02:35.036+0000] {subprocess.py:93} INFO - 25/11/30 01:02:35 INFO StandaloneSchedulerBackend: Granted executor ID app-20251130010230-0002/4 on hostPort 172.19.0.16:40845 with 20 core(s), 1024.0 MiB RAM
+[2025-11-30T01:02:35.047+0000] {subprocess.py:93} INFO - 25/11/30 01:02:35 ERROR TaskSchedulerImpl: Lost an executor 3 (already removed): Unable to create executor due to /tmp/spark_drivers/postgresql-42.7.7.jar
+[2025-11-30T01:02:35.051+0000] {subprocess.py:93} INFO - 25/11/30 01:02:35 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20251130010230-0002/4 is now RUNNING
+[2025-11-30T01:02:35.121+0000] {subprocess.py:93} INFO - 25/11/30 01:02:35 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20251130010230-0002/3 is now EXITED (Command exited with code 1)
+[2025-11-30T01:02:35.121+0000] {subprocess.py:93} INFO - 25/11/30 01:02:35 INFO StandaloneSchedulerBackend: Executor app-20251130010230-0002/3 removed: Command exited with code 1
+[2025-11-30T01:02:35.121+0000] {subprocess.py:93} INFO - 25/11/30 01:02:35 INFO BlockManagerMasterEndpoint: Trying to remove executor 3 from BlockManagerMaster.
+[2025-11-30T01:02:35.122+0000] {subprocess.py:93} INFO - 25/11/30 01:02:35 INFO BlockManagerMaster: Removal of executor 3 requested
+[2025-11-30T01:02:35.122+0000] {subprocess.py:93} INFO - 25/11/30 01:02:35 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Asked to remove non-existent executor 3
+[2025-11-30T01:02:35.122+0000] {subprocess.py:93} INFO - 25/11/30 01:02:35 INFO BlockManagerMasterEndpoint: Removing block manager BlockManagerId(3, 172.19.0.15, 33755, None)
+[2025-11-30T01:02:35.122+0000] {subprocess.py:93} INFO - 25/11/30 01:02:35 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20251130010230-0002/5 on worker-20251130003745-172.19.0.15-44503 (172.19.0.15:44503) with 20 core(s)
+[2025-11-30T01:02:35.122+0000] {subprocess.py:93} INFO - 25/11/30 01:02:35 INFO StandaloneSchedulerBackend: Granted executor ID app-20251130010230-0002/5 on hostPort 172.19.0.15:44503 with 20 core(s), 1024.0 MiB RAM
+[2025-11-30T01:02:35.137+0000] {subprocess.py:93} INFO - 25/11/30 01:02:35 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20251130010230-0002/5 is now RUNNING
+[2025-11-30T01:02:35.250+0000] {subprocess.py:93} INFO - 
+[2025-11-30T01:02:35.250+0000] {subprocess.py:93} INFO - --- Reading from PG table: gold_dim_airport ---
+[2025-11-30T01:02:35.332+0000] {subprocess.py:93} INFO - Error processing table gold_dim_airport: An error occurred while calling o48.load.
+[2025-11-30T01:02:35.332+0000] {subprocess.py:93} INFO - : java.lang.ClassNotFoundException: org.postgresql.Driver
+[2025-11-30T01:02:35.332+0000] {subprocess.py:93} INFO - 	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+[2025-11-30T01:02:35.332+0000] {subprocess.py:93} INFO - 	at java.lang.ClassLoader.loadClass(ClassLoader.java:419)
+[2025-11-30T01:02:35.332+0000] {subprocess.py:93} INFO - 	at java.lang.ClassLoader.loadClass(ClassLoader.java:352)
+[2025-11-30T01:02:35.332+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.DriverRegistry$.register(DriverRegistry.scala:46)
+[2025-11-30T01:02:35.333+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JDBCOptions.$anonfun$driverClass$1(JDBCOptions.scala:101)
+[2025-11-30T01:02:35.333+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JDBCOptions.$anonfun$driverClass$1$adapted(JDBCOptions.scala:101)
+[2025-11-30T01:02:35.333+0000] {subprocess.py:93} INFO - 	at scala.Option.foreach(Option.scala:407)
+[2025-11-30T01:02:35.333+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JDBCOptions.<init>(JDBCOptions.scala:101)
+[2025-11-30T01:02:35.333+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JDBCOptions.<init>(JDBCOptions.scala:39)
+[2025-11-30T01:02:35.333+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JdbcRelationProvider.createRelation(JdbcRelationProvider.scala:34)
+[2025-11-30T01:02:35.333+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.DataSource.resolveRelation(DataSource.scala:350)
+[2025-11-30T01:02:35.333+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.loadV1Source(DataFrameReader.scala:228)
+[2025-11-30T01:02:35.333+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.$anonfun$load$2(DataFrameReader.scala:210)
+[2025-11-30T01:02:35.334+0000] {subprocess.py:93} INFO - 	at scala.Option.getOrElse(Option.scala:189)
+[2025-11-30T01:02:35.334+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:210)
+[2025-11-30T01:02:35.334+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:171)
+[2025-11-30T01:02:35.334+0000] {subprocess.py:93} INFO - 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[2025-11-30T01:02:35.334+0000] {subprocess.py:93} INFO - 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[2025-11-30T01:02:35.334+0000] {subprocess.py:93} INFO - 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[2025-11-30T01:02:35.334+0000] {subprocess.py:93} INFO - 	at java.lang.reflect.Method.invoke(Method.java:498)
+[2025-11-30T01:02:35.334+0000] {subprocess.py:93} INFO - 	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+[2025-11-30T01:02:35.334+0000] {subprocess.py:93} INFO - 	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+[2025-11-30T01:02:35.334+0000] {subprocess.py:93} INFO - 	at py4j.Gateway.invoke(Gateway.java:282)
+[2025-11-30T01:02:35.335+0000] {subprocess.py:93} INFO - 	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+[2025-11-30T01:02:35.335+0000] {subprocess.py:93} INFO - 	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+[2025-11-30T01:02:35.335+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2025-11-30T01:02:35.335+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2025-11-30T01:02:35.335+0000] {subprocess.py:93} INFO - 	at java.lang.Thread.run(Thread.java:748)
+[2025-11-30T01:02:35.335+0000] {subprocess.py:93} INFO - 
+[2025-11-30T01:02:35.335+0000] {subprocess.py:93} INFO - 
+[2025-11-30T01:02:35.335+0000] {subprocess.py:93} INFO - --- Reading from PG table: gold_dim_date ---
+[2025-11-30T01:02:35.343+0000] {subprocess.py:93} INFO - Error processing table gold_dim_date: An error occurred while calling o56.load.
+[2025-11-30T01:02:35.344+0000] {subprocess.py:93} INFO - : java.lang.ClassNotFoundException: org.postgresql.Driver
+[2025-11-30T01:02:35.344+0000] {subprocess.py:93} INFO - 	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+[2025-11-30T01:02:35.344+0000] {subprocess.py:93} INFO - 	at java.lang.ClassLoader.loadClass(ClassLoader.java:419)
+[2025-11-30T01:02:35.344+0000] {subprocess.py:93} INFO - 	at java.lang.ClassLoader.loadClass(ClassLoader.java:352)
+[2025-11-30T01:02:35.344+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.DriverRegistry$.register(DriverRegistry.scala:46)
+[2025-11-30T01:02:35.344+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JDBCOptions.$anonfun$driverClass$1(JDBCOptions.scala:101)
+[2025-11-30T01:02:35.344+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JDBCOptions.$anonfun$driverClass$1$adapted(JDBCOptions.scala:101)
+[2025-11-30T01:02:35.344+0000] {subprocess.py:93} INFO - 	at scala.Option.foreach(Option.scala:407)
+[2025-11-30T01:02:35.344+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JDBCOptions.<init>(JDBCOptions.scala:101)
+[2025-11-30T01:02:35.344+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JDBCOptions.<init>(JDBCOptions.scala:39)
+[2025-11-30T01:02:35.344+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JdbcRelationProvider.createRelation(JdbcRelationProvider.scala:34)
+[2025-11-30T01:02:35.344+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.DataSource.resolveRelation(DataSource.scala:350)
+[2025-11-30T01:02:35.345+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.loadV1Source(DataFrameReader.scala:228)
+[2025-11-30T01:02:35.345+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.$anonfun$load$2(DataFrameReader.scala:210)
+[2025-11-30T01:02:35.345+0000] {subprocess.py:93} INFO - 	at scala.Option.getOrElse(Option.scala:189)
+[2025-11-30T01:02:35.345+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:210)
+[2025-11-30T01:02:35.345+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:171)
+[2025-11-30T01:02:35.345+0000] {subprocess.py:93} INFO - 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[2025-11-30T01:02:35.345+0000] {subprocess.py:93} INFO - 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[2025-11-30T01:02:35.345+0000] {subprocess.py:93} INFO - 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[2025-11-30T01:02:35.345+0000] {subprocess.py:93} INFO - 	at java.lang.reflect.Method.invoke(Method.java:498)
+[2025-11-30T01:02:35.345+0000] {subprocess.py:93} INFO - 	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+[2025-11-30T01:02:35.345+0000] {subprocess.py:93} INFO - 	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+[2025-11-30T01:02:35.345+0000] {subprocess.py:93} INFO - 	at py4j.Gateway.invoke(Gateway.java:282)
+[2025-11-30T01:02:35.345+0000] {subprocess.py:93} INFO - 	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+[2025-11-30T01:02:35.345+0000] {subprocess.py:93} INFO - 	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+[2025-11-30T01:02:35.345+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2025-11-30T01:02:35.345+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2025-11-30T01:02:35.345+0000] {subprocess.py:93} INFO - 	at java.lang.Thread.run(Thread.java:748)
+[2025-11-30T01:02:35.345+0000] {subprocess.py:93} INFO - 
+[2025-11-30T01:02:35.345+0000] {subprocess.py:93} INFO - 
+[2025-11-30T01:02:35.345+0000] {subprocess.py:93} INFO - --- Reading from PG table: gold_dim_flight ---
+[2025-11-30T01:02:35.361+0000] {subprocess.py:93} INFO - Error processing table gold_dim_flight: An error occurred while calling o64.load.
+[2025-11-30T01:02:35.361+0000] {subprocess.py:93} INFO - : java.lang.ClassNotFoundException: org.postgresql.Driver
+[2025-11-30T01:02:35.361+0000] {subprocess.py:93} INFO - 	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+[2025-11-30T01:02:35.361+0000] {subprocess.py:93} INFO - 	at java.lang.ClassLoader.loadClass(ClassLoader.java:419)
+[2025-11-30T01:02:35.361+0000] {subprocess.py:93} INFO - 	at java.lang.ClassLoader.loadClass(ClassLoader.java:352)
+[2025-11-30T01:02:35.361+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.DriverRegistry$.register(DriverRegistry.scala:46)
+[2025-11-30T01:02:35.362+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JDBCOptions.$anonfun$driverClass$1(JDBCOptions.scala:101)
+[2025-11-30T01:02:35.362+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JDBCOptions.$anonfun$driverClass$1$adapted(JDBCOptions.scala:101)
+[2025-11-30T01:02:35.362+0000] {subprocess.py:93} INFO - 	at scala.Option.foreach(Option.scala:407)
+[2025-11-30T01:02:35.362+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JDBCOptions.<init>(JDBCOptions.scala:101)
+[2025-11-30T01:02:35.362+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JDBCOptions.<init>(JDBCOptions.scala:39)
+[2025-11-30T01:02:35.362+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JdbcRelationProvider.createRelation(JdbcRelationProvider.scala:34)
+[2025-11-30T01:02:35.362+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.DataSource.resolveRelation(DataSource.scala:350)
+[2025-11-30T01:02:35.362+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.loadV1Source(DataFrameReader.scala:228)
+[2025-11-30T01:02:35.363+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.$anonfun$load$2(DataFrameReader.scala:210)
+[2025-11-30T01:02:35.363+0000] {subprocess.py:93} INFO - 	at scala.Option.getOrElse(Option.scala:189)
+[2025-11-30T01:02:35.363+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:210)
+[2025-11-30T01:02:35.363+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:171)
+[2025-11-30T01:02:35.363+0000] {subprocess.py:93} INFO - 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[2025-11-30T01:02:35.363+0000] {subprocess.py:93} INFO - 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[2025-11-30T01:02:35.363+0000] {subprocess.py:93} INFO - 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[2025-11-30T01:02:35.363+0000] {subprocess.py:93} INFO - 	at java.lang.reflect.Method.invoke(Method.java:498)
+[2025-11-30T01:02:35.363+0000] {subprocess.py:93} INFO - 	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+[2025-11-30T01:02:35.363+0000] {subprocess.py:93} INFO - 	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+[2025-11-30T01:02:35.364+0000] {subprocess.py:93} INFO - 	at py4j.Gateway.invoke(Gateway.java:282)
+[2025-11-30T01:02:35.364+0000] {subprocess.py:93} INFO - 	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+[2025-11-30T01:02:35.364+0000] {subprocess.py:93} INFO - 	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+[2025-11-30T01:02:35.364+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2025-11-30T01:02:35.364+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2025-11-30T01:02:35.364+0000] {subprocess.py:93} INFO - 	at java.lang.Thread.run(Thread.java:748)
+[2025-11-30T01:02:35.364+0000] {subprocess.py:93} INFO - 
+[2025-11-30T01:02:35.364+0000] {subprocess.py:93} INFO - 
+[2025-11-30T01:02:35.364+0000] {subprocess.py:93} INFO - --- Reading from PG table: gold_dim_passenger ---
+[2025-11-30T01:02:35.379+0000] {subprocess.py:93} INFO - Error processing table gold_dim_passenger: An error occurred while calling o72.load.
+[2025-11-30T01:02:35.379+0000] {subprocess.py:93} INFO - : java.lang.ClassNotFoundException: org.postgresql.Driver
+[2025-11-30T01:02:35.380+0000] {subprocess.py:93} INFO - 	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+[2025-11-30T01:02:35.380+0000] {subprocess.py:93} INFO - 	at java.lang.ClassLoader.loadClass(ClassLoader.java:419)
+[2025-11-30T01:02:35.380+0000] {subprocess.py:93} INFO - 	at java.lang.ClassLoader.loadClass(ClassLoader.java:352)
+[2025-11-30T01:02:35.380+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.DriverRegistry$.register(DriverRegistry.scala:46)
+[2025-11-30T01:02:35.380+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JDBCOptions.$anonfun$driverClass$1(JDBCOptions.scala:101)
+[2025-11-30T01:02:35.380+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JDBCOptions.$anonfun$driverClass$1$adapted(JDBCOptions.scala:101)
+[2025-11-30T01:02:35.380+0000] {subprocess.py:93} INFO - 	at scala.Option.foreach(Option.scala:407)
+[2025-11-30T01:02:35.380+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JDBCOptions.<init>(JDBCOptions.scala:101)
+[2025-11-30T01:02:35.380+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JDBCOptions.<init>(JDBCOptions.scala:39)
+[2025-11-30T01:02:35.381+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JdbcRelationProvider.createRelation(JdbcRelationProvider.scala:34)
+[2025-11-30T01:02:35.381+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.DataSource.resolveRelation(DataSource.scala:350)
+[2025-11-30T01:02:35.381+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.loadV1Source(DataFrameReader.scala:228)
+[2025-11-30T01:02:35.381+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.$anonfun$load$2(DataFrameReader.scala:210)
+[2025-11-30T01:02:35.381+0000] {subprocess.py:93} INFO - 	at scala.Option.getOrElse(Option.scala:189)
+[2025-11-30T01:02:35.381+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:210)
+[2025-11-30T01:02:35.381+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:171)
+[2025-11-30T01:02:35.381+0000] {subprocess.py:93} INFO - 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[2025-11-30T01:02:35.381+0000] {subprocess.py:93} INFO - 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[2025-11-30T01:02:35.381+0000] {subprocess.py:93} INFO - 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[2025-11-30T01:02:35.382+0000] {subprocess.py:93} INFO - 	at java.lang.reflect.Method.invoke(Method.java:498)
+[2025-11-30T01:02:35.382+0000] {subprocess.py:93} INFO - 	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+[2025-11-30T01:02:35.382+0000] {subprocess.py:93} INFO - 	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+[2025-11-30T01:02:35.382+0000] {subprocess.py:93} INFO - 	at py4j.Gateway.invoke(Gateway.java:282)
+[2025-11-30T01:02:35.382+0000] {subprocess.py:93} INFO - 	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+[2025-11-30T01:02:35.382+0000] {subprocess.py:93} INFO - 	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+[2025-11-30T01:02:35.382+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2025-11-30T01:02:35.382+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2025-11-30T01:02:35.382+0000] {subprocess.py:93} INFO - 	at java.lang.Thread.run(Thread.java:748)
+[2025-11-30T01:02:35.383+0000] {subprocess.py:93} INFO - 
+[2025-11-30T01:02:35.383+0000] {subprocess.py:93} INFO - 
+[2025-11-30T01:02:35.383+0000] {subprocess.py:93} INFO - --- Reading from PG table: gold_dim_ticket ---
+[2025-11-30T01:02:35.398+0000] {subprocess.py:93} INFO - Error processing table gold_dim_ticket: An error occurred while calling o80.load.
+[2025-11-30T01:02:35.398+0000] {subprocess.py:93} INFO - : java.lang.ClassNotFoundException: org.postgresql.Driver
+[2025-11-30T01:02:35.398+0000] {subprocess.py:93} INFO - 	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+[2025-11-30T01:02:35.398+0000] {subprocess.py:93} INFO - 	at java.lang.ClassLoader.loadClass(ClassLoader.java:419)
+[2025-11-30T01:02:35.398+0000] {subprocess.py:93} INFO - 	at java.lang.ClassLoader.loadClass(ClassLoader.java:352)
+[2025-11-30T01:02:35.398+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.DriverRegistry$.register(DriverRegistry.scala:46)
+[2025-11-30T01:02:35.399+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JDBCOptions.$anonfun$driverClass$1(JDBCOptions.scala:101)
+[2025-11-30T01:02:35.399+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JDBCOptions.$anonfun$driverClass$1$adapted(JDBCOptions.scala:101)
+[2025-11-30T01:02:35.399+0000] {subprocess.py:93} INFO - 	at scala.Option.foreach(Option.scala:407)
+[2025-11-30T01:02:35.399+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JDBCOptions.<init>(JDBCOptions.scala:101)
+[2025-11-30T01:02:35.399+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JDBCOptions.<init>(JDBCOptions.scala:39)
+[2025-11-30T01:02:35.399+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JdbcRelationProvider.createRelation(JdbcRelationProvider.scala:34)
+[2025-11-30T01:02:35.399+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.DataSource.resolveRelation(DataSource.scala:350)
+[2025-11-30T01:02:35.399+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.loadV1Source(DataFrameReader.scala:228)
+[2025-11-30T01:02:35.399+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.$anonfun$load$2(DataFrameReader.scala:210)
+[2025-11-30T01:02:35.399+0000] {subprocess.py:93} INFO - 	at scala.Option.getOrElse(Option.scala:189)
+[2025-11-30T01:02:35.399+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:210)
+[2025-11-30T01:02:35.399+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:171)
+[2025-11-30T01:02:35.399+0000] {subprocess.py:93} INFO - 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[2025-11-30T01:02:35.399+0000] {subprocess.py:93} INFO - 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[2025-11-30T01:02:35.400+0000] {subprocess.py:93} INFO - 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[2025-11-30T01:02:35.400+0000] {subprocess.py:93} INFO - 	at java.lang.reflect.Method.invoke(Method.java:498)
+[2025-11-30T01:02:35.400+0000] {subprocess.py:93} INFO - 	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+[2025-11-30T01:02:35.400+0000] {subprocess.py:93} INFO - 	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+[2025-11-30T01:02:35.400+0000] {subprocess.py:93} INFO - 	at py4j.Gateway.invoke(Gateway.java:282)
+[2025-11-30T01:02:35.400+0000] {subprocess.py:93} INFO - 	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+[2025-11-30T01:02:35.400+0000] {subprocess.py:93} INFO - 	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+[2025-11-30T01:02:35.400+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2025-11-30T01:02:35.400+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2025-11-30T01:02:35.400+0000] {subprocess.py:93} INFO - 	at java.lang.Thread.run(Thread.java:748)
+[2025-11-30T01:02:35.400+0000] {subprocess.py:93} INFO - 
+[2025-11-30T01:02:35.400+0000] {subprocess.py:93} INFO - 
+[2025-11-30T01:02:35.400+0000] {subprocess.py:93} INFO - --- Reading from PG table: gold_dim_weather ---
+[2025-11-30T01:02:35.414+0000] {subprocess.py:93} INFO - Error processing table gold_dim_weather: An error occurred while calling o88.load.
+[2025-11-30T01:02:35.415+0000] {subprocess.py:93} INFO - : java.lang.ClassNotFoundException: org.postgresql.Driver
+[2025-11-30T01:02:35.415+0000] {subprocess.py:93} INFO - 	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+[2025-11-30T01:02:35.415+0000] {subprocess.py:93} INFO - 	at java.lang.ClassLoader.loadClass(ClassLoader.java:419)
+[2025-11-30T01:02:35.415+0000] {subprocess.py:93} INFO - 	at java.lang.ClassLoader.loadClass(ClassLoader.java:352)
+[2025-11-30T01:02:35.415+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.DriverRegistry$.register(DriverRegistry.scala:46)
+[2025-11-30T01:02:35.415+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JDBCOptions.$anonfun$driverClass$1(JDBCOptions.scala:101)
+[2025-11-30T01:02:35.415+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JDBCOptions.$anonfun$driverClass$1$adapted(JDBCOptions.scala:101)
+[2025-11-30T01:02:35.415+0000] {subprocess.py:93} INFO - 	at scala.Option.foreach(Option.scala:407)
+[2025-11-30T01:02:35.416+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JDBCOptions.<init>(JDBCOptions.scala:101)
+[2025-11-30T01:02:35.416+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JDBCOptions.<init>(JDBCOptions.scala:39)
+[2025-11-30T01:02:35.416+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JdbcRelationProvider.createRelation(JdbcRelationProvider.scala:34)
+[2025-11-30T01:02:35.416+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.DataSource.resolveRelation(DataSource.scala:350)
+[2025-11-30T01:02:35.416+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.loadV1Source(DataFrameReader.scala:228)
+[2025-11-30T01:02:35.416+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.$anonfun$load$2(DataFrameReader.scala:210)
+[2025-11-30T01:02:35.416+0000] {subprocess.py:93} INFO - 	at scala.Option.getOrElse(Option.scala:189)
+[2025-11-30T01:02:35.416+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:210)
+[2025-11-30T01:02:35.416+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:171)
+[2025-11-30T01:02:35.417+0000] {subprocess.py:93} INFO - 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[2025-11-30T01:02:35.417+0000] {subprocess.py:93} INFO - 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[2025-11-30T01:02:35.417+0000] {subprocess.py:93} INFO - 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[2025-11-30T01:02:35.417+0000] {subprocess.py:93} INFO - 	at java.lang.reflect.Method.invoke(Method.java:498)
+[2025-11-30T01:02:35.417+0000] {subprocess.py:93} INFO - 	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+[2025-11-30T01:02:35.417+0000] {subprocess.py:93} INFO - 	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+[2025-11-30T01:02:35.417+0000] {subprocess.py:93} INFO - 	at py4j.Gateway.invoke(Gateway.java:282)
+[2025-11-30T01:02:35.417+0000] {subprocess.py:93} INFO - 	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+[2025-11-30T01:02:35.417+0000] {subprocess.py:93} INFO - 	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+[2025-11-30T01:02:35.417+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2025-11-30T01:02:35.418+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2025-11-30T01:02:35.418+0000] {subprocess.py:93} INFO - 	at java.lang.Thread.run(Thread.java:748)
+[2025-11-30T01:02:35.418+0000] {subprocess.py:93} INFO - 
+[2025-11-30T01:02:35.418+0000] {subprocess.py:93} INFO - 
+[2025-11-30T01:02:35.418+0000] {subprocess.py:93} INFO - --- Reading from PG table: gold_fact_booking ---
+[2025-11-30T01:02:35.434+0000] {subprocess.py:93} INFO - Error processing table gold_fact_booking: An error occurred while calling o96.load.
+[2025-11-30T01:02:35.434+0000] {subprocess.py:93} INFO - : java.lang.ClassNotFoundException: org.postgresql.Driver
+[2025-11-30T01:02:35.434+0000] {subprocess.py:93} INFO - 	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+[2025-11-30T01:02:35.434+0000] {subprocess.py:93} INFO - 	at java.lang.ClassLoader.loadClass(ClassLoader.java:419)
+[2025-11-30T01:02:35.435+0000] {subprocess.py:93} INFO - 	at java.lang.ClassLoader.loadClass(ClassLoader.java:352)
+[2025-11-30T01:02:35.435+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.DriverRegistry$.register(DriverRegistry.scala:46)
+[2025-11-30T01:02:35.435+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JDBCOptions.$anonfun$driverClass$1(JDBCOptions.scala:101)
+[2025-11-30T01:02:35.435+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JDBCOptions.$anonfun$driverClass$1$adapted(JDBCOptions.scala:101)
+[2025-11-30T01:02:35.435+0000] {subprocess.py:93} INFO - 	at scala.Option.foreach(Option.scala:407)
+[2025-11-30T01:02:35.435+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JDBCOptions.<init>(JDBCOptions.scala:101)
+[2025-11-30T01:02:35.435+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JDBCOptions.<init>(JDBCOptions.scala:39)
+[2025-11-30T01:02:35.435+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JdbcRelationProvider.createRelation(JdbcRelationProvider.scala:34)
+[2025-11-30T01:02:35.435+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.DataSource.resolveRelation(DataSource.scala:350)
+[2025-11-30T01:02:35.435+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.loadV1Source(DataFrameReader.scala:228)
+[2025-11-30T01:02:35.436+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.$anonfun$load$2(DataFrameReader.scala:210)
+[2025-11-30T01:02:35.436+0000] {subprocess.py:93} INFO - 	at scala.Option.getOrElse(Option.scala:189)
+[2025-11-30T01:02:35.436+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:210)
+[2025-11-30T01:02:35.436+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:171)
+[2025-11-30T01:02:35.436+0000] {subprocess.py:93} INFO - 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[2025-11-30T01:02:35.436+0000] {subprocess.py:93} INFO - 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[2025-11-30T01:02:35.436+0000] {subprocess.py:93} INFO - 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[2025-11-30T01:02:35.436+0000] {subprocess.py:93} INFO - 	at java.lang.reflect.Method.invoke(Method.java:498)
+[2025-11-30T01:02:35.436+0000] {subprocess.py:93} INFO - 	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+[2025-11-30T01:02:35.436+0000] {subprocess.py:93} INFO - 	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+[2025-11-30T01:02:35.437+0000] {subprocess.py:93} INFO - 	at py4j.Gateway.invoke(Gateway.java:282)
+[2025-11-30T01:02:35.437+0000] {subprocess.py:93} INFO - 	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+[2025-11-30T01:02:35.437+0000] {subprocess.py:93} INFO - 	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+[2025-11-30T01:02:35.437+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2025-11-30T01:02:35.437+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2025-11-30T01:02:35.437+0000] {subprocess.py:93} INFO - 	at java.lang.Thread.run(Thread.java:748)
+[2025-11-30T01:02:35.437+0000] {subprocess.py:93} INFO - 
+[2025-11-30T01:02:35.437+0000] {subprocess.py:93} INFO - 
+[2025-11-30T01:02:35.437+0000] {subprocess.py:93} INFO - SHOWING TABLES in Hive:
+[2025-11-30T01:02:36.115+0000] {subprocess.py:93} INFO - 25/11/30 01:02:36 INFO CodeGenerator: Code generated in 172.48605 ms
+[2025-11-30T01:02:36.164+0000] {subprocess.py:93} INFO - +---------+---------+-----------+
+[2025-11-30T01:02:36.165+0000] {subprocess.py:93} INFO - |namespace|tableName|isTemporary|
+[2025-11-30T01:02:36.165+0000] {subprocess.py:93} INFO - +---------+---------+-----------+
+[2025-11-30T01:02:36.165+0000] {subprocess.py:93} INFO - +---------+---------+-----------+
+[2025-11-30T01:02:36.165+0000] {subprocess.py:93} INFO - 
+[2025-11-30T01:02:36.217+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-11-30T01:02:36.217+0000] {subprocess.py:93} INFO -   File "/tmp/spark_drivers/batch.py", line 64, in <module>
+[2025-11-30T01:02:36.217+0000] {subprocess.py:93} INFO -     spark.sql("SELECT * FROM dim_flight").show()
+[2025-11-30T01:02:36.218+0000] {subprocess.py:93} INFO -   File "/spark/python/lib/pyspark.zip/pyspark/sql/session.py", line 1034, in sql
+[2025-11-30T01:02:36.218+0000] {subprocess.py:93} INFO -   File "/spark/python/lib/py4j-0.10.9.5-src.zip/py4j/java_gateway.py", line 1322, in __call__
+[2025-11-30T01:02:36.218+0000] {subprocess.py:93} INFO -   File "/spark/python/lib/pyspark.zip/pyspark/sql/utils.py", line 196, in deco
+[2025-11-30T01:02:36.221+0000] {subprocess.py:93} INFO - pyspark.sql.utils.AnalysisException: Table or view not found: dim_flight; line 1 pos 14;
+[2025-11-30T01:02:36.221+0000] {subprocess.py:93} INFO - 'Project [*]
+[2025-11-30T01:02:36.222+0000] {subprocess.py:93} INFO - +- 'UnresolvedRelation [dim_flight], [], false
+[2025-11-30T01:02:36.222+0000] {subprocess.py:93} INFO - 
+[2025-11-30T01:02:36.243+0000] {subprocess.py:93} INFO - 25/11/30 01:02:36 INFO SparkContext: Invoking stop() from shutdown hook
+[2025-11-30T01:02:36.255+0000] {subprocess.py:93} INFO - 25/11/30 01:02:36 INFO SparkUI: Stopped Spark web UI at http://3e067e6dd517:4040
+[2025-11-30T01:02:36.258+0000] {subprocess.py:93} INFO - 25/11/30 01:02:36 INFO StandaloneSchedulerBackend: Shutting down all executors
+[2025-11-30T01:02:36.258+0000] {subprocess.py:93} INFO - 25/11/30 01:02:36 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Asking each executor to shut down
+[2025-11-30T01:02:36.274+0000] {subprocess.py:93} INFO - 25/11/30 01:02:36 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2025-11-30T01:02:36.286+0000] {subprocess.py:93} INFO - 25/11/30 01:02:36 INFO MemoryStore: MemoryStore cleared
+[2025-11-30T01:02:36.286+0000] {subprocess.py:93} INFO - 25/11/30 01:02:36 INFO BlockManager: BlockManager stopped
+[2025-11-30T01:02:36.289+0000] {subprocess.py:93} INFO - 25/11/30 01:02:36 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2025-11-30T01:02:36.292+0000] {subprocess.py:93} INFO - 25/11/30 01:02:36 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2025-11-30T01:02:36.297+0000] {subprocess.py:93} INFO - 25/11/30 01:02:36 INFO SparkContext: Successfully stopped SparkContext
+[2025-11-30T01:02:36.297+0000] {subprocess.py:93} INFO - 25/11/30 01:02:36 INFO ShutdownHookManager: Shutdown hook called
+[2025-11-30T01:02:36.298+0000] {subprocess.py:93} INFO - 25/11/30 01:02:36 INFO ShutdownHookManager: Deleting directory /tmp/spark-057ba921-c1b6-4e87-b4a3-219303535804
+[2025-11-30T01:02:36.300+0000] {subprocess.py:93} INFO - 25/11/30 01:02:36 INFO ShutdownHookManager: Deleting directory /tmp/spark-16d2258e-b706-464c-80fb-bde36a121aae
+[2025-11-30T01:02:36.302+0000] {subprocess.py:93} INFO - 25/11/30 01:02:36 INFO ShutdownHookManager: Deleting directory /tmp/spark-16d2258e-b706-464c-80fb-bde36a121aae/pyspark-63adbd71-ed81-4b5c-9e20-34e5b0a241e6
+[2025-11-30T01:02:36.380+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-11-30T01:02:36.389+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-11-30T01:02:36.392+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=flight_etl, task_id=spark_batch_processor, execution_date=20251130T010041, start_date=20251130T010226, end_date=20251130T010236
+[2025-11-30T01:02:36.402+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 468 for task spark_batch_processor (Bash command failed. The command returned a non-zero exit code 1.; 1882)
+[2025-11-30T01:02:36.427+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-11-30T01:02:36.438+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

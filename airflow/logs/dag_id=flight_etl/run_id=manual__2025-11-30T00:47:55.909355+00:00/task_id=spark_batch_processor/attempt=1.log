@@ -1,0 +1,24 @@
+[2025-11-30T00:49:24.201+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_etl.spark_batch_processor manual__2025-11-30T00:47:55.909355+00:00 [queued]>
+[2025-11-30T00:49:24.207+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_etl.spark_batch_processor manual__2025-11-30T00:47:55.909355+00:00 [queued]>
+[2025-11-30T00:49:24.207+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2025-11-30T00:49:24.217+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): spark_batch_processor> on 2025-11-30 00:47:55.909355+00:00
+[2025-11-30T00:49:24.221+0000] {standard_task_runner.py:57} INFO - Started process 794 to run task
+[2025-11-30T00:49:24.224+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'flight_etl', 'spark_batch_processor', 'manual__2025-11-30T00:47:55.909355+00:00', '--job-id', '418', '--raw', '--subdir', 'DAGS_FOLDER/etl-dag.py', '--cfg-path', '/tmp/tmparc74nme']
+[2025-11-30T00:49:24.227+0000] {standard_task_runner.py:85} INFO - Job 418: Subtask spark_batch_processor
+[2025-11-30T00:49:24.273+0000] {task_command.py:416} INFO - Running <TaskInstance: flight_etl.spark_batch_processor manual__2025-11-30T00:47:55.909355+00:00 [running]> on host 45304bb2c878
+[2025-11-30T00:49:24.342+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='flight_etl' AIRFLOW_CTX_TASK_ID='spark_batch_processor' AIRFLOW_CTX_EXECUTION_DATE='2025-11-30T00:47:55.909355+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-30T00:47:55.909355+00:00'
+[2025-11-30T00:49:24.343+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-30T00:49:24.344+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', '\n        docker exec spark-master /spark/bin/spark-submit \\\n            --master spark://spark-master:7077 \\\n            --jars /tmp/spark_drivers/postgresql-42.7.7.jar \\\n            --conf spark.pyspark.python=/usr/bin/python3 \\  <-- ENSURE ONLY ONE BACKSLASH\n            /tmp/spark_drivers/batch.py \n    ']
+[2025-11-30T00:49:24.353+0000] {subprocess.py:86} INFO - Output:
+[2025-11-30T00:49:24.354+0000] {subprocess.py:93} INFO - /bin/bash: line 2: --: No such file or directory
+[2025-11-30T00:49:24.355+0000] {subprocess.py:93} INFO - /bin/bash: line 6: /tmp/spark_drivers/batch.py: No such file or directory
+[2025-11-30T00:49:24.355+0000] {subprocess.py:97} INFO - Command exited with return code 127
+[2025-11-30T00:49:24.370+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 127.
+[2025-11-30T00:49:24.375+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=flight_etl, task_id=spark_batch_processor, execution_date=20251130T004755, start_date=20251130T004924, end_date=20251130T004924
+[2025-11-30T00:49:24.390+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 418 for task spark_batch_processor (Bash command failed. The command returned a non-zero exit code 127.; 794)
+[2025-11-30T00:49:24.435+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-11-30T00:49:24.449+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

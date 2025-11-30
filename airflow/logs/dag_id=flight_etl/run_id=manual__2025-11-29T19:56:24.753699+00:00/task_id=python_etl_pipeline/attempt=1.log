@@ -1,0 +1,38 @@
+[2025-11-29T19:56:27.961+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_etl.python_etl_pipeline manual__2025-11-29T19:56:24.753699+00:00 [queued]>
+[2025-11-29T19:56:27.969+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_etl.python_etl_pipeline manual__2025-11-29T19:56:24.753699+00:00 [queued]>
+[2025-11-29T19:56:27.969+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2025-11-29T19:56:27.979+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): python_etl_pipeline> on 2025-11-29 19:56:24.753699+00:00
+[2025-11-29T19:56:27.986+0000] {standard_task_runner.py:57} INFO - Started process 123 to run task
+[2025-11-29T19:56:27.990+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'flight_etl', 'python_etl_pipeline', 'manual__2025-11-29T19:56:24.753699+00:00', '--job-id', '170', '--raw', '--subdir', 'DAGS_FOLDER/etl-dag.py', '--cfg-path', '/tmp/tmpkm_3fp02']
+[2025-11-29T19:56:27.994+0000] {standard_task_runner.py:85} INFO - Job 170: Subtask python_etl_pipeline
+[2025-11-29T19:56:28.078+0000] {task_command.py:416} INFO - Running <TaskInstance: flight_etl.python_etl_pipeline manual__2025-11-29T19:56:24.753699+00:00 [running]> on host 7db045a8237a
+[2025-11-29T19:56:28.157+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='flight_etl' AIRFLOW_CTX_TASK_ID='python_etl_pipeline' AIRFLOW_CTX_EXECUTION_DATE='2025-11-29T19:56:24.753699+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-29T19:56:24.753699+00:00'
+[2025-11-29T19:56:28.162+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-29T19:56:28.163+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', '\n            echo "Starting ETL pipeline execution..." &&             cd /opt/***/etl_scripts &&             echo "Current directory is: $(pwd)" &&             echo "Installing requirements..." &&             /usr/local/bin/pip install -r requirements.txt &&             echo "Starting main.py script..." &&             python main.py\n        ']
+[2025-11-29T19:56:28.178+0000] {subprocess.py:86} INFO - Output:
+[2025-11-29T19:56:28.180+0000] {subprocess.py:93} INFO - Starting ETL pipeline execution...
+[2025-11-29T19:56:28.181+0000] {subprocess.py:93} INFO - Current directory is: /opt/***/etl_scripts
+[2025-11-29T19:56:28.181+0000] {subprocess.py:93} INFO - Installing requirements...
+[2025-11-29T19:56:29.755+0000] {subprocess.py:93} INFO - Collecting certifi==2025.8.3
+[2025-11-29T19:56:30.043+0000] {subprocess.py:93} INFO -   Downloading certifi-2025.8.3-py3-none-any.whl (161 kB)
+[2025-11-29T19:56:30.531+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 161.2/161.2 kB 386.1 kB/s eta 0:00:00
+[2025-11-29T19:56:30.956+0000] {subprocess.py:93} INFO - Collecting charset-normalizer==3.4.3
+[2025-11-29T19:56:31.048+0000] {subprocess.py:93} INFO -   Downloading charset_normalizer-3.4.3-cp38-cp38-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (147 kB)
+[2025-11-29T19:56:31.572+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 147.4/147.4 kB 290.3 kB/s eta 0:00:00
+[2025-11-29T19:56:31.838+0000] {subprocess.py:93} INFO - Collecting Faker==35.2.2
+[2025-11-29T19:56:31.930+0000] {subprocess.py:93} INFO -   Downloading Faker-35.2.2-py3-none-any.whl (1.9 MB)
+[2025-11-29T19:56:48.023+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 118.9 kB/s eta 0:00:00
+[2025-11-29T19:56:48.617+0000] {subprocess.py:93} INFO - Collecting greenlet==2.0.2
+[2025-11-29T19:56:48.715+0000] {subprocess.py:93} INFO -   Downloading greenlet-2.0.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (618 kB)
+[2025-11-29T19:56:52.420+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 618.5/618.5 kB 176.3 kB/s eta 0:00:00
+[2025-11-29T19:56:52.940+0000] {subprocess.py:93} INFO - Collecting idna==3.10
+[2025-11-29T19:56:53.030+0000] {subprocess.py:93} INFO -   Downloading idna-3.10-py3-none-any.whl (70 kB)
+[2025-11-29T19:56:53.342+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 70.4/70.4 kB 367.9 kB/s eta 0:00:00
+[2025-11-29T19:56:53.579+0000] {subprocess.py:93} INFO - Collecting kagglehub==0.2.9
+[2025-11-29T19:56:53.669+0000] {subprocess.py:93} INFO -   Downloading kagglehub-0.2.9-py3-none-any.whl (39 kB)
+[2025-11-29T19:56:53.848+0000] {subprocess.py:93} INFO - Requirement already satisfied: numpy==1.24.4 in /home/***/.local/lib/python3.8/site-packages (from -r requirements.txt (line 7)) (1.24.4)
+[2025-11-29T19:56:54.079+0000] {subprocess.py:93} INFO - Collecting packaging==25.0
+[2025-11-29T19:56:54.172+0000] {subprocess.py:93} INFO -   Downloading packaging-25.0-py3-none-any.whl (66 kB)
+[2025-11-29T19:56:54.530+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 66.5/66.5 kB 186.9 kB/s eta 0:00:00
+[2025-11-29T19:56:56.340+0000] {subprocess.py:93} INFO - Collecting pandas==1.5.3
+[2025-11-29T19:56:56.434+0000] {subprocess.py:93} INFO -   Downloading pandas-1.5.3-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.2 MB)

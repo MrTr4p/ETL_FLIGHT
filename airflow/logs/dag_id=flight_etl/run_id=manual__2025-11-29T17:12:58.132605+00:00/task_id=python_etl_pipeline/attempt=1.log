@@ -1,0 +1,235 @@
+[2025-11-29T17:13:01.977+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_etl.python_etl_pipeline manual__2025-11-29T17:12:58.132605+00:00 [queued]>
+[2025-11-29T17:13:01.982+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_etl.python_etl_pipeline manual__2025-11-29T17:12:58.132605+00:00 [queued]>
+[2025-11-29T17:13:01.982+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2025-11-29T17:13:02.011+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): python_etl_pipeline> on 2025-11-29 17:12:58.132605+00:00
+[2025-11-29T17:13:02.017+0000] {standard_task_runner.py:57} INFO - Started process 453 to run task
+[2025-11-29T17:13:02.021+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'flight_etl', 'python_etl_pipeline', 'manual__2025-11-29T17:12:58.132605+00:00', '--job-id', '68', '--raw', '--subdir', 'DAGS_FOLDER/etl-dag.py', '--cfg-path', '/tmp/tmpoe3gf7of']
+[2025-11-29T17:13:02.026+0000] {standard_task_runner.py:85} INFO - Job 68: Subtask python_etl_pipeline
+[2025-11-29T17:13:02.063+0000] {task_command.py:416} INFO - Running <TaskInstance: flight_etl.python_etl_pipeline manual__2025-11-29T17:12:58.132605+00:00 [running]> on host 074e46dd394a
+[2025-11-29T17:13:02.126+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='flight_etl' AIRFLOW_CTX_TASK_ID='python_etl_pipeline' AIRFLOW_CTX_EXECUTION_DATE='2025-11-29T17:12:58.132605+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-29T17:12:58.132605+00:00'
+[2025-11-29T17:13:02.128+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-29T17:13:02.128+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', '\n            echo "Starting ETL pipeline execution..." &&             cd /opt/***/etl_scripts &&             echo "Current directory is: $(pwd)" &&             echo "Installing requirements..." &&             /usr/local/bin/pip install -r requirements.txt &&             echo "Starting main.py script..." &&             python main.py\n        ']
+[2025-11-29T17:13:02.140+0000] {subprocess.py:86} INFO - Output:
+[2025-11-29T17:13:02.151+0000] {subprocess.py:93} INFO - Starting ETL pipeline execution...
+[2025-11-29T17:13:02.152+0000] {subprocess.py:93} INFO - Current directory is: /opt/***/etl_scripts
+[2025-11-29T17:13:02.152+0000] {subprocess.py:93} INFO - Installing requirements...
+[2025-11-29T17:13:02.855+0000] {subprocess.py:93} INFO - Collecting certifi==2025.8.3
+[2025-11-29T17:13:02.857+0000] {subprocess.py:93} INFO -   Using cached certifi-2025.8.3-py3-none-any.whl (161 kB)
+[2025-11-29T17:13:03.045+0000] {subprocess.py:93} INFO - Collecting charset-normalizer==3.4.3
+[2025-11-29T17:13:03.047+0000] {subprocess.py:93} INFO -   Using cached charset_normalizer-3.4.3-cp38-cp38-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (147 kB)
+[2025-11-29T17:13:03.229+0000] {subprocess.py:93} INFO - Collecting Faker==35.2.2
+[2025-11-29T17:13:03.238+0000] {subprocess.py:93} INFO -   Using cached Faker-35.2.2-py3-none-any.whl (1.9 MB)
+[2025-11-29T17:13:03.533+0000] {subprocess.py:93} INFO - Collecting greenlet==2.0.2
+[2025-11-29T17:13:03.536+0000] {subprocess.py:93} INFO -   Using cached greenlet-2.0.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (618 kB)
+[2025-11-29T17:13:03.617+0000] {subprocess.py:93} INFO - Collecting idna==3.10
+[2025-11-29T17:13:03.635+0000] {subprocess.py:93} INFO -   Using cached idna-3.10-py3-none-any.whl (70 kB)
+[2025-11-29T17:13:03.711+0000] {subprocess.py:93} INFO - Collecting kagglehub==0.2.9
+[2025-11-29T17:13:03.713+0000] {subprocess.py:93} INFO -   Using cached kagglehub-0.2.9-py3-none-any.whl (39 kB)
+[2025-11-29T17:13:03.714+0000] {subprocess.py:93} INFO - Requirement already satisfied: numpy==1.24.4 in /home/***/.local/lib/python3.8/site-packages (from -r requirements.txt (line 7)) (1.24.4)
+[2025-11-29T17:13:03.789+0000] {subprocess.py:93} INFO - Collecting packaging==25.0
+[2025-11-29T17:13:03.791+0000] {subprocess.py:93} INFO -   Using cached packaging-25.0-py3-none-any.whl (66 kB)
+[2025-11-29T17:13:04.027+0000] {subprocess.py:93} INFO - Collecting pandas==1.5.3
+[2025-11-29T17:13:04.080+0000] {subprocess.py:93} INFO -   Using cached pandas-1.5.3-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.2 MB)
+[2025-11-29T17:13:04.303+0000] {subprocess.py:93} INFO - Collecting psycopg2-binary==2.9.10
+[2025-11-29T17:13:04.317+0000] {subprocess.py:93} INFO -   Using cached psycopg2_binary-2.9.10-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
+[2025-11-29T17:13:04.398+0000] {subprocess.py:93} INFO - Collecting python-dateutil==2.9.0.post0
+[2025-11-29T17:13:04.401+0000] {subprocess.py:93} INFO -   Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+[2025-11-29T17:13:04.507+0000] {subprocess.py:93} INFO - Collecting pytz==2025.2
+[2025-11-29T17:13:04.510+0000] {subprocess.py:93} INFO -   Using cached pytz-2025.2-py2.py3-none-any.whl (509 kB)
+[2025-11-29T17:13:04.651+0000] {subprocess.py:93} INFO - Collecting PyYAML==6.0.2
+[2025-11-29T17:13:04.659+0000] {subprocess.py:93} INFO -   Using cached PyYAML-6.0.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (746 kB)
+[2025-11-29T17:13:04.796+0000] {subprocess.py:93} INFO - Collecting requests==2.32.4
+[2025-11-29T17:13:04.802+0000] {subprocess.py:93} INFO -   Using cached requests-2.32.4-py3-none-any.whl (64 kB)
+[2025-11-29T17:13:04.893+0000] {subprocess.py:93} INFO - Collecting six==1.17.0
+[2025-11-29T17:13:04.895+0000] {subprocess.py:93} INFO -   Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+[2025-11-29T17:13:05.471+0000] {subprocess.py:93} INFO - Collecting SQLAlchemy==2.0.43
+[2025-11-29T17:13:05.478+0000] {subprocess.py:93} INFO -   Using cached sqlalchemy-2.0.43-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.2 MB)
+[2025-11-29T17:13:05.600+0000] {subprocess.py:93} INFO - Collecting tqdm==4.67.1
+[2025-11-29T17:13:05.609+0000] {subprocess.py:93} INFO -   Using cached tqdm-4.67.1-py3-none-any.whl (78 kB)
+[2025-11-29T17:13:05.705+0000] {subprocess.py:93} INFO - Collecting typing_extensions==4.13.2
+[2025-11-29T17:13:05.709+0000] {subprocess.py:93} INFO -   Using cached typing_extensions-4.13.2-py3-none-any.whl (45 kB)
+[2025-11-29T17:13:05.814+0000] {subprocess.py:93} INFO - Collecting tzdata==2025.2
+[2025-11-29T17:13:05.820+0000] {subprocess.py:93} INFO -   Using cached tzdata-2025.2-py2.py3-none-any.whl (347 kB)
+[2025-11-29T17:13:05.924+0000] {subprocess.py:93} INFO - Collecting urllib3==2.2.3
+[2025-11-29T17:13:06.286+0000] {subprocess.py:93} INFO -   Downloading urllib3-2.2.3-py3-none-any.whl (126 kB)
+[2025-11-29T17:13:06.507+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 126.3/126.3 kB 538.5 kB/s eta 0:00:00
+[2025-11-29T17:13:10.060+0000] {subprocess.py:93} INFO - Installing collected packages: pytz, urllib3, tzdata, typing_extensions, tqdm, six, PyYAML, psycopg2-binary, packaging, idna, greenlet, charset-normalizer, certifi, SQLAlchemy, requests, python-dateutil, pandas, kagglehub, Faker
+[2025-11-29T17:13:10.060+0000] {subprocess.py:93} INFO -   Attempting uninstall: pytz
+[2025-11-29T17:13:10.073+0000] {subprocess.py:93} INFO -     Found existing installation: pytz 2023.3.post1
+[2025-11-29T17:13:10.121+0000] {subprocess.py:93} INFO -     Uninstalling pytz-2023.3.post1:
+[2025-11-29T17:13:10.167+0000] {subprocess.py:93} INFO -       Successfully uninstalled pytz-2023.3.post1
+[2025-11-29T17:13:10.303+0000] {subprocess.py:93} INFO -   Attempting uninstall: urllib3
+[2025-11-29T17:13:10.305+0000] {subprocess.py:93} INFO -     Found existing installation: urllib3 1.26.18
+[2025-11-29T17:13:10.317+0000] {subprocess.py:93} INFO -     Uninstalling urllib3-1.26.18:
+[2025-11-29T17:13:10.319+0000] {subprocess.py:93} INFO -       Successfully uninstalled urllib3-1.26.18
+[2025-11-29T17:13:10.391+0000] {subprocess.py:93} INFO -   Attempting uninstall: tzdata
+[2025-11-29T17:13:10.392+0000] {subprocess.py:93} INFO -     Found existing installation: tzdata 2023.3
+[2025-11-29T17:13:10.476+0000] {subprocess.py:93} INFO -     Uninstalling tzdata-2023.3:
+[2025-11-29T17:13:10.479+0000] {subprocess.py:93} INFO -       Successfully uninstalled tzdata-2023.3
+[2025-11-29T17:13:10.559+0000] {subprocess.py:93} INFO -   Attempting uninstall: typing_extensions
+[2025-11-29T17:13:10.560+0000] {subprocess.py:93} INFO -     Found existing installation: typing_extensions 4.8.0
+[2025-11-29T17:13:10.562+0000] {subprocess.py:93} INFO -     Uninstalling typing_extensions-4.8.0:
+[2025-11-29T17:13:11.005+0000] {subprocess.py:93} INFO -       Successfully uninstalled typing_extensions-4.8.0
+[2025-11-29T17:13:11.069+0000] {subprocess.py:93} INFO -   Attempting uninstall: six
+[2025-11-29T17:13:11.070+0000] {subprocess.py:93} INFO -     Found existing installation: six 1.16.0
+[2025-11-29T17:13:11.071+0000] {subprocess.py:93} INFO -     Uninstalling six-1.16.0:
+[2025-11-29T17:13:11.211+0000] {subprocess.py:93} INFO -       Successfully uninstalled six-1.16.0
+[2025-11-29T17:13:11.221+0000] {subprocess.py:93} INFO -   Attempting uninstall: PyYAML
+[2025-11-29T17:13:11.222+0000] {subprocess.py:93} INFO -     Found existing installation: PyYAML 6.0.1
+[2025-11-29T17:13:11.226+0000] {subprocess.py:93} INFO -     Uninstalling PyYAML-6.0.1:
+[2025-11-29T17:13:11.227+0000] {subprocess.py:93} INFO -       Successfully uninstalled PyYAML-6.0.1
+[2025-11-29T17:13:11.285+0000] {subprocess.py:93} INFO -   Attempting uninstall: psycopg2-binary
+[2025-11-29T17:13:11.286+0000] {subprocess.py:93} INFO -     Found existing installation: psycopg2-binary 2.9.9
+[2025-11-29T17:13:11.290+0000] {subprocess.py:93} INFO -     Uninstalling psycopg2-binary-2.9.9:
+[2025-11-29T17:13:11.291+0000] {subprocess.py:93} INFO -       Successfully uninstalled psycopg2-binary-2.9.9
+[2025-11-29T17:13:11.360+0000] {subprocess.py:93} INFO -   Attempting uninstall: packaging
+[2025-11-29T17:13:11.361+0000] {subprocess.py:93} INFO -     Found existing installation: packaging 23.2
+[2025-11-29T17:13:11.367+0000] {subprocess.py:93} INFO -     Uninstalling packaging-23.2:
+[2025-11-29T17:13:11.368+0000] {subprocess.py:93} INFO -       Successfully uninstalled packaging-23.2
+[2025-11-29T17:13:11.401+0000] {subprocess.py:93} INFO -   Attempting uninstall: idna
+[2025-11-29T17:13:11.402+0000] {subprocess.py:93} INFO -     Found existing installation: idna 3.4
+[2025-11-29T17:13:11.405+0000] {subprocess.py:93} INFO -     Uninstalling idna-3.4:
+[2025-11-29T17:13:11.406+0000] {subprocess.py:93} INFO -       Successfully uninstalled idna-3.4
+[2025-11-29T17:13:11.474+0000] {subprocess.py:93} INFO -   Attempting uninstall: greenlet
+[2025-11-29T17:13:11.475+0000] {subprocess.py:93} INFO -     Found existing installation: greenlet 3.0.1
+[2025-11-29T17:13:11.484+0000] {subprocess.py:93} INFO -     Uninstalling greenlet-3.0.1:
+[2025-11-29T17:13:11.485+0000] {subprocess.py:93} INFO -       Successfully uninstalled greenlet-3.0.1
+[2025-11-29T17:13:11.525+0000] {subprocess.py:93} INFO -   Attempting uninstall: charset-normalizer
+[2025-11-29T17:13:11.528+0000] {subprocess.py:93} INFO -     Found existing installation: charset-normalizer 3.3.2
+[2025-11-29T17:13:11.532+0000] {subprocess.py:93} INFO -     Uninstalling charset-normalizer-3.3.2:
+[2025-11-29T17:13:11.533+0000] {subprocess.py:93} INFO -       Successfully uninstalled charset-normalizer-3.3.2
+[2025-11-29T17:13:11.562+0000] {subprocess.py:93} INFO -   Attempting uninstall: certifi
+[2025-11-29T17:13:11.564+0000] {subprocess.py:93} INFO -     Found existing installation: certifi 2023.7.22
+[2025-11-29T17:13:11.566+0000] {subprocess.py:93} INFO -     Uninstalling certifi-2023.7.22:
+[2025-11-29T17:13:11.566+0000] {subprocess.py:93} INFO -       Successfully uninstalled certifi-2023.7.22
+[2025-11-29T17:13:11.575+0000] {subprocess.py:93} INFO -   Attempting uninstall: SQLAlchemy
+[2025-11-29T17:13:11.576+0000] {subprocess.py:93} INFO -     Found existing installation: SQLAlchemy 1.4.50
+[2025-11-29T17:13:11.633+0000] {subprocess.py:93} INFO -     Uninstalling SQLAlchemy-1.4.50:
+[2025-11-29T17:13:11.635+0000] {subprocess.py:93} INFO -       Successfully uninstalled SQLAlchemy-1.4.50
+[2025-11-29T17:13:12.375+0000] {subprocess.py:93} INFO -   Attempting uninstall: requests
+[2025-11-29T17:13:12.376+0000] {subprocess.py:93} INFO -     Found existing installation: requests 2.31.0
+[2025-11-29T17:13:12.381+0000] {subprocess.py:93} INFO -     Uninstalling requests-2.31.0:
+[2025-11-29T17:13:12.381+0000] {subprocess.py:93} INFO -       Successfully uninstalled requests-2.31.0
+[2025-11-29T17:13:12.408+0000] {subprocess.py:93} INFO -   Attempting uninstall: python-dateutil
+[2025-11-29T17:13:12.409+0000] {subprocess.py:93} INFO -     Found existing installation: python-dateutil 2.8.2
+[2025-11-29T17:13:12.414+0000] {subprocess.py:93} INFO -     Uninstalling python-dateutil-2.8.2:
+[2025-11-29T17:13:12.414+0000] {subprocess.py:93} INFO -       Successfully uninstalled python-dateutil-2.8.2
+[2025-11-29T17:13:12.450+0000] {subprocess.py:93} INFO -   Attempting uninstall: pandas
+[2025-11-29T17:13:12.451+0000] {subprocess.py:93} INFO -     Found existing installation: pandas 2.0.3
+[2025-11-29T17:13:12.722+0000] {subprocess.py:93} INFO -     Uninstalling pandas-2.0.3:
+[2025-11-29T17:13:12.729+0000] {subprocess.py:93} INFO -       Successfully uninstalled pandas-2.0.3
+[2025-11-29T17:13:16.156+0000] {subprocess.py:93} INFO - ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+[2025-11-29T17:13:16.156+0000] {subprocess.py:93} INFO - sqlalchemy-redshift 0.8.14 requires SQLAlchemy<2.0.0,>=0.9.2, but you have sqlalchemy 2.0.43 which is incompatible.
+[2025-11-29T17:13:16.156+0000] {subprocess.py:93} INFO - sqlalchemy-bigquery 1.8.0 requires sqlalchemy<2.0.0dev,>=1.2.0, but you have sqlalchemy 2.0.43 which is incompatible.
+[2025-11-29T17:13:16.156+0000] {subprocess.py:93} INFO - snowflake-sqlalchemy 1.5.0 requires sqlalchemy<2.0.0,>=1.4.0, but you have sqlalchemy 2.0.43 which is incompatible.
+[2025-11-29T17:13:16.156+0000] {subprocess.py:93} INFO - snowflake-connector-python 3.3.1 requires urllib3<1.27,>=1.21.1, but you have urllib3 2.2.3 which is incompatible.
+[2025-11-29T17:13:16.156+0000] {subprocess.py:93} INFO - limits 3.6.0 requires packaging<24,>=21, but you have packaging 25.0 which is incompatible.
+[2025-11-29T17:13:16.156+0000] {subprocess.py:93} INFO - flask-appbuilder 4.3.6 requires SQLAlchemy<1.5, but you have sqlalchemy 2.0.43 which is incompatible.
+[2025-11-29T17:13:16.156+0000] {subprocess.py:93} INFO - botocore 1.31.64 requires urllib3<1.27,>=1.25.4; python_version < "3.10", but you have urllib3 2.2.3 which is incompatible.
+[2025-11-29T17:13:16.156+0000] {subprocess.py:93} INFO - apache-*** 2.7.3 requires sqlalchemy<2.0,>=1.4.28, but you have sqlalchemy 2.0.43 which is incompatible.
+[2025-11-29T17:13:16.157+0000] {subprocess.py:93} INFO - Successfully installed Faker-35.2.2 PyYAML-6.0.2 SQLAlchemy-2.0.43 certifi-2025.8.3 charset-normalizer-3.4.3 greenlet-2.0.2 idna-3.10 kagglehub-0.2.9 packaging-25.0 pandas-1.5.3 psycopg2-binary-2.9.10 python-dateutil-2.9.0.post0 pytz-2025.2 requests-2.32.4 six-1.17.0 tqdm-4.67.1 typing_extensions-4.13.2 tzdata-2025.2 urllib3-2.2.3
+[2025-11-29T17:13:16.157+0000] {subprocess.py:93} INFO - WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[2025-11-29T17:13:16.162+0000] {subprocess.py:93} INFO - 
+[2025-11-29T17:13:16.162+0000] {subprocess.py:93} INFO - [notice] A new release of pip is available: 23.0.1 -> 25.0.1
+[2025-11-29T17:13:16.162+0000] {subprocess.py:93} INFO - [notice] To update, run: pip3 install --upgrade pip
+[2025-11-29T17:13:16.456+0000] {subprocess.py:93} INFO - Starting main.py script...
+[2025-11-29T17:13:17.223+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-11-29T17:13:17.223+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 143, in __init__
+[2025-11-29T17:13:17.223+0000] {subprocess.py:93} INFO -     self._dbapi_connection = engine.raw_connection()
+[2025-11-29T17:13:17.224+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 3301, in raw_connection
+[2025-11-29T17:13:17.224+0000] {subprocess.py:93} INFO -     return self.pool.connect()
+[2025-11-29T17:13:17.224+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 447, in connect
+[2025-11-29T17:13:17.224+0000] {subprocess.py:93} INFO -     return _ConnectionFairy._checkout(self)
+[2025-11-29T17:13:17.224+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+[2025-11-29T17:13:17.224+0000] {subprocess.py:93} INFO -     fairy = _ConnectionRecord.checkout(pool)
+[2025-11-29T17:13:17.224+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 711, in checkout
+[2025-11-29T17:13:17.224+0000] {subprocess.py:93} INFO -     rec = pool._do_get()
+[2025-11-29T17:13:17.224+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 178, in _do_get
+[2025-11-29T17:13:17.224+0000] {subprocess.py:93} INFO -     self._dec_overflow()
+[2025-11-29T17:13:17.224+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+[2025-11-29T17:13:17.224+0000] {subprocess.py:93} INFO -     raise exc_value.with_traceback(exc_tb)
+[2025-11-29T17:13:17.224+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 175, in _do_get
+[2025-11-29T17:13:17.224+0000] {subprocess.py:93} INFO -     return self._create_connection()
+[2025-11-29T17:13:17.224+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 388, in _create_connection
+[2025-11-29T17:13:17.224+0000] {subprocess.py:93} INFO -     return _ConnectionRecord(self)
+[2025-11-29T17:13:17.224+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 673, in __init__
+[2025-11-29T17:13:17.224+0000] {subprocess.py:93} INFO -     self.__connect()
+[2025-11-29T17:13:17.224+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+[2025-11-29T17:13:17.224+0000] {subprocess.py:93} INFO -     pool.logger.debug("Error on connect(): %s", e)
+[2025-11-29T17:13:17.224+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+[2025-11-29T17:13:17.225+0000] {subprocess.py:93} INFO -     raise exc_value.with_traceback(exc_tb)
+[2025-11-29T17:13:17.225+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 895, in __connect
+[2025-11-29T17:13:17.225+0000] {subprocess.py:93} INFO -     self.dbapi_connection = connection = pool._invoke_creator(self)
+[2025-11-29T17:13:17.225+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/create.py", line 661, in connect
+[2025-11-29T17:13:17.225+0000] {subprocess.py:93} INFO -     return dialect.connect(*cargs, **cparams)
+[2025-11-29T17:13:17.225+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 629, in connect
+[2025-11-29T17:13:17.225+0000] {subprocess.py:93} INFO -     return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+[2025-11-29T17:13:17.225+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+[2025-11-29T17:13:17.225+0000] {subprocess.py:93} INFO -     conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+[2025-11-29T17:13:17.225+0000] {subprocess.py:93} INFO - psycopg2.OperationalError: connection to server at "localhost" (::1), port 5433 failed: Connection refused
+[2025-11-29T17:13:17.225+0000] {subprocess.py:93} INFO - 	Is the server running on that host and accepting TCP/IP connections?
+[2025-11-29T17:13:17.225+0000] {subprocess.py:93} INFO - connection to server at "localhost" (127.0.0.1), port 5433 failed: Connection refused
+[2025-11-29T17:13:17.225+0000] {subprocess.py:93} INFO - 	Is the server running on that host and accepting TCP/IP connections?
+[2025-11-29T17:13:17.225+0000] {subprocess.py:93} INFO - 
+[2025-11-29T17:13:17.225+0000] {subprocess.py:93} INFO - 
+[2025-11-29T17:13:17.225+0000] {subprocess.py:93} INFO - The above exception was the direct cause of the following exception:
+[2025-11-29T17:13:17.225+0000] {subprocess.py:93} INFO - 
+[2025-11-29T17:13:17.225+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-11-29T17:13:17.225+0000] {subprocess.py:93} INFO -   File "main.py", line 10, in <module>
+[2025-11-29T17:13:17.225+0000] {subprocess.py:93} INFO -     common.truncate_all_tables(engine)
+[2025-11-29T17:13:17.225+0000] {subprocess.py:93} INFO -   File "/opt/***/etl_scripts/common.py", line 75, in truncate_all_tables
+[2025-11-29T17:13:17.226+0000] {subprocess.py:93} INFO -     with engine.connect() as connection:
+[2025-11-29T17:13:17.226+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 3277, in connect
+[2025-11-29T17:13:17.226+0000] {subprocess.py:93} INFO -     return self._connection_cls(self)
+[2025-11-29T17:13:17.226+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 145, in __init__
+[2025-11-29T17:13:17.226+0000] {subprocess.py:93} INFO -     Connection._handle_dbapi_exception_noconnection(
+[2025-11-29T17:13:17.226+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2440, in _handle_dbapi_exception_noconnection
+[2025-11-29T17:13:17.226+0000] {subprocess.py:93} INFO -     raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+[2025-11-29T17:13:17.226+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 143, in __init__
+[2025-11-29T17:13:17.226+0000] {subprocess.py:93} INFO -     self._dbapi_connection = engine.raw_connection()
+[2025-11-29T17:13:17.226+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 3301, in raw_connection
+[2025-11-29T17:13:17.226+0000] {subprocess.py:93} INFO -     return self.pool.connect()
+[2025-11-29T17:13:17.226+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 447, in connect
+[2025-11-29T17:13:17.226+0000] {subprocess.py:93} INFO -     return _ConnectionFairy._checkout(self)
+[2025-11-29T17:13:17.226+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+[2025-11-29T17:13:17.226+0000] {subprocess.py:93} INFO -     fairy = _ConnectionRecord.checkout(pool)
+[2025-11-29T17:13:17.226+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 711, in checkout
+[2025-11-29T17:13:17.226+0000] {subprocess.py:93} INFO -     rec = pool._do_get()
+[2025-11-29T17:13:17.226+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 178, in _do_get
+[2025-11-29T17:13:17.226+0000] {subprocess.py:93} INFO -     self._dec_overflow()
+[2025-11-29T17:13:17.227+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+[2025-11-29T17:13:17.227+0000] {subprocess.py:93} INFO -     raise exc_value.with_traceback(exc_tb)
+[2025-11-29T17:13:17.227+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 175, in _do_get
+[2025-11-29T17:13:17.227+0000] {subprocess.py:93} INFO -     return self._create_connection()
+[2025-11-29T17:13:17.227+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 388, in _create_connection
+[2025-11-29T17:13:17.227+0000] {subprocess.py:93} INFO -     return _ConnectionRecord(self)
+[2025-11-29T17:13:17.227+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 673, in __init__
+[2025-11-29T17:13:17.227+0000] {subprocess.py:93} INFO -     self.__connect()
+[2025-11-29T17:13:17.227+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+[2025-11-29T17:13:17.227+0000] {subprocess.py:93} INFO -     pool.logger.debug("Error on connect(): %s", e)
+[2025-11-29T17:13:17.227+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+[2025-11-29T17:13:17.227+0000] {subprocess.py:93} INFO -     raise exc_value.with_traceback(exc_tb)
+[2025-11-29T17:13:17.227+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 895, in __connect
+[2025-11-29T17:13:17.227+0000] {subprocess.py:93} INFO -     self.dbapi_connection = connection = pool._invoke_creator(self)
+[2025-11-29T17:13:17.227+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/create.py", line 661, in connect
+[2025-11-29T17:13:17.227+0000] {subprocess.py:93} INFO -     return dialect.connect(*cargs, **cparams)
+[2025-11-29T17:13:17.227+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 629, in connect
+[2025-11-29T17:13:17.227+0000] {subprocess.py:93} INFO -     return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+[2025-11-29T17:13:17.227+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+[2025-11-29T17:13:17.227+0000] {subprocess.py:93} INFO -     conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+[2025-11-29T17:13:17.227+0000] {subprocess.py:93} INFO - sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5433 failed: Connection refused
+[2025-11-29T17:13:17.228+0000] {subprocess.py:93} INFO - 	Is the server running on that host and accepting TCP/IP connections?
+[2025-11-29T17:13:17.228+0000] {subprocess.py:93} INFO - connection to server at "localhost" (127.0.0.1), port 5433 failed: Connection refused
+[2025-11-29T17:13:17.228+0000] {subprocess.py:93} INFO - 	Is the server running on that host and accepting TCP/IP connections?
+[2025-11-29T17:13:17.228+0000] {subprocess.py:93} INFO - 
+[2025-11-29T17:13:17.228+0000] {subprocess.py:93} INFO - (Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2025-11-29T17:13:17.337+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-11-29T17:13:17.346+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-11-29T17:13:17.349+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=flight_etl, task_id=python_etl_pipeline, execution_date=20251129T171258, start_date=20251129T171301, end_date=20251129T171317
+[2025-11-29T17:13:17.358+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 68 for task python_etl_pipeline (Bash command failed. The command returned a non-zero exit code 1.; 453)
+[2025-11-29T17:13:17.364+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-11-29T17:13:17.375+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

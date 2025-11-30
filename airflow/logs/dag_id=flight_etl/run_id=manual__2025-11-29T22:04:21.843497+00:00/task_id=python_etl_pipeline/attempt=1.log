@@ -1,0 +1,225 @@
+[2025-11-29T22:04:24.671+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_etl.python_etl_pipeline manual__2025-11-29T22:04:21.843497+00:00 [queued]>
+[2025-11-29T22:04:24.677+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_etl.python_etl_pipeline manual__2025-11-29T22:04:21.843497+00:00 [queued]>
+[2025-11-29T22:04:24.678+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2025-11-29T22:04:24.690+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): python_etl_pipeline> on 2025-11-29 22:04:21.843497+00:00
+[2025-11-29T22:04:24.694+0000] {standard_task_runner.py:57} INFO - Started process 248 to run task
+[2025-11-29T22:04:24.697+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'flight_etl', 'python_etl_pipeline', 'manual__2025-11-29T22:04:21.843497+00:00', '--job-id', '234', '--raw', '--subdir', 'DAGS_FOLDER/etl-dag.py', '--cfg-path', '/tmp/tmpl95wjfpx']
+[2025-11-29T22:04:24.698+0000] {standard_task_runner.py:85} INFO - Job 234: Subtask python_etl_pipeline
+[2025-11-29T22:04:24.744+0000] {task_command.py:416} INFO - Running <TaskInstance: flight_etl.python_etl_pipeline manual__2025-11-29T22:04:21.843497+00:00 [running]> on host 3a775eb2a8e1
+[2025-11-29T22:04:24.801+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='flight_etl' AIRFLOW_CTX_TASK_ID='python_etl_pipeline' AIRFLOW_CTX_EXECUTION_DATE='2025-11-29T22:04:21.843497+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-29T22:04:21.843497+00:00'
+[2025-11-29T22:04:24.802+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-29T22:04:24.803+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', '\n        echo "Starting ETL pipeline execution..." &&         cd /opt/***/etl_scripts &&         echo "Current directory is: $(pwd)" &&         echo "Installing requirements..." &&         /usr/local/bin/pip install --ignore-installed -r requirements.txt &&         echo "Starting main.py script..." &&         python main.py\n    ']
+[2025-11-29T22:04:24.813+0000] {subprocess.py:86} INFO - Output:
+[2025-11-29T22:04:24.814+0000] {subprocess.py:93} INFO - Starting ETL pipeline execution...
+[2025-11-29T22:04:24.814+0000] {subprocess.py:93} INFO - Current directory is: /opt/***/etl_scripts
+[2025-11-29T22:04:24.815+0000] {subprocess.py:93} INFO - Installing requirements...
+[2025-11-29T22:04:25.527+0000] {subprocess.py:93} INFO - Collecting certifi==2025.8.3
+[2025-11-29T22:04:25.530+0000] {subprocess.py:93} INFO -   Using cached certifi-2025.8.3-py3-none-any.whl (161 kB)
+[2025-11-29T22:04:25.731+0000] {subprocess.py:93} INFO - Collecting charset-normalizer==3.4.3
+[2025-11-29T22:04:25.733+0000] {subprocess.py:93} INFO -   Using cached charset_normalizer-3.4.3-cp38-cp38-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (147 kB)
+[2025-11-29T22:04:25.927+0000] {subprocess.py:93} INFO - Collecting Faker==35.2.2
+[2025-11-29T22:04:25.934+0000] {subprocess.py:93} INFO -   Using cached Faker-35.2.2-py3-none-any.whl (1.9 MB)
+[2025-11-29T22:04:26.197+0000] {subprocess.py:93} INFO - Collecting greenlet==2.0.2
+[2025-11-29T22:04:26.202+0000] {subprocess.py:93} INFO -   Using cached greenlet-2.0.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (618 kB)
+[2025-11-29T22:04:26.295+0000] {subprocess.py:93} INFO - Collecting idna==3.10
+[2025-11-29T22:04:26.297+0000] {subprocess.py:93} INFO -   Using cached idna-3.10-py3-none-any.whl (70 kB)
+[2025-11-29T22:04:26.401+0000] {subprocess.py:93} INFO - Collecting kagglehub==0.2.9
+[2025-11-29T22:04:26.402+0000] {subprocess.py:93} INFO -   Using cached kagglehub-0.2.9-py3-none-any.whl (39 kB)
+[2025-11-29T22:04:27.038+0000] {subprocess.py:93} INFO - Collecting numpy==1.24.4
+[2025-11-29T22:04:27.082+0000] {subprocess.py:93} INFO -   Using cached numpy-1.24.4-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (17.3 MB)
+[2025-11-29T22:04:27.212+0000] {subprocess.py:93} INFO - Collecting packaging==25.0
+[2025-11-29T22:04:27.214+0000] {subprocess.py:93} INFO -   Using cached packaging-25.0-py3-none-any.whl (66 kB)
+[2025-11-29T22:04:27.473+0000] {subprocess.py:93} INFO - Collecting pandas==1.5.3
+[2025-11-29T22:04:27.503+0000] {subprocess.py:93} INFO -   Using cached pandas-1.5.3-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.2 MB)
+[2025-11-29T22:04:27.693+0000] {subprocess.py:93} INFO - Collecting psycopg2-binary==2.9.10
+[2025-11-29T22:04:27.702+0000] {subprocess.py:93} INFO -   Using cached psycopg2_binary-2.9.10-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
+[2025-11-29T22:04:27.892+0000] {subprocess.py:93} INFO - Collecting python-dateutil==2.9.0.post0
+[2025-11-29T22:04:27.894+0000] {subprocess.py:93} INFO -   Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+[2025-11-29T22:04:28.022+0000] {subprocess.py:93} INFO - Collecting pytz==2025.2
+[2025-11-29T22:04:28.024+0000] {subprocess.py:93} INFO -   Using cached pytz-2025.2-py2.py3-none-any.whl (509 kB)
+[2025-11-29T22:04:28.139+0000] {subprocess.py:93} INFO - Collecting PyYAML==6.0.2
+[2025-11-29T22:04:28.142+0000] {subprocess.py:93} INFO -   Using cached PyYAML-6.0.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (746 kB)
+[2025-11-29T22:04:28.375+0000] {subprocess.py:93} INFO - Collecting requests==2.32.4
+[2025-11-29T22:04:28.382+0000] {subprocess.py:93} INFO -   Using cached requests-2.32.4-py3-none-any.whl (64 kB)
+[2025-11-29T22:04:28.518+0000] {subprocess.py:93} INFO - Collecting six==1.17.0
+[2025-11-29T22:04:28.527+0000] {subprocess.py:93} INFO -   Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+[2025-11-29T22:04:29.113+0000] {subprocess.py:93} INFO - Collecting SQLAlchemy==2.0.43
+[2025-11-29T22:04:29.125+0000] {subprocess.py:93} INFO -   Using cached sqlalchemy-2.0.43-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.2 MB)
+[2025-11-29T22:04:29.283+0000] {subprocess.py:93} INFO - Collecting tqdm==4.67.1
+[2025-11-29T22:04:29.286+0000] {subprocess.py:93} INFO -   Using cached tqdm-4.67.1-py3-none-any.whl (78 kB)
+[2025-11-29T22:04:29.413+0000] {subprocess.py:93} INFO - Collecting typing_extensions==4.13.2
+[2025-11-29T22:04:29.420+0000] {subprocess.py:93} INFO -   Using cached typing_extensions-4.13.2-py3-none-any.whl (45 kB)
+[2025-11-29T22:04:29.532+0000] {subprocess.py:93} INFO - Collecting tzdata==2025.2
+[2025-11-29T22:04:29.544+0000] {subprocess.py:93} INFO -   Using cached tzdata-2025.2-py2.py3-none-any.whl (347 kB)
+[2025-11-29T22:04:29.668+0000] {subprocess.py:93} INFO - Collecting urllib3==2.2.3
+[2025-11-29T22:04:29.670+0000] {subprocess.py:93} INFO -   Using cached urllib3-2.2.3-py3-none-any.whl (126 kB)
+[2025-11-29T22:04:33.506+0000] {subprocess.py:93} INFO - Installing collected packages: pytz, urllib3, tzdata, typing_extensions, tqdm, six, PyYAML, psycopg2-binary, packaging, numpy, idna, greenlet, charset-normalizer, certifi, SQLAlchemy, requests, python-dateutil, pandas, kagglehub, Faker
+[2025-11-29T22:04:42.659+0000] {subprocess.py:93} INFO - ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+[2025-11-29T22:04:42.701+0000] {subprocess.py:93} INFO - sqlalchemy-redshift 0.8.14 requires SQLAlchemy<2.0.0,>=0.9.2, but you have sqlalchemy 2.0.43 which is incompatible.
+[2025-11-29T22:04:42.702+0000] {subprocess.py:93} INFO - sqlalchemy-bigquery 1.8.0 requires sqlalchemy<2.0.0dev,>=1.2.0, but you have sqlalchemy 2.0.43 which is incompatible.
+[2025-11-29T22:04:42.702+0000] {subprocess.py:93} INFO - snowflake-sqlalchemy 1.5.0 requires sqlalchemy<2.0.0,>=1.4.0, but you have sqlalchemy 2.0.43 which is incompatible.
+[2025-11-29T22:04:42.702+0000] {subprocess.py:93} INFO - snowflake-connector-python 3.3.1 requires urllib3<1.27,>=1.21.1, but you have urllib3 2.2.3 which is incompatible.
+[2025-11-29T22:04:42.702+0000] {subprocess.py:93} INFO - limits 3.6.0 requires packaging<24,>=21, but you have packaging 25.0 which is incompatible.
+[2025-11-29T22:04:42.702+0000] {subprocess.py:93} INFO - flask-appbuilder 4.3.6 requires SQLAlchemy<1.5, but you have sqlalchemy 2.0.43 which is incompatible.
+[2025-11-29T22:04:42.702+0000] {subprocess.py:93} INFO - botocore 1.31.64 requires urllib3<1.27,>=1.25.4; python_version < "3.10", but you have urllib3 2.2.3 which is incompatible.
+[2025-11-29T22:04:42.702+0000] {subprocess.py:93} INFO - apache-*** 2.7.3 requires sqlalchemy<2.0,>=1.4.28, but you have sqlalchemy 2.0.43 which is incompatible.
+[2025-11-29T22:04:42.702+0000] {subprocess.py:93} INFO - Successfully installed Faker-35.2.2 PyYAML-6.0.2 SQLAlchemy-2.0.43 certifi-2025.8.3 charset-normalizer-3.4.3 greenlet-2.0.2 idna-3.10 kagglehub-0.2.9 numpy-1.24.4 packaging-25.0 pandas-1.5.3 psycopg2-binary-2.9.10 python-dateutil-2.9.0.post0 pytz-2025.2 requests-2.32.4 six-1.17.0 tqdm-4.67.1 typing_extensions-4.13.2 tzdata-2025.2 urllib3-2.2.3
+[2025-11-29T22:04:42.702+0000] {subprocess.py:93} INFO - WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[2025-11-29T22:04:42.913+0000] {subprocess.py:93} INFO - 
+[2025-11-29T22:04:42.913+0000] {subprocess.py:93} INFO - [notice] A new release of pip is available: 23.0.1 -> 25.0.1
+[2025-11-29T22:04:42.913+0000] {subprocess.py:93} INFO - [notice] To update, run: pip3 install --upgrade pip
+[2025-11-29T22:04:43.437+0000] {subprocess.py:93} INFO - Starting main.py script...
+[2025-11-29T22:04:49.290+0000] {subprocess.py:93} INFO - All tables truncated successfully
+[2025-11-29T22:04:49.290+0000] {subprocess.py:93} INFO - Warning: Looks like you're using an outdated `kagglehub` version, please consider updating (latest version: 0.3.13)
+[2025-11-29T22:04:49.998+0000] {subprocess.py:93} INFO - Downloading from https://www.kaggle.com/api/v1/datasets/download/usdot/flight-delays?dataset_version_number=1...
+[2025-11-29T22:05:53.158+0000] {subprocess.py:93} INFO -   0%|          | 0.00/191M [00:00<?, ?B/s]  1%|          | 1.00M/191M [00:01<04:50, 686kB/s]  1%|          | 2.00M/191M [00:02<04:05, 807kB/s]  2%|▏         | 3.00M/191M [00:03<02:41, 1.22MB/s]  2%|▏         | 4.00M/191M [00:03<01:57, 1.67MB/s]  3%|▎         | 5.00M/191M [00:03<01:33, 2.09MB/s]  3%|▎         | 6.00M/191M [00:03<01:18, 2.47MB/s]  4%|▎         | 7.00M/191M [00:04<01:08, 2.80MB/s]  4%|▍         | 8.00M/191M [00:04<01:02, 3.05MB/s]  5%|▍         | 9.00M/191M [00:04<00:58, 3.26MB/s]  5%|▌         | 10.0M/191M [00:04<00:55, 3.41MB/s]  6%|▌         | 11.0M/191M [00:05<00:53, 3.53MB/s]  6%|▋         | 12.0M/191M [00:05<00:52, 3.58MB/s]  7%|▋         | 13.0M/191M [00:05<00:51, 3.62MB/s]  7%|▋         | 14.0M/191M [00:06<00:53, 3.44MB/s]  8%|▊         | 15.0M/191M [00:06<00:56, 3.29MB/s]  8%|▊         | 16.0M/191M [00:06<00:53, 3.41MB/s]  9%|▉         | 17.0M/191M [00:07<00:52, 3.48MB/s]  9%|▉         | 18.0M/191M [00:07<00:51, 3.54MB/s] 10%|▉         | 19.0M/191M [00:07<00:50, 3.58MB/s] 10%|█         | 20.0M/191M [00:07<00:49, 3.61MB/s] 11%|█         | 21.0M/191M [00:08<00:49, 3.63MB/s] 12%|█▏        | 22.0M/191M [00:08<00:48, 3.66MB/s] 12%|█▏        | 23.0M/191M [00:08<00:47, 3.67MB/s] 13%|█▎        | 24.0M/191M [00:09<00:47, 3.68MB/s] 13%|█▎        | 25.0M/191M [00:09<00:47, 3.69MB/s] 14%|█▎        | 26.0M/191M [00:09<00:46, 3.69MB/s] 14%|█▍        | 27.0M/191M [00:09<00:46, 3.69MB/s] 15%|█▍        | 28.0M/191M [00:10<00:46, 3.67MB/s] 15%|█▌        | 29.0M/191M [00:10<00:46, 3.68MB/s] 16%|█▌        | 30.0M/191M [00:10<00:45, 3.67MB/s] 16%|█▌        | 31.0M/191M [00:11<00:45, 3.68MB/s] 17%|█▋        | 32.0M/191M [00:11<00:45, 3.66MB/s] 17%|█▋        | 33.0M/191M [00:11<00:51, 3.24MB/s] 18%|█▊        | 34.0M/191M [00:11<00:49, 3.35MB/s] 18%|█▊        | 35.0M/191M [00:12<00:47, 3.41MB/s] 19%|█▉        | 36.0M/191M [00:12<00:53, 3.03MB/s] 19%|█▉        | 37.0M/191M [00:13<00:58, 2.75MB/s] 20%|█▉        | 38.0M/191M [00:13<01:02, 2.57MB/s] 20%|██        | 39.0M/191M [00:14<01:04, 2.47MB/s] 21%|██        | 40.0M/191M [00:14<01:05, 2.40MB/s] 21%|██▏       | 41.0M/191M [00:14<01:00, 2.60MB/s] 22%|██▏       | 42.0M/191M [00:15<00:56, 2.76MB/s] 23%|██▎       | 43.0M/191M [00:15<00:48, 3.20MB/s] 23%|██▎       | 44.0M/191M [00:15<00:46, 3.34MB/s] 24%|██▎       | 45.0M/191M [00:16<00:44, 3.43MB/s] 24%|██▍       | 46.0M/191M [00:16<00:43, 3.52MB/s] 25%|██▍       | 47.0M/191M [00:16<00:42, 3.55MB/s] 25%|██▌       | 48.0M/191M [00:16<00:42, 3.53MB/s] 26%|██▌       | 49.0M/191M [00:17<00:43, 3.39MB/s] 26%|██▌       | 50.0M/191M [00:17<00:46, 3.19MB/s] 27%|██▋       | 51.0M/191M [00:17<00:48, 3.02MB/s] 27%|██▋       | 52.0M/191M [00:18<00:46, 3.10MB/s] 28%|██▊       | 53.0M/191M [00:18<00:44, 3.24MB/s] 28%|██▊       | 54.0M/191M [00:18<00:42, 3.35MB/s] 29%|██▉       | 55.0M/191M [00:19<00:41, 3.43MB/s] 29%|██▉       | 56.0M/191M [00:19<00:40, 3.50MB/s] 30%|██▉       | 57.0M/191M [00:19<00:39, 3.54MB/s] 30%|███       | 58.0M/191M [00:20<00:38, 3.58MB/s] 31%|███       | 59.0M/191M [00:20<00:38, 3.59MB/s] 31%|███▏      | 60.0M/191M [00:20<00:40, 3.42MB/s] 32%|███▏      | 61.0M/191M [00:20<00:39, 3.44MB/s] 32%|███▏      | 62.0M/191M [00:21<00:39, 3.41MB/s] 33%|███▎      | 63.0M/191M [00:21<00:38, 3.47MB/s] 34%|███▎      | 64.0M/191M [00:21<00:41, 3.22MB/s] 34%|███▍      | 65.0M/191M [00:22<00:42, 3.09MB/s] 35%|███▍      | 66.0M/191M [00:22<00:47, 2.77MB/s] 35%|███▌      | 67.0M/191M [00:23<00:53, 2.43MB/s] 36%|███▌      | 68.0M/191M [00:23<00:47, 2.69MB/s] 36%|███▌      | 69.0M/191M [00:23<00:43, 2.91MB/s] 37%|███▋      | 70.0M/191M [00:24<00:41, 3.08MB/s] 37%|███▋      | 71.0M/191M [00:24<00:39, 3.22MB/s] 38%|███▊      | 72.0M/191M [00:24<00:37, 3.32MB/s] 38%|███▊      | 73.0M/191M [00:25<00:36, 3.40MB/s] 39%|███▉      | 74.0M/191M [00:25<00:35, 3.46MB/s] 39%|███▉      | 75.0M/191M [00:25<00:34, 3.50MB/s] 40%|███▉      | 76.0M/191M [00:25<00:34, 3.53MB/s] 40%|████      | 77.0M/191M [00:26<00:33, 3.54MB/s] 41%|████      | 78.0M/191M [00:26<00:33, 3.55MB/s] 41%|████▏     | 79.0M/191M [00:26<00:32, 3.56MB/s] 42%|████▏     | 80.0M/191M [00:27<00:32, 3.57MB/s] 42%|████▏     | 81.0M/191M [00:27<00:32, 3.56MB/s] 43%|████▎     | 82.0M/191M [00:27<00:31, 3.57MB/s] 44%|████▎     | 83.0M/191M [00:28<00:31, 3.57MB/s] 44%|████▍     | 84.0M/191M [00:28<00:32, 3.49MB/s] 45%|████▍     | 85.0M/191M [00:28<00:34, 3.17MB/s] 45%|████▌     | 86.0M/191M [00:29<00:33, 3.29MB/s] 46%|████▌     | 87.0M/191M [00:29<00:32, 3.36MB/s] 46%|████▌     | 88.0M/191M [00:29<00:31, 3.40MB/s] 47%|████▋     | 89.0M/191M [00:29<00:31, 3.43MB/s] 47%|████▋     | 90.0M/191M [00:30<00:31, 3.36MB/s] 48%|████▊     | 91.0M/191M [00:30<00:31, 3.32MB/s] 48%|████▊     | 92.0M/191M [00:30<00:31, 3.32MB/s] 49%|████▊     | 93.0M/191M [00:31<00:30, 3.37MB/s] 49%|████▉     | 94.0M/191M [00:31<00:29, 3.42MB/s] 50%|████▉     | 95.0M/191M [00:31<00:28, 3.47MB/s] 50%|█████     | 96.0M/191M [00:32<00:28, 3.50MB/s] 51%|█████     | 97.0M/191M [00:32<00:27, 3.53MB/s] 51%|█████▏    | 98.0M/191M [00:32<00:28, 3.46MB/s] 52%|█████▏    | 99.0M/191M [00:33<00:31, 3.04MB/s] 52%|█████▏    | 100M/191M [00:33<00:31, 3.06MB/s]  53%|█████▎    | 101M/191M [00:33<00:33, 2.78MB/s] 53%|█████▎    | 102M/191M [00:34<00:31, 2.92MB/s] 54%|█████▍    | 103M/191M [00:34<00:30, 3.02MB/s] 55%|█████▍    | 104M/191M [00:35<00:32, 2.77MB/s] 55%|█████▌    | 105M/191M [00:35<00:33, 2.65MB/s] 56%|█████▌    | 106M/191M [00:35<00:32, 2.74MB/s] 56%|█████▌    | 107M/191M [00:36<00:31, 2.76MB/s] 57%|█████▋    | 108M/191M [00:36<00:32, 2.68MB/s] 57%|█████▋    | 109M/191M [00:36<00:31, 2.71MB/s] 58%|█████▊    | 110M/191M [00:37<00:27, 3.10MB/s] 58%|█████▊    | 111M/191M [00:37<00:26, 3.21MB/s] 59%|█████▊    | 112M/191M [00:37<00:24, 3.31MB/s] 59%|█████▉    | 113M/191M [00:38<00:24, 3.32MB/s] 60%|█████▉    | 114M/191M [00:38<00:24, 3.32MB/s] 60%|██████    | 115M/191M [00:38<00:23, 3.37MB/s] 61%|██████    | 116M/191M [00:39<00:23, 3.41MB/s] 61%|██████▏   | 117M/191M [00:39<00:22, 3.45MB/s] 62%|██████▏   | 118M/191M [00:39<00:23, 3.21MB/s] 62%|██████▏   | 119M/191M [00:39<00:21, 3.48MB/s] 63%|██████▎   | 120M/191M [00:40<00:22, 3.34MB/s] 63%|██████▎   | 121M/191M [00:40<00:22, 3.29MB/s] 64%|██████▍   | 122M/191M [00:40<00:22, 3.25MB/s] 64%|██████▍   | 123M/191M [00:41<00:26, 2.66MB/s] 65%|██████▍   | 124M/191M [00:41<00:27, 2.55MB/s] 66%|██████▌   | 125M/191M [00:42<00:26, 2.64MB/s] 66%|██████▌   | 126M/191M [00:42<00:23, 2.90MB/s] 67%|██████▋   | 127M/191M [00:42<00:22, 2.99MB/s] 67%|██████▋   | 128M/191M [00:43<00:21, 3.11MB/s] 68%|██████▊   | 129M/191M [00:43<00:20, 3.19MB/s] 68%|██████▊   | 130M/191M [00:43<00:19, 3.22MB/s] 69%|██████▊   | 131M/191M [00:44<00:20, 3.08MB/s] 69%|██████▉   | 132M/191M [00:44<00:20, 3.01MB/s] 70%|██████▉   | 133M/191M [00:44<00:16, 3.64MB/s] 70%|███████   | 134M/191M [00:45<00:17, 3.31MB/s] 71%|███████   | 135M/191M [00:45<00:15, 3.72MB/s] 71%|███████▏  | 136M/191M [00:45<00:16, 3.58MB/s] 72%|███████▏  | 137M/191M [00:45<00:16, 3.43MB/s] 72%|███████▏  | 138M/191M [00:46<00:17, 3.25MB/s] 73%|███████▎  | 139M/191M [00:46<00:16, 3.32MB/s] 73%|███████▎  | 140M/191M [00:47<00:17, 3.08MB/s] 74%|███████▍  | 141M/191M [00:47<00:17, 2.98MB/s] 74%|███████▍  | 142M/191M [00:47<00:16, 3.01MB/s] 75%|███████▍  | 143M/191M [00:48<00:15, 3.16MB/s] 75%|███████▌  | 144M/191M [00:48<00:15, 3.22MB/s] 76%|███████▌  | 145M/191M [00:48<00:14, 3.28MB/s] 77%|███████▋  | 146M/191M [00:48<00:13, 3.36MB/s] 77%|███████▋  | 147M/191M [00:49<00:13, 3.42MB/s] 78%|███████▊  | 148M/191M [00:49<00:12, 3.46MB/s] 78%|███████▊  | 149M/191M [00:49<00:12, 3.50MB/s] 79%|███████▊  | 150M/191M [00:50<00:12, 3.54MB/s] 79%|███████▉  | 151M/191M [00:50<00:11, 3.55MB/s] 80%|███████▉  | 152M/191M [00:50<00:11, 3.56MB/s] 80%|████████  | 153M/191M [00:51<00:11, 3.56MB/s] 81%|████████  | 154M/191M [00:51<00:10, 3.58MB/s] 81%|████████  | 155M/191M [00:51<00:10, 3.57MB/s] 82%|████████▏ | 156M/191M [00:51<00:10, 3.56MB/s] 82%|████████▏ | 157M/191M [00:52<00:10, 3.34MB/s] 83%|████████▎ | 158M/191M [00:52<00:11, 2.91MB/s] 83%|████████▎ | 159M/191M [00:53<00:10, 3.03MB/s] 84%|████████▍ | 160M/191M [00:53<00:11, 2.91MB/s] 84%|████████▍ | 161M/191M [00:53<00:11, 2.69MB/s] 85%|████████▍ | 162M/191M [00:54<00:11, 2.62MB/s] 85%|████████▌ | 163M/191M [00:54<00:10, 2.67MB/s] 86%|████████▌ | 164M/191M [00:55<00:09, 2.84MB/s] 86%|████████▋ | 165M/191M [00:55<00:08, 3.02MB/s] 87%|████████▋ | 166M/191M [00:55<00:08, 3.10MB/s] 88%|████████▊ | 167M/191M [00:55<00:07, 3.21MB/s] 88%|████████▊ | 168M/191M [00:56<00:07, 3.31MB/s] 89%|████████▊ | 169M/191M [00:56<00:06, 3.40MB/s] 89%|████████▉ | 170M/191M [00:56<00:06, 3.45MB/s] 90%|████████▉ | 171M/191M [00:57<00:05, 3.50MB/s] 90%|█████████ | 172M/191M [00:57<00:05, 3.52MB/s] 91%|█████████ | 173M/191M [00:57<00:05, 3.15MB/s] 91%|█████████ | 174M/191M [00:58<00:05, 3.27MB/s] 92%|█████████▏| 175M/191M [00:58<00:04, 3.36MB/s] 92%|█████████▏| 176M/191M [00:58<00:04, 3.40MB/s] 93%|█████████▎| 177M/191M [00:58<00:04, 3.46MB/s] 93%|█████████▎| 178M/191M [00:59<00:03, 3.52MB/s] 94%|█████████▍| 179M/191M [00:59<00:03, 3.55MB/s] 94%|█████████▍| 180M/191M [00:59<00:03, 3.56MB/s] 95%|█████████▍| 181M/191M [01:00<00:02, 3.59MB/s] 95%|█████████▌| 182M/191M [01:00<00:02, 3.59MB/s] 96%|█████████▌| 183M/191M [01:00<00:02, 3.59MB/s] 96%|█████████▋| 184M/191M [01:00<00:01, 3.58MB/s] 97%|█████████▋| 185M/191M [01:01<00:01, 3.59MB/s] 97%|█████████▋| 186M/191M [01:01<00:01, 3.58MB/s] 98%|█████████▊| 187M/191M [01:01<00:01, 3.58MB/s] 99%|█████████▊| 188M/191M [01:02<00:00, 3.58MB/s] 99%|█████████▉| 189M/191M [01:02<00:00, 3.58MB/s]100%|█████████▉| 190M/191M [01:02<00:00, 3.59MB/s]100%|██████████| 191M/191M [01:03<00:00, 3.19MB/s]100%|██████████| 191M/191M [01:03<00:00, 3.17MB/s]Extracting model files...
+[2025-11-29T22:06:07.408+0000] {subprocess.py:93} INFO - 
+[2025-11-29T22:06:07.442+0000] {subprocess.py:93} INFO - Exception in thread Thread-6:
+[2025-11-29T22:06:07.443+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-11-29T22:06:07.443+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2025-11-29T22:06:07.443+0000] {subprocess.py:93} INFO -     self.run()
+[2025-11-29T22:06:07.443+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/threading.py", line 870, in run
+[2025-11-29T22:06:07.443+0000] {subprocess.py:93} INFO -     self._target(*self._args, **self._kwargs)
+[2025-11-29T22:06:07.443+0000] {subprocess.py:93} INFO -   File "/opt/***/etl_scripts/bronze_layer_workflows.py", line 171, in create_payment
+[2025-11-29T22:06:07.444+0000] {subprocess.py:93} INFO -     connection.commit()
+[2025-11-29T22:06:07.444+0000] {subprocess.py:93} INFO - AttributeError: 'Connection' object has no attribute 'commit'
+[2025-11-29T22:06:07.519+0000] {subprocess.py:93} INFO - Exception in thread Thread-5:
+[2025-11-29T22:06:07.519+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-11-29T22:06:07.520+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2025-11-29T22:06:07.520+0000] {subprocess.py:93} INFO -     self.run()
+[2025-11-29T22:06:07.520+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/threading.py", line 870, in run
+[2025-11-29T22:06:07.520+0000] {subprocess.py:93} INFO -     self._target(*self._args, **self._kwargs)
+[2025-11-29T22:06:07.520+0000] {subprocess.py:93} INFO -   File "/opt/***/etl_scripts/bronze_layer_workflows.py", line 156, in create_passenger
+[2025-11-29T22:06:07.520+0000] {subprocess.py:93} INFO -     connection.commit()
+[2025-11-29T22:06:07.520+0000] {subprocess.py:93} INFO - AttributeError: 'Connection' object has no attribute 'commit'
+[2025-11-29T22:06:07.734+0000] {subprocess.py:93} INFO - Exception in thread Thread-7:
+[2025-11-29T22:06:07.735+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-11-29T22:06:07.735+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2025-11-29T22:06:07.735+0000] {subprocess.py:93} INFO -     self.run()
+[2025-11-29T22:06:07.735+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/threading.py", line 870, in run
+[2025-11-29T22:06:07.736+0000] {subprocess.py:93} INFO -     self._target(*self._args, **self._kwargs)
+[2025-11-29T22:06:07.736+0000] {subprocess.py:93} INFO -   File "/opt/***/etl_scripts/bronze_layer_workflows.py", line 185, in create_ticket
+[2025-11-29T22:06:07.736+0000] {subprocess.py:93} INFO -     connection.commit()
+[2025-11-29T22:06:07.736+0000] {subprocess.py:93} INFO - AttributeError: 'Connection' object has no attribute 'commit'
+[2025-11-29T22:07:47.901+0000] {subprocess.py:93} INFO - Exception in thread Thread-9:
+[2025-11-29T22:07:47.955+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-11-29T22:07:47.956+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2025-11-29T22:07:47.956+0000] {subprocess.py:93} INFO -     self.run()
+[2025-11-29T22:07:47.956+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/threading.py", line 870, in run
+[2025-11-29T22:07:47.957+0000] {subprocess.py:93} INFO -     self._target(*self._args, **self._kwargs)
+[2025-11-29T22:07:47.957+0000] {subprocess.py:93} INFO -   File "/opt/***/etl_scripts/bronze_layer_workflows.py", line 246, in create_booking
+[2025-11-29T22:07:47.957+0000] {subprocess.py:93} INFO - AttributeError: 'Connection' object has no attribute 'commit'
+[2025-11-29T22:08:04.069+0000] {subprocess.py:93} INFO - Exception in thread Thread-4:
+[2025-11-29T22:08:04.072+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-11-29T22:08:04.072+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2025-11-29T22:08:04.073+0000] {subprocess.py:93} INFO -     self.run()
+[2025-11-29T22:08:04.073+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/threading.py", line 870, in run
+[2025-11-29T22:08:04.073+0000] {subprocess.py:93} INFO -     self._target(*self._args, **self._kwargs)
+[2025-11-29T22:08:04.073+0000] {subprocess.py:93} INFO -   File "/opt/***/etl_scripts/bronze_layer_workflows.py", line 201, in create_date
+[2025-11-29T22:08:04.074+0000] {subprocess.py:93} INFO -     for i in range(1,80):
+[2025-11-29T22:08:04.074+0000] {subprocess.py:93} INFO - AttributeError: 'Connection' object has no attribute 'commit'
+[2025-11-29T22:08:04.150+0000] {subprocess.py:93} INFO - Exception in thread Thread-8:
+[2025-11-29T22:08:04.151+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-11-29T22:08:04.151+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+[2025-11-29T22:08:04.151+0000] {subprocess.py:93} INFO -     self.dialect.do_execute(
+[2025-11-29T22:08:04.151+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+[2025-11-29T22:08:04.151+0000] {subprocess.py:93} INFO -     cursor.execute(statement, parameters)
+[2025-11-29T22:08:04.151+0000] {subprocess.py:93} INFO - psycopg2.errors.UndefinedColumn: column "iata_code" does not exist
+[2025-11-29T22:08:04.151+0000] {subprocess.py:93} INFO - LINE 1: SELECT * FROM bronze_dim_airport WHERE iata_code = 'JLN'
+[2025-11-29T22:08:04.151+0000] {subprocess.py:93} INFO -                                                ^
+[2025-11-29T22:08:04.152+0000] {subprocess.py:93} INFO - 
+[2025-11-29T22:08:04.152+0000] {subprocess.py:93} INFO - 
+[2025-11-29T22:08:04.152+0000] {subprocess.py:93} INFO - The above exception was the direct cause of the following exception:
+[2025-11-29T22:08:04.152+0000] {subprocess.py:93} INFO - 
+[2025-11-29T22:08:04.152+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-11-29T22:08:04.152+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2025-11-29T22:08:04.152+0000] {subprocess.py:93} INFO -     self.run()
+[2025-11-29T22:08:04.152+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/threading.py", line 870, in run
+[2025-11-29T22:08:04.152+0000] {subprocess.py:93} INFO -     self._target(*self._args, **self._kwargs)
+[2025-11-29T22:08:04.153+0000] {subprocess.py:93} INFO -   File "/opt/***/etl_scripts/bronze_layer_workflows.py", line 207, in create_weather
+[2025-11-29T22:08:04.153+0000] {subprocess.py:93} INFO -     lat = airport[5]
+[2025-11-29T22:08:04.153+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1385, in execute
+[2025-11-29T22:08:04.153+0000] {subprocess.py:93} INFO -     return meth(self, multiparams, params, _EMPTY_EXECUTION_OPTS)
+[2025-11-29T22:08:04.153+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+[2025-11-29T22:08:04.153+0000] {subprocess.py:93} INFO -     return connection._execute_clauseelement(
+[2025-11-29T22:08:04.153+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1577, in _execute_clauseelement
+[2025-11-29T22:08:04.153+0000] {subprocess.py:93} INFO -     ret = self._execute_context(
+[2025-11-29T22:08:04.154+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1953, in _execute_context
+[2025-11-29T22:08:04.154+0000] {subprocess.py:93} INFO -     self._handle_dbapi_exception(
+[2025-11-29T22:08:04.154+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2134, in _handle_dbapi_exception
+[2025-11-29T22:08:04.154+0000] {subprocess.py:93} INFO -     util.raise_(
+[2025-11-29T22:08:04.154+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+[2025-11-29T22:08:04.154+0000] {subprocess.py:93} INFO -     raise exception
+[2025-11-29T22:08:04.154+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+[2025-11-29T22:08:04.154+0000] {subprocess.py:93} INFO -     self.dialect.do_execute(
+[2025-11-29T22:08:04.155+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+[2025-11-29T22:08:04.155+0000] {subprocess.py:93} INFO -     cursor.execute(statement, parameters)
+[2025-11-29T22:08:04.155+0000] {subprocess.py:93} INFO - sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column "iata_code" does not exist
+[2025-11-29T22:08:04.155+0000] {subprocess.py:93} INFO - LINE 1: SELECT * FROM bronze_dim_airport WHERE iata_code = 'JLN'
+[2025-11-29T22:08:04.155+0000] {subprocess.py:93} INFO -                                                ^
+[2025-11-29T22:08:04.155+0000] {subprocess.py:93} INFO - 
+[2025-11-29T22:08:04.155+0000] {subprocess.py:93} INFO - [SQL: SELECT * FROM bronze_dim_airport WHERE iata_code = 'JLN']
+[2025-11-29T22:08:04.155+0000] {subprocess.py:93} INFO - (Background on this error at: https://sqlalche.me/e/14/f405)
+[2025-11-29T22:08:04.155+0000] {subprocess.py:93} INFO - /root/.cache/kagglehub/datasets/usdot/flight-delays/versions/1
+[2025-11-29T22:08:04.156+0000] {subprocess.py:93} INFO - AIRPORT_THREAD_STARTED
+[2025-11-29T22:08:04.156+0000] {subprocess.py:93} INFO - FLIGHT_THREAD_STARTED
+[2025-11-29T22:08:04.156+0000] {subprocess.py:93} INFO - FLIGHT:FLIGHT_SUB_THREAD_HAS_STARTED
+[2025-11-29T22:08:04.156+0000] {subprocess.py:93} INFO - FLIGHT:AIRELINE_SUB_THREAD_HAS_STARTED
+[2025-11-29T22:08:04.156+0000] {subprocess.py:93} INFO - FLIGHT:AIRLINE_SUB_THREAD_HAS_FINISHED
+[2025-11-29T22:08:04.156+0000] {subprocess.py:93} INFO - FLIGHT:FLIGHT_SUB_THREAD_HAS_FINISHED
+[2025-11-29T22:08:04.156+0000] {subprocess.py:93} INFO -       month  day  ...  iata_code                  carrier_name
+[2025-11-29T22:08:04.156+0000] {subprocess.py:93} INFO - 0         1    1  ...         AS          Alaska Airlines Inc.
+[2025-11-29T22:08:04.156+0000] {subprocess.py:93} INFO - 1         1    1  ...         AA        American Airlines Inc.
+[2025-11-29T22:08:04.156+0000] {subprocess.py:93} INFO - 2         1    1  ...         US               US Airways Inc.
+[2025-11-29T22:08:04.157+0000] {subprocess.py:93} INFO - 3         1    1  ...         AA        American Airlines Inc.
+[2025-11-29T22:08:04.157+0000] {subprocess.py:93} INFO - 4         1    1  ...         AS          Alaska Airlines Inc.
+[2025-11-29T22:08:04.157+0000] {subprocess.py:93} INFO - ...     ...  ...  ...        ...                           ...
+[2025-11-29T22:08:04.157+0000] {subprocess.py:93} INFO - 9995      1    1  ...         HA        Hawaiian Airlines Inc.
+[2025-11-29T22:08:04.157+0000] {subprocess.py:93} INFO - 9996      1    1  ...         MQ  American Eagle Airlines Inc.
+[2025-11-29T22:08:04.157+0000] {subprocess.py:93} INFO - 9997      1    1  ...         MQ  American Eagle Airlines Inc.
+[2025-11-29T22:08:04.157+0000] {subprocess.py:93} INFO - 9998      1    1  ...         MQ  American Eagle Airlines Inc.
+[2025-11-29T22:08:04.157+0000] {subprocess.py:93} INFO - 9999      1    1  ...         MQ  American Eagle Airlines Inc.
+[2025-11-29T22:08:04.157+0000] {subprocess.py:93} INFO - 
+[2025-11-29T22:08:04.157+0000] {subprocess.py:93} INFO - [10000 rows x 32 columns]
+[2025-11-29T22:08:04.158+0000] {subprocess.py:93} INFO - Chunk 1 written to 'bronze_dim_airport'
+[2025-11-29T22:08:04.158+0000] {subprocess.py:93} INFO - Completed writing bronze_dim_airport
+[2025-11-29T22:08:04.158+0000] {subprocess.py:93} INFO - Chunk 1 written to 'bronze_dim_flight'
+[2025-11-29T22:08:04.158+0000] {subprocess.py:93} INFO - Completed writing bronze_dim_flight
+[2025-11-29T22:08:04.158+0000] {subprocess.py:93} INFO - FLIGHT_THREAD_FINISHED
+[2025-11-29T22:08:04.158+0000] {subprocess.py:93} INFO - PASSENGER_THREAD_STARTED
+[2025-11-29T22:08:04.158+0000] {subprocess.py:93} INFO - PAYMENT_THREAD_STARTED
+[2025-11-29T22:08:04.158+0000] {subprocess.py:93} INFO - TICKET_THREAD_STARTED
+[2025-11-29T22:08:04.158+0000] {subprocess.py:93} INFO - BOOKING_THREAD_STARTED
+[2025-11-29T22:08:04.159+0000] {subprocess.py:93} INFO - AIRPORT_THREAD_FINISHED
+[2025-11-29T22:08:04.159+0000] {subprocess.py:93} INFO - PAYMENT: Progress: 0/1000
+[2025-11-29T22:08:04.159+0000] {subprocess.py:93} INFO - PASSENGER: Progress: 0/1000
+[2025-11-29T22:08:04.159+0000] {subprocess.py:93} INFO - PAYMENT: Progress: 100/1000
+[2025-11-29T22:08:04.159+0000] {subprocess.py:93} INFO - PASSENGER: Progress: 100/1000
+[2025-11-29T22:08:04.159+0000] {subprocess.py:93} INFO - PAYMENT: Progress: 200/1000
+[2025-11-29T22:08:04.159+0000] {subprocess.py:93} INFO - PASSENGER: Progress: 200/1000
+[2025-11-29T22:08:04.159+0000] {subprocess.py:93} INFO - PAYMENT: Progress: 300/1000
+[2025-11-29T22:08:04.159+0000] {subprocess.py:93} INFO - PASSENGER: Progress: 300/1000
+[2025-11-29T22:08:04.160+0000] {subprocess.py:93} INFO - PAYMENT: Progress: 400/1000
+[2025-11-29T22:08:04.160+0000] {subprocess.py:93} INFO - PASSENGER: Progress: 400/1000
+[2025-11-29T22:08:04.160+0000] {subprocess.py:93} INFO - PAYMENT: Progress: 500/1000
+[2025-11-29T22:08:04.160+0000] {subprocess.py:93} INFO - PASSENGER: Progress: 500/1000
+[2025-11-29T22:08:04.160+0000] {subprocess.py:93} INFO - PAYMENT: Progress: 600/1000
+[2025-11-29T22:08:04.160+0000] {subprocess.py:93} INFO - PASSENGER: Progress: 600/1000
+[2025-11-29T22:08:04.160+0000] {subprocess.py:93} INFO - PAYMENT: Progress: 700/1000
+[2025-11-29T22:08:04.160+0000] {subprocess.py:93} INFO - PASSENGER: Progress: 700/1000
+[2025-11-29T22:08:04.161+0000] {subprocess.py:93} INFO - PAYMENT: Progress: 800/1000
+[2025-11-29T22:08:04.161+0000] {subprocess.py:93} INFO - PASSENGER: Progress: 800/1000
+[2025-11-29T22:08:04.161+0000] {subprocess.py:93} INFO - PAYMENT: Progress: 900/1000
+[2025-11-29T22:08:04.161+0000] {subprocess.py:93} INFO - PASSENGER: Progress: 900/1000
+[2025-11-29T22:08:04.161+0000] {subprocess.py:93} INFO - PASSENGER_THREAD_FINISHED
+[2025-11-29T22:08:04.161+0000] {subprocess.py:93} INFO - PAYMENT_THREAD_FINISHED
+[2025-11-29T22:08:04.161+0000] {subprocess.py:93} INFO - TICKET_THREAD_FINISHED
+[2025-11-29T22:08:04.169+0000] {subprocess.py:93} INFO - BOOKING_THREAD_FINISHED
+[2025-11-29T22:08:04.169+0000] {subprocess.py:93} INFO - DATE_THREAD_STARTED
+[2025-11-29T22:08:04.169+0000] {subprocess.py:93} INFO - DATE_THREAD_FINISHED
+[2025-11-29T22:08:04.169+0000] {subprocess.py:93} INFO - WEATHER_THREAD_STARTED
+[2025-11-29T22:08:04.169+0000] {subprocess.py:93} INFO - WEATHER_THREAD_FINISHED
+[2025-11-29T22:08:05.323+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-11-29T22:08:05.409+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=flight_etl, task_id=python_etl_pipeline, execution_date=20251129T220421, start_date=20251129T220424, end_date=20251129T220805
+[2025-11-29T22:08:05.456+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-11-29T22:08:05.480+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check

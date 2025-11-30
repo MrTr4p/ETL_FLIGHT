@@ -1,0 +1,28 @@
+[2025-11-29T13:24:52.680+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_etl.call_bronze_procedure manual__2025-11-29T13:24:47.828792+00:00 [queued]>
+[2025-11-29T13:24:52.687+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_etl.call_bronze_procedure manual__2025-11-29T13:24:47.828792+00:00 [queued]>
+[2025-11-29T13:24:52.687+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2025-11-29T13:24:52.754+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): call_bronze_procedure> on 2025-11-29 13:24:47.828792+00:00
+[2025-11-29T13:24:52.760+0000] {standard_task_runner.py:57} INFO - Started process 155 to run task
+[2025-11-29T13:24:52.763+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'flight_etl', 'call_bronze_procedure', 'manual__2025-11-29T13:24:47.828792+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/etl-dag.py', '--cfg-path', '/tmp/tmpq1ar0wbj']
+[2025-11-29T13:24:52.765+0000] {standard_task_runner.py:85} INFO - Job 5: Subtask call_bronze_procedure
+[2025-11-29T13:24:52.803+0000] {task_command.py:416} INFO - Running <TaskInstance: flight_etl.call_bronze_procedure manual__2025-11-29T13:24:47.828792+00:00 [running]> on host 5c8e1088e7e2
+[2025-11-29T13:24:52.865+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='flight_etl' AIRFLOW_CTX_TASK_ID='call_bronze_procedure' AIRFLOW_CTX_EXECUTION_DATE='2025-11-29T13:24:47.828792+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-29T13:24:47.828792+00:00'
+[2025-11-29T13:24:52.878+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/etl-dag.py", line 12, in call_procedure
+    conn = hook.get_conn()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/postgres/hooks/postgres.py", line 125, in get_conn
+    conn = deepcopy(self.connection or self.get_connection(conn_id))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/hooks/base.py", line 72, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/connection.py", line 477, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `depi_db` isn't defined
+[2025-11-29T13:24:52.949+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=flight_etl, task_id=call_bronze_procedure, execution_date=20251129T132447, start_date=20251129T132452, end_date=20251129T132452
+[2025-11-29T13:24:53.058+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 5 for task call_bronze_procedure (The conn_id `depi_db` isn't defined; 155)
+[2025-11-29T13:24:53.095+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-11-29T13:24:53.111+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

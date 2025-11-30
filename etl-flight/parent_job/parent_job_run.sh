@@ -1,0 +1,4 @@
+#!/bin/sh
+cd `dirname $0`
+ROOT_PATH=`pwd`
+java -Dtalend.component.manager.m2.repository=$ROOT_PATH/../lib -Xms256M -Xmx1024M -cp .:$ROOT_PATH:$ROOT_PATH/../lib/routines.jar:$ROOT_PATH/../lib/log4j-slf4j-impl-2.13.2.jar:$ROOT_PATH/../lib/log4j-api-2.13.2.jar:$ROOT_PATH/../lib/log4j-core-2.13.2.jar:$ROOT_PATH/../lib/jboss-marshalling-2.0.12.Final.jar:$ROOT_PATH/../lib/dom4j-2.1.3.jar:$ROOT_PATH/../lib/slf4j-api-1.7.29.jar:$ROOT_PATH/../lib/postgresql-42.2.14.jar:$ROOT_PATH/../lib/crypto-utils-0.31.12.jar:$ROOT_PATH/parent_job_0_1.jar:$ROOT_PATH/airport_dim_0_1.jar:$ROOT_PATH/ticket_dim_0_1.jar:$ROOT_PATH/flight_dim_0_1.jar:$ROOT_PATH/booking_fact_0_1.jar:$ROOT_PATH/weather_dim_0_1.jar:$ROOT_PATH/payment_dim_0_1.jar:$ROOT_PATH/passenger_dim_0_1.jar:$ROOT_PATH/date_dim_0_1.jar: depi.parent_job_0_1.parent_job --context=Default "$@"

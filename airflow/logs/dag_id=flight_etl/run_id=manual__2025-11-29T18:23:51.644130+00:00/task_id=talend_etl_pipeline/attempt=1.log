@@ -1,0 +1,24 @@
+[2025-11-29T18:23:54.241+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_etl.talend_etl_pipeline manual__2025-11-29T18:23:51.644130+00:00 [queued]>
+[2025-11-29T18:23:54.251+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_etl.talend_etl_pipeline manual__2025-11-29T18:23:51.644130+00:00 [queued]>
+[2025-11-29T18:23:54.252+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2025-11-29T18:23:54.279+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): talend_etl_pipeline> on 2025-11-29 18:23:51.644130+00:00
+[2025-11-29T18:23:54.284+0000] {standard_task_runner.py:57} INFO - Started process 344 to run task
+[2025-11-29T18:23:54.287+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'flight_etl', 'talend_etl_pipeline', 'manual__2025-11-29T18:23:51.644130+00:00', '--job-id', '116', '--raw', '--subdir', 'DAGS_FOLDER/etl-dag.py', '--cfg-path', '/tmp/tmp5q0n3k3j']
+[2025-11-29T18:23:54.288+0000] {standard_task_runner.py:85} INFO - Job 116: Subtask talend_etl_pipeline
+[2025-11-29T18:23:54.355+0000] {task_command.py:416} INFO - Running <TaskInstance: flight_etl.talend_etl_pipeline manual__2025-11-29T18:23:51.644130+00:00 [running]> on host de85a2875cf6
+[2025-11-29T18:23:54.875+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='flight_etl' AIRFLOW_CTX_TASK_ID='talend_etl_pipeline' AIRFLOW_CTX_EXECUTION_DATE='2025-11-29T18:23:51.644130+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-29T18:23:51.644130+00:00'
+[2025-11-29T18:23:55.068+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/etl-dag.py", line 38, in run_talend_job
+    raise Exception(f"Talend job failed: {result.stderr}")
+Exception: Talend job failed: /bin/bash: line 1: ./parent_job_run.sh: Permission denied
+
+[2025-11-29T18:23:55.084+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=flight_etl, task_id=talend_etl_pipeline, execution_date=20251129T182351, start_date=20251129T182354, end_date=20251129T182355
+[2025-11-29T18:23:55.118+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 116 for task talend_etl_pipeline (Talend job failed: /bin/bash: line 1: ./parent_job_run.sh: Permission denied
+; 344)
+[2025-11-29T18:23:55.140+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-11-29T18:23:55.158+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,9 @@
+date_id,calendar_date,day_of_week,day_of_month,month_number,month_name,quarter,year,is_weekend
+1,2025-11-17,Monday,17,11,November,4,2025,False
+2,2025-11-18,Tuesday,18,11,November,4,2025,False
+3,2025-11-19,Wednesday,19,11,November,4,2025,False
+4,2025-11-20,Thursday,20,11,November,4,2025,False
+5,2025-11-21,Friday,21,11,November,4,2025,False
+6,2025-11-22,Saturday,22,11,November,4,2025,True
+7,2025-11-23,Sunday,23,11,November,4,2025,True
+8,2025-11-24,Monday,24,11,November,4,2025,False

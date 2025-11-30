@@ -1,0 +1,23 @@
+[2025-11-30T00:27:01.875+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_etl.copy_jdbc_jar manual__2025-11-30T00:25:34.185936+00:00 [queued]>
+[2025-11-30T00:27:01.880+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_etl.copy_jdbc_jar manual__2025-11-30T00:25:34.185936+00:00 [queued]>
+[2025-11-30T00:27:01.880+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2025-11-30T00:27:01.889+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): copy_jdbc_jar> on 2025-11-30 00:25:34.185936+00:00
+[2025-11-30T00:27:01.894+0000] {standard_task_runner.py:57} INFO - Started process 844 to run task
+[2025-11-30T00:27:01.897+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'flight_etl', 'copy_jdbc_jar', 'manual__2025-11-30T00:25:34.185936+00:00', '--job-id', '364', '--raw', '--subdir', 'DAGS_FOLDER/etl-dag.py', '--cfg-path', '/tmp/tmpau4by9ao']
+[2025-11-30T00:27:01.900+0000] {standard_task_runner.py:85} INFO - Job 364: Subtask copy_jdbc_jar
+[2025-11-30T00:27:01.939+0000] {task_command.py:416} INFO - Running <TaskInstance: flight_etl.copy_jdbc_jar manual__2025-11-30T00:25:34.185936+00:00 [running]> on host c5613c26f8d0
+[2025-11-30T00:27:01.992+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='flight_etl' AIRFLOW_CTX_TASK_ID='copy_jdbc_jar' AIRFLOW_CTX_EXECUTION_DATE='2025-11-30T00:25:34.185936+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-30T00:25:34.185936+00:00'
+[2025-11-30T00:27:01.993+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-30T00:27:01.993+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', '\n        SPARK_MASTER="spark-master"\n        JAR_PATH="/opt/***/drivers/postgresql-42.7.7.jar" \n        DEST_DIR="/tmp/spark_drivers/"\n\n        # 1. CREATE DESTINATION DIRECTORY (Crucial step!)\n        docker exec ${SPARK_MASTER} mkdir -p ${DEST_DIR}\n\n        # 2. Copy the file\n        docker cp ${JAR_PATH} ${SPARK_MASTER}:${DEST_DIR}${JAR_NAME}\n        # ...\n    ']
+[2025-11-30T00:27:02.003+0000] {subprocess.py:86} INFO - Output:
+[2025-11-30T00:27:02.081+0000] {subprocess.py:93} INFO - lstat /opt/***/drivers: no such file or directory
+[2025-11-30T00:27:02.082+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-11-30T00:27:02.096+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-11-30T00:27:02.100+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=flight_etl, task_id=copy_jdbc_jar, execution_date=20251130T002534, start_date=20251130T002701, end_date=20251130T002702
+[2025-11-30T00:27:02.110+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 364 for task copy_jdbc_jar (Bash command failed. The command returned a non-zero exit code 1.; 844)
+[2025-11-30T00:27:02.148+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-11-30T00:27:02.177+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,8 @@
+# Use the official Confluent Kafka Connect base image
+FROM confluentinc/cp-kafka-connect:latest
+
+# Run the utility to install the JDBC connector package
+# We assume you need the PostgreSQL driver to connect to your DWH/Airflow DB
+RUN confluent-hub install --no-prompt confluentinc/kafka-connect-jdbc:10.7.6
+
+# You can add other configurations or connectors here if needed later

@@ -1,0 +1,107 @@
+[2025-11-30T00:10:21.679+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_etl.python_etl_pipeline manual__2025-11-30T00:10:19.131515+00:00 [queued]>
+[2025-11-30T00:10:21.685+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_etl.python_etl_pipeline manual__2025-11-30T00:10:19.131515+00:00 [queued]>
+[2025-11-30T00:10:21.685+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2025-11-30T00:10:21.700+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): python_etl_pipeline> on 2025-11-30 00:10:19.131515+00:00
+[2025-11-30T00:10:21.704+0000] {standard_task_runner.py:57} INFO - Started process 229 to run task
+[2025-11-30T00:10:21.706+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'flight_etl', 'python_etl_pipeline', 'manual__2025-11-30T00:10:19.131515+00:00', '--job-id', '335', '--raw', '--subdir', 'DAGS_FOLDER/etl-dag.py', '--cfg-path', '/tmp/tmpzrrv63hx']
+[2025-11-30T00:10:21.708+0000] {standard_task_runner.py:85} INFO - Job 335: Subtask python_etl_pipeline
+[2025-11-30T00:10:21.747+0000] {task_command.py:416} INFO - Running <TaskInstance: flight_etl.python_etl_pipeline manual__2025-11-30T00:10:19.131515+00:00 [running]> on host c5613c26f8d0
+[2025-11-30T00:10:21.841+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='flight_etl' AIRFLOW_CTX_TASK_ID='python_etl_pipeline' AIRFLOW_CTX_EXECUTION_DATE='2025-11-30T00:10:19.131515+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-30T00:10:19.131515+00:00'
+[2025-11-30T00:10:21.842+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-30T00:10:21.843+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', '\n        echo "Starting ETL pipeline execution..." &&         cd /opt/***/etl_scripts &&         echo "Current directory is: $(pwd)" &&         echo "Installing requirements..." &&         /usr/local/bin/pip install --ignore-installed -r requirements.txt &&         echo "Starting main.py script..." &&         python main.py\n    ']
+[2025-11-30T00:10:21.853+0000] {subprocess.py:86} INFO - Output:
+[2025-11-30T00:10:21.854+0000] {subprocess.py:93} INFO - Starting ETL pipeline execution...
+[2025-11-30T00:10:21.855+0000] {subprocess.py:93} INFO - Current directory is: /opt/***/etl_scripts
+[2025-11-30T00:10:21.856+0000] {subprocess.py:93} INFO - Installing requirements...
+[2025-11-30T00:10:22.891+0000] {subprocess.py:93} INFO - Collecting certifi==2025.8.3
+[2025-11-30T00:10:22.893+0000] {subprocess.py:93} INFO -   Using cached certifi-2025.8.3-py3-none-any.whl (161 kB)
+[2025-11-30T00:10:23.084+0000] {subprocess.py:93} INFO - Collecting charset-normalizer==3.4.3
+[2025-11-30T00:10:23.086+0000] {subprocess.py:93} INFO -   Using cached charset_normalizer-3.4.3-cp38-cp38-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (147 kB)
+[2025-11-30T00:10:23.261+0000] {subprocess.py:93} INFO - Collecting Faker==35.2.2
+[2025-11-30T00:10:23.270+0000] {subprocess.py:93} INFO -   Using cached Faker-35.2.2-py3-none-any.whl (1.9 MB)
+[2025-11-30T00:10:23.522+0000] {subprocess.py:93} INFO - Collecting greenlet==2.0.2
+[2025-11-30T00:10:23.525+0000] {subprocess.py:93} INFO -   Using cached greenlet-2.0.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (618 kB)
+[2025-11-30T00:10:23.598+0000] {subprocess.py:93} INFO - Collecting idna==3.10
+[2025-11-30T00:10:23.600+0000] {subprocess.py:93} INFO -   Using cached idna-3.10-py3-none-any.whl (70 kB)
+[2025-11-30T00:10:23.683+0000] {subprocess.py:93} INFO - Collecting kagglehub==0.2.9
+[2025-11-30T00:10:23.684+0000] {subprocess.py:93} INFO -   Using cached kagglehub-0.2.9-py3-none-any.whl (39 kB)
+[2025-11-30T00:10:24.043+0000] {subprocess.py:93} INFO - Collecting numpy==1.24.4
+[2025-11-30T00:10:24.086+0000] {subprocess.py:93} INFO -   Using cached numpy-1.24.4-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (17.3 MB)
+[2025-11-30T00:10:24.197+0000] {subprocess.py:93} INFO - Collecting packaging==25.0
+[2025-11-30T00:10:24.198+0000] {subprocess.py:93} INFO -   Using cached packaging-25.0-py3-none-any.whl (66 kB)
+[2025-11-30T00:10:24.423+0000] {subprocess.py:93} INFO - Collecting pandas==1.5.3
+[2025-11-30T00:10:24.470+0000] {subprocess.py:93} INFO -   Using cached pandas-1.5.3-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.2 MB)
+[2025-11-30T00:10:24.667+0000] {subprocess.py:93} INFO - Collecting psycopg2-binary==2.9.10
+[2025-11-30T00:10:24.675+0000] {subprocess.py:93} INFO -   Using cached psycopg2_binary-2.9.10-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
+[2025-11-30T00:10:24.753+0000] {subprocess.py:93} INFO - Collecting python-dateutil==2.9.0.post0
+[2025-11-30T00:10:24.755+0000] {subprocess.py:93} INFO -   Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+[2025-11-30T00:10:24.852+0000] {subprocess.py:93} INFO - Collecting pytz==2025.2
+[2025-11-30T00:10:24.855+0000] {subprocess.py:93} INFO -   Using cached pytz-2025.2-py2.py3-none-any.whl (509 kB)
+[2025-11-30T00:10:24.977+0000] {subprocess.py:93} INFO - Collecting PyYAML==6.0.2
+[2025-11-30T00:10:24.980+0000] {subprocess.py:93} INFO -   Using cached PyYAML-6.0.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (746 kB)
+[2025-11-30T00:10:25.067+0000] {subprocess.py:93} INFO - Collecting requests==2.32.4
+[2025-11-30T00:10:25.069+0000] {subprocess.py:93} INFO -   Using cached requests-2.32.4-py3-none-any.whl (64 kB)
+[2025-11-30T00:10:25.140+0000] {subprocess.py:93} INFO - Collecting six==1.17.0
+[2025-11-30T00:10:25.141+0000] {subprocess.py:93} INFO -   Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+[2025-11-30T00:10:25.676+0000] {subprocess.py:93} INFO - Collecting SQLAlchemy==2.0.43
+[2025-11-30T00:10:25.682+0000] {subprocess.py:93} INFO -   Using cached sqlalchemy-2.0.43-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.2 MB)
+[2025-11-30T00:10:25.794+0000] {subprocess.py:93} INFO - Collecting tqdm==4.67.1
+[2025-11-30T00:10:25.796+0000] {subprocess.py:93} INFO -   Using cached tqdm-4.67.1-py3-none-any.whl (78 kB)
+[2025-11-30T00:10:25.871+0000] {subprocess.py:93} INFO - Collecting typing_extensions==4.13.2
+[2025-11-30T00:10:25.873+0000] {subprocess.py:93} INFO -   Using cached typing_extensions-4.13.2-py3-none-any.whl (45 kB)
+[2025-11-30T00:10:25.944+0000] {subprocess.py:93} INFO - Collecting tzdata==2025.2
+[2025-11-30T00:10:25.946+0000] {subprocess.py:93} INFO -   Using cached tzdata-2025.2-py2.py3-none-any.whl (347 kB)
+[2025-11-30T00:10:26.038+0000] {subprocess.py:93} INFO - Collecting urllib3==2.2.3
+[2025-11-30T00:10:26.041+0000] {subprocess.py:93} INFO -   Using cached urllib3-2.2.3-py3-none-any.whl (126 kB)
+[2025-11-30T00:10:29.052+0000] {subprocess.py:93} INFO - Installing collected packages: pytz, urllib3, tzdata, typing_extensions, tqdm, six, PyYAML, psycopg2-binary, packaging, numpy, idna, greenlet, charset-normalizer, certifi, SQLAlchemy, requests, python-dateutil, pandas, kagglehub, Faker
+[2025-11-30T00:10:35.196+0000] {subprocess.py:93} INFO - ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+[2025-11-30T00:10:35.196+0000] {subprocess.py:93} INFO - sqlalchemy-redshift 0.8.14 requires SQLAlchemy<2.0.0,>=0.9.2, but you have sqlalchemy 2.0.43 which is incompatible.
+[2025-11-30T00:10:35.196+0000] {subprocess.py:93} INFO - sqlalchemy-bigquery 1.8.0 requires sqlalchemy<2.0.0dev,>=1.2.0, but you have sqlalchemy 2.0.43 which is incompatible.
+[2025-11-30T00:10:35.196+0000] {subprocess.py:93} INFO - snowflake-sqlalchemy 1.5.0 requires sqlalchemy<2.0.0,>=1.4.0, but you have sqlalchemy 2.0.43 which is incompatible.
+[2025-11-30T00:10:35.196+0000] {subprocess.py:93} INFO - snowflake-connector-python 3.3.1 requires urllib3<1.27,>=1.21.1, but you have urllib3 2.2.3 which is incompatible.
+[2025-11-30T00:10:35.196+0000] {subprocess.py:93} INFO - limits 3.6.0 requires packaging<24,>=21, but you have packaging 25.0 which is incompatible.
+[2025-11-30T00:10:35.196+0000] {subprocess.py:93} INFO - flask-appbuilder 4.3.6 requires SQLAlchemy<1.5, but you have sqlalchemy 2.0.43 which is incompatible.
+[2025-11-30T00:10:35.196+0000] {subprocess.py:93} INFO - botocore 1.31.64 requires urllib3<1.27,>=1.25.4; python_version < "3.10", but you have urllib3 2.2.3 which is incompatible.
+[2025-11-30T00:10:35.196+0000] {subprocess.py:93} INFO - apache-*** 2.7.3 requires sqlalchemy<2.0,>=1.4.28, but you have sqlalchemy 2.0.43 which is incompatible.
+[2025-11-30T00:10:35.197+0000] {subprocess.py:93} INFO - Successfully installed Faker-35.2.2 PyYAML-6.0.2 SQLAlchemy-2.0.43 certifi-2025.8.3 charset-normalizer-3.4.3 greenlet-2.0.2 idna-3.10 kagglehub-0.2.9 numpy-1.24.4 packaging-25.0 pandas-1.5.3 psycopg2-binary-2.9.10 python-dateutil-2.9.0.post0 pytz-2025.2 requests-2.32.4 six-1.17.0 tqdm-4.67.1 typing_extensions-4.13.2 tzdata-2025.2 urllib3-2.2.3
+[2025-11-30T00:10:35.197+0000] {subprocess.py:93} INFO - WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[2025-11-30T00:10:35.201+0000] {subprocess.py:93} INFO - 
+[2025-11-30T00:10:35.201+0000] {subprocess.py:93} INFO - [notice] A new release of pip is available: 23.0.1 -> 25.0.1
+[2025-11-30T00:10:35.201+0000] {subprocess.py:93} INFO - [notice] To update, run: pip3 install --upgrade pip
+[2025-11-30T00:10:35.410+0000] {subprocess.py:93} INFO - Starting main.py script...
+[2025-11-30T00:10:36.341+0000] {subprocess.py:93} INFO - All tables truncated successfully
+[2025-11-30T00:10:36.342+0000] {subprocess.py:93} INFO - Warning: Looks like you're using an outdated `kagglehub` version, please consider updating (latest version: 0.3.13)
+[2025-11-30T00:10:37.289+0000] {subprocess.py:93} INFO - Resuming download from 233621700 bytes (-33554432 bytes left)...
+[2025-11-30T00:10:37.595+0000] {subprocess.py:93} INFO - Resuming download from https://www.kaggle.com/api/v1/datasets/download/usdot/flight-delays?dataset_version_number=1 (233621700/200067268) bytes left.
+[2025-11-30T00:10:37.626+0000] {subprocess.py:93} INFO - 223MB [00:00, ?B/s]223MB [00:00, 185kB/s]
+[2025-11-30T00:10:37.626+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-11-30T00:10:37.626+0000] {subprocess.py:93} INFO -   File "main.py", line 11, in <module>
+[2025-11-30T00:10:37.626+0000] {subprocess.py:93} INFO -     path = bronze_layer_workflows.download_kaggle_file()
+[2025-11-30T00:10:37.626+0000] {subprocess.py:93} INFO -   File "/opt/***/etl_scripts/bronze_layer_workflows.py", line 18, in download_kaggle_file
+[2025-11-30T00:10:37.626+0000] {subprocess.py:93} INFO -     path = kagglehub.dataset_download("usdot/flight-delays")
+[2025-11-30T00:10:37.626+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/kagglehub/datasets.py", line 28, in dataset_download
+[2025-11-30T00:10:37.626+0000] {subprocess.py:93} INFO -     return registry.dataset_resolver(h, path, force_download=force_download)
+[2025-11-30T00:10:37.626+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/kagglehub/registry.py", line 23, in __call__
+[2025-11-30T00:10:37.626+0000] {subprocess.py:93} INFO -     return impl(*args, **kwargs)
+[2025-11-30T00:10:37.627+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/kagglehub/http_resolver.py", line 60, in __call__
+[2025-11-30T00:10:37.627+0000] {subprocess.py:93} INFO -     api_client.download_file(url_path, archive_path, h)
+[2025-11-30T00:10:37.627+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/site-packages/kagglehub/clients.py", line 173, in download_file
+[2025-11-30T00:10:37.627+0000] {subprocess.py:93} INFO -     raise DataCorruptionError(
+[2025-11-30T00:10:37.627+0000] {subprocess.py:93} INFO - kagglehub.exceptions.DataCorruptionError: The X-Goog-Hash header indicated a MD5 checksum of:
+[2025-11-30T00:10:37.627+0000] {subprocess.py:93} INFO - 
+[2025-11-30T00:10:37.627+0000] {subprocess.py:93} INFO -   5c/ROJM66D5aVGvkKEMmsQ==
+[2025-11-30T00:10:37.627+0000] {subprocess.py:93} INFO - 
+[2025-11-30T00:10:37.627+0000] {subprocess.py:93} INFO - but the actual MD5 checksum of the downloaded contents was:
+[2025-11-30T00:10:37.627+0000] {subprocess.py:93} INFO - 
+[2025-11-30T00:10:37.627+0000] {subprocess.py:93} INFO -   zLx1tw6ud++moUfXaBGTOQ==
+[2025-11-30T00:10:37.627+0000] {subprocess.py:93} INFO - 
+[2025-11-30T00:10:37.695+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-11-30T00:10:37.703+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-11-30T00:10:37.705+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=flight_etl, task_id=python_etl_pipeline, execution_date=20251130T001019, start_date=20251130T001021, end_date=20251130T001037
+[2025-11-30T00:10:37.717+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 335 for task python_etl_pipeline (Bash command failed. The command returned a non-zero exit code 1.; 229)
+[2025-11-30T00:10:37.730+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-11-30T00:10:37.756+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

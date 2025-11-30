@@ -1,0 +1,27 @@
+[2025-11-29T22:39:05.637+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_etl.spark_batch_processor manual__2025-11-29T22:33:53.163471+00:00 [queued]>
+[2025-11-29T22:39:05.646+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_etl.spark_batch_processor manual__2025-11-29T22:33:53.163471+00:00 [queued]>
+[2025-11-29T22:39:05.647+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2025-11-29T22:39:05.787+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): spark_batch_processor> on 2025-11-29 22:33:53.163471+00:00
+[2025-11-29T22:39:05.792+0000] {standard_task_runner.py:57} INFO - Started process 265 to run task
+[2025-11-29T22:39:05.795+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'flight_etl', 'spark_batch_processor', 'manual__2025-11-29T22:33:53.163471+00:00', '--job-id', '280', '--raw', '--subdir', 'DAGS_FOLDER/etl-dag.py', '--cfg-path', '/tmp/tmpy5ac5d6g']
+[2025-11-29T22:39:05.797+0000] {standard_task_runner.py:85} INFO - Job 280: Subtask spark_batch_processor
+[2025-11-29T22:39:05.930+0000] {task_command.py:416} INFO - Running <TaskInstance: flight_etl.spark_batch_processor manual__2025-11-29T22:33:53.163471+00:00 [running]> on host 686a2d59d14f
+[2025-11-29T22:39:06.159+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='flight_etl' AIRFLOW_CTX_TASK_ID='spark_batch_processor' AIRFLOW_CTX_EXECUTION_DATE='2025-11-29T22:33:53.163471+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-29T22:33:53.163471+00:00'
+[2025-11-29T22:39:06.203+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-29T22:39:06.204+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', '\n        docker exec spark-master /spark/bin/spark-submit \\\n            --master spark://spark-master:7077 \\\n            --jars /tmp/spark_drivers/postgresql-42.7.7.jar \\\n            /tmp/spark_drivers/batch.py \n    ']
+[2025-11-29T22:39:06.242+0000] {subprocess.py:86} INFO - Output:
+[2025-11-29T22:39:10.393+0000] {subprocess.py:93} INFO - 25/11/29 22:39:10 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-11-29T22:39:10.724+0000] {subprocess.py:93} INFO - 25/11/29 22:39:10 WARN DependencyUtils: Local jar /tmp/spark_drivers/postgresql-42.7.7.jar does not exist, skipping.
+[2025-11-29T22:39:10.934+0000] {subprocess.py:93} INFO - python3: can't open file '/tmp/spark_drivers/batch.py': [Errno 2] No such file or directory
+[2025-11-29T22:39:10.941+0000] {subprocess.py:93} INFO - 25/11/29 22:39:10 INFO ShutdownHookManager: Shutdown hook called
+[2025-11-29T22:39:10.941+0000] {subprocess.py:93} INFO - 25/11/29 22:39:10 INFO ShutdownHookManager: Deleting directory /tmp/spark-b358b1e7-9c1e-475a-bf16-3b72acdf7bbc
+[2025-11-29T22:39:11.008+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2025-11-29T22:39:11.024+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2025-11-29T22:39:11.037+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=flight_etl, task_id=spark_batch_processor, execution_date=20251129T223353, start_date=20251129T223905, end_date=20251129T223911
+[2025-11-29T22:39:11.066+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 280 for task spark_batch_processor (Bash command failed. The command returned a non-zero exit code 2.; 265)
+[2025-11-29T22:39:11.101+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-11-29T22:39:11.120+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

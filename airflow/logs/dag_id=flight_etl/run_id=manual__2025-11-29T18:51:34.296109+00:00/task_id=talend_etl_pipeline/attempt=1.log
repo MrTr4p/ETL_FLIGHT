@@ -1,0 +1,134 @@
+[2025-11-29T18:51:38.768+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_etl.talend_etl_pipeline manual__2025-11-29T18:51:34.296109+00:00 [queued]>
+[2025-11-29T18:51:38.782+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_etl.talend_etl_pipeline manual__2025-11-29T18:51:34.296109+00:00 [queued]>
+[2025-11-29T18:51:38.782+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2025-11-29T18:51:38.920+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): talend_etl_pipeline> on 2025-11-29 18:51:34.296109+00:00
+[2025-11-29T18:51:38.929+0000] {standard_task_runner.py:57} INFO - Started process 92 to run task
+[2025-11-29T18:51:38.932+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'flight_etl', 'talend_etl_pipeline', 'manual__2025-11-29T18:51:34.296109+00:00', '--job-id', '142', '--raw', '--subdir', 'DAGS_FOLDER/etl-dag.py', '--cfg-path', '/tmp/tmpec3681c0']
+[2025-11-29T18:51:38.935+0000] {standard_task_runner.py:85} INFO - Job 142: Subtask talend_etl_pipeline
+[2025-11-29T18:51:39.053+0000] {task_command.py:416} INFO - Running <TaskInstance: flight_etl.talend_etl_pipeline manual__2025-11-29T18:51:34.296109+00:00 [running]> on host 5eb1b8ec96b4
+[2025-11-29T18:51:39.382+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='flight_etl' AIRFLOW_CTX_TASK_ID='talend_etl_pipeline' AIRFLOW_CTX_EXECUTION_DATE='2025-11-29T18:51:34.296109+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-29T18:51:34.296109+00:00'
+[2025-11-29T18:51:52.260+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/etl-dag.py", line 38, in run_talend_job
+    raise Exception(f"Talend job failed: {result.stderr}")
+Exception: Talend job failed: Exception in component tDBInput_2 (airport_dim)
+org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:297)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:217)
+	at org.postgresql.Driver.makeConnection(Driver.java:458)
+	at org.postgresql.Driver.connect(Driver.java:260)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:228)
+	at depi.airport_dim_0_1.airport_dim.tDBInput_2Process(airport_dim.java:1964)
+	at depi.airport_dim_0_1.airport_dim.runJobInTOS(airport_dim.java:3601)
+	at depi.airport_dim_0_1.airport_dim.runJob(airport_dim.java:3432)
+	at depi.parent_job_0_1.parent_job.tRunJob_1Process(parent_job.java:952)
+	at depi.parent_job_0_1.parent_job.runJobInTOS(parent_job.java:8475)
+	at depi.parent_job_0_1.parent_job.main(parent_job.java:8306)
+Caused by: java.net.UnknownHostException: dwh-postgress
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:229)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.base/java.net.Socket.connect(Socket.java:609)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:81)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:93)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:197)
+	... 12 more
+Exception in component tRunJob_1 (parent_job)
+java.lang.RuntimeException: Child job running failed.
+org.postgresql.util.PSQLException: The connection attempt failed.
+	at depi.parent_job_0_1.parent_job.tRunJob_1Process(parent_job.java:965)
+	at depi.parent_job_0_1.parent_job.runJobInTOS(parent_job.java:8475)
+	at depi.parent_job_0_1.parent_job.main(parent_job.java:8306)
+Exception in component tDBInput_2 (flight_dim)
+org.postgresql.util.PSQLException: ERROR: column "flight_number" does not exist
+  Hint: Perhaps you meant to reference the column "bronze_dim_flight.flightnumber".
+  Position: 43
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2532)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2267)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:312)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:448)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:369)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:310)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:296)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:273)
+	at org.postgresql.jdbc.PgStatement.executeQuery(PgStatement.java:226)
+	at depi.flight_dim_0_1.flight_dim.tDBInput_1Process(flight_dim.java:6025)
+	at depi.flight_dim_0_1.flight_dim.runJobInTOS(flight_dim.java:8856)
+	at depi.flight_dim_0_1.flight_dim.runJob(flight_dim.java:8695)
+	at depi.parent_job_0_1.parent_job.tRunJob_4Process(parent_job.java:4475)
+	at depi.parent_job_0_1.parent_job.runJobInTOS(parent_job.java:8502)
+	at depi.parent_job_0_1.parent_job.main(parent_job.java:8306)
+Exception in component tRunJob_4 (parent_job)
+java.lang.RuntimeException: Child job running failed.
+org.postgresql.util.PSQLException: ERROR: column "flight_number" does not exist
+  Hint: Perhaps you meant to reference the column "bronze_dim_flight.flightnumber".
+  Position: 43
+	at depi.parent_job_0_1.parent_job.tRunJob_4Process(parent_job.java:4488)
+	at depi.parent_job_0_1.parent_job.runJobInTOS(parent_job.java:8502)
+	at depi.parent_job_0_1.parent_job.main(parent_job.java:8306)
+
+[2025-11-29T18:51:52.274+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=flight_etl, task_id=talend_etl_pipeline, execution_date=20251129T185134, start_date=20251129T185138, end_date=20251129T185152
+[2025-11-29T18:51:52.300+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 142 for task talend_etl_pipeline (Talend job failed: Exception in component tDBInput_2 (airport_dim)
+org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:297)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:217)
+	at org.postgresql.Driver.makeConnection(Driver.java:458)
+	at org.postgresql.Driver.connect(Driver.java:260)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:228)
+	at depi.airport_dim_0_1.airport_dim.tDBInput_2Process(airport_dim.java:1964)
+	at depi.airport_dim_0_1.airport_dim.runJobInTOS(airport_dim.java:3601)
+	at depi.airport_dim_0_1.airport_dim.runJob(airport_dim.java:3432)
+	at depi.parent_job_0_1.parent_job.tRunJob_1Process(parent_job.java:952)
+	at depi.parent_job_0_1.parent_job.runJobInTOS(parent_job.java:8475)
+	at depi.parent_job_0_1.parent_job.main(parent_job.java:8306)
+Caused by: java.net.UnknownHostException: dwh-postgress
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:229)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.base/java.net.Socket.connect(Socket.java:609)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:81)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:93)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:197)
+	... 12 more
+Exception in component tRunJob_1 (parent_job)
+java.lang.RuntimeException: Child job running failed.
+org.postgresql.util.PSQLException: The connection attempt failed.
+	at depi.parent_job_0_1.parent_job.tRunJob_1Process(parent_job.java:965)
+	at depi.parent_job_0_1.parent_job.runJobInTOS(parent_job.java:8475)
+	at depi.parent_job_0_1.parent_job.main(parent_job.java:8306)
+Exception in component tDBInput_2 (flight_dim)
+org.postgresql.util.PSQLException: ERROR: column "flight_number" does not exist
+  Hint: Perhaps you meant to reference the column "bronze_dim_flight.flightnumber".
+  Position: 43
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2532)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2267)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:312)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:448)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:369)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:310)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:296)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:273)
+	at org.postgresql.jdbc.PgStatement.executeQuery(PgStatement.java:226)
+	at depi.flight_dim_0_1.flight_dim.tDBInput_1Process(flight_dim.java:6025)
+	at depi.flight_dim_0_1.flight_dim.runJobInTOS(flight_dim.java:8856)
+	at depi.flight_dim_0_1.flight_dim.runJob(flight_dim.java:8695)
+	at depi.parent_job_0_1.parent_job.tRunJob_4Process(parent_job.java:4475)
+	at depi.parent_job_0_1.parent_job.runJobInTOS(parent_job.java:8502)
+	at depi.parent_job_0_1.parent_job.main(parent_job.java:8306)
+Exception in component tRunJob_4 (parent_job)
+java.lang.RuntimeException: Child job running failed.
+org.postgresql.util.PSQLException: ERROR: column "flight_number" does not exist
+  Hint: Perhaps you meant to reference the column "bronze_dim_flight.flightnumber".
+  Position: 43
+	at depi.parent_job_0_1.parent_job.tRunJob_4Process(parent_job.java:4488)
+	at depi.parent_job_0_1.parent_job.runJobInTOS(parent_job.java:8502)
+	at depi.parent_job_0_1.parent_job.main(parent_job.java:8306)
+; 92)
+[2025-11-29T18:51:52.333+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-11-29T18:51:52.344+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,17 @@
+[2025-11-30T00:45:39.860+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_etl.call_silver_procedure manual__2025-11-30T00:45:37.148477+00:00 [queued]>
+[2025-11-30T00:45:39.865+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_etl.call_silver_procedure manual__2025-11-30T00:45:37.148477+00:00 [queued]>
+[2025-11-30T00:45:39.866+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2025-11-30T00:45:39.878+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): call_silver_procedure> on 2025-11-30 00:45:37.148477+00:00
+[2025-11-30T00:45:39.882+0000] {standard_task_runner.py:57} INFO - Started process 472 to run task
+[2025-11-30T00:45:39.884+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'flight_etl', 'call_silver_procedure', 'manual__2025-11-30T00:45:37.148477+00:00', '--job-id', '404', '--raw', '--subdir', 'DAGS_FOLDER/etl-dag.py', '--cfg-path', '/tmp/tmp5ieebolu']
+[2025-11-30T00:45:39.886+0000] {standard_task_runner.py:85} INFO - Job 404: Subtask call_silver_procedure
+[2025-11-30T00:45:39.919+0000] {task_command.py:416} INFO - Running <TaskInstance: flight_etl.call_silver_procedure manual__2025-11-30T00:45:37.148477+00:00 [running]> on host 45304bb2c878
+[2025-11-30T00:45:39.974+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='flight_etl' AIRFLOW_CTX_TASK_ID='call_silver_procedure' AIRFLOW_CTX_EXECUTION_DATE='2025-11-30T00:45:37.148477+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-30T00:45:37.148477+00:00'
+[2025-11-30T00:45:39.975+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2025-11-30T00:45:39.975+0000] {base.py:73} INFO - Using connection ID 'depi_db' for task execution.
+[2025-11-30T00:45:39.978+0000] {logging_mixin.py:154} INFO - Starting silver procedure execution...
+[2025-11-30T00:45:40.011+0000] {logging_mixin.py:154} INFO - Procedure silver execution is done...
+[2025-11-30T00:45:40.011+0000] {python.py:194} INFO - Done. Returned value was: None
+[2025-11-30T00:45:40.017+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=flight_etl, task_id=call_silver_procedure, execution_date=20251130T004537, start_date=20251130T004539, end_date=20251130T004540
+[2025-11-30T00:45:40.056+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-11-30T00:45:40.075+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check

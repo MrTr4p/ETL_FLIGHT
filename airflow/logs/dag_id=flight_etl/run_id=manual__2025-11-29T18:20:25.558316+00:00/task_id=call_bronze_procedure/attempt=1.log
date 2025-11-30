@@ -1,0 +1,35 @@
+[2025-11-29T18:20:27.987+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_etl.call_bronze_procedure manual__2025-11-29T18:20:25.558316+00:00 [queued]>
+[2025-11-29T18:20:27.994+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_etl.call_bronze_procedure manual__2025-11-29T18:20:25.558316+00:00 [queued]>
+[2025-11-29T18:20:27.995+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2025-11-29T18:20:28.009+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): call_bronze_procedure> on 2025-11-29 18:20:25.558316+00:00
+[2025-11-29T18:20:28.017+0000] {standard_task_runner.py:57} INFO - Started process 268 to run task
+[2025-11-29T18:20:28.021+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'flight_etl', 'call_bronze_procedure', 'manual__2025-11-29T18:20:25.558316+00:00', '--job-id', '112', '--raw', '--subdir', 'DAGS_FOLDER/etl-dag.py', '--cfg-path', '/tmp/tmp77_ynviw']
+[2025-11-29T18:20:28.022+0000] {standard_task_runner.py:85} INFO - Job 112: Subtask call_bronze_procedure
+[2025-11-29T18:20:28.069+0000] {task_command.py:416} INFO - Running <TaskInstance: flight_etl.call_bronze_procedure manual__2025-11-29T18:20:25.558316+00:00 [running]> on host de85a2875cf6
+[2025-11-29T18:20:28.372+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='flight_etl' AIRFLOW_CTX_TASK_ID='call_bronze_procedure' AIRFLOW_CTX_EXECUTION_DATE='2025-11-29T18:20:25.558316+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-29T18:20:25.558316+00:00'
+[2025-11-29T18:20:28.373+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2025-11-29T18:20:28.373+0000] {base.py:73} INFO - Using connection ID 'depi_db' for task execution.
+[2025-11-29T18:20:28.376+0000] {logging_mixin.py:154} INFO - Starting bronze procedure execution...
+[2025-11-29T18:25:51.544+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/airflow/dags/etl-dag.py", line 17, in call_procedure
+    cursor.execute(f"CALL {procedure_name}_layer();")
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/etl-dag.py", line 22, in call_procedure
+    conn.rollback()
+psycopg2.InterfaceError: connection already closed
+[2025-11-29T18:25:51.580+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=flight_etl, task_id=call_bronze_procedure, execution_date=20251129T182025, start_date=20251129T182027, end_date=20251129T182551
+[2025-11-29T18:25:51.765+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 112 for task call_bronze_procedure (connection already closed; 268)
+[2025-11-29T18:25:51.799+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-11-29T18:25:51.811+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
