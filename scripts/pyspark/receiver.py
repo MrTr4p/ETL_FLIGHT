@@ -67,10 +67,10 @@ print(f"Spark Streaming Query Started. Sinking to HDFS.")
 
 query.awaitTermination()
 
-# docker cp receiver.py spark-master:/opt/kafka_consumer.py       
+# docker cp scripts/pyspark/receiver.py spark-master:/opt/kafka_consumer.py       
 
-# docker exec -it spark-master /spark/bin/spark-submit \
-#   --master spark://spark-master:7077 \
-#   --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.3.0 \
-#   --jars /opt/spark/jars/postgresql-42.7.7.jar \
+#  docker exec -it spark-master /spark/bin/spark-submit \
+#    --master spark://spark-master:7077 \
+#    --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.3.0 \
+#    --jars /opt/spark/jars/postgresql-42.7.7.jar \
 #   /opt/kafka_consumer.py

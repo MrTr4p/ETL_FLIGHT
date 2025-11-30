@@ -60,10 +60,13 @@ while True:
     time.sleep(1)
 
 
-# docker cp producer.py spark-notebook:/tmp/kafka_streaming_job.py              
+# docker cp notebooks/producer.py spark-notebook:/tmp/kafka_streaming_job.py              
 
-#  docker exec -it --user root spark-notebook /usr/local/spark/bin/spark-submit \
-#    --master spark://spark-master:7077 \
-#    --name NotebookStreamingConsumer \
-#    --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.3.0 \
+#docker exec -it spark-notebook pip install kafka-python
+
+
+#    docker exec -it --user root spark-notebook /usr/local/spark/bin/spark-submit \
+#      --master spark://spark-master:7077 \
+#      --name NotebookStreamingConsumer \
+#      --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.3.0 \
 #   /tmp/kafka_streaming_job.py
